@@ -1,0 +1,1605 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>日子有序 V47 · 五日同屏課表</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+:root{--bg:#f8f7f3;--paper:#fffefa;--ink:#303c39;--muted:#8b9690;--line:#eaece6;--sage:#c7ded0;--green:#3d715e;--peach:#f6e1ce;--sky:#deebf4;--lav:#e9e3f1;--yellow:#f7edcb;--shadow:0 12px 38px #35463b0d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans','Noto Sans TC',system-ui,sans-serif;font-size:14px}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #79a591;outline-offset:2px}.app{max-width:1240px;margin:auto;padding:16px 18px 90px}.top{display:flex;justify-content:flex-start;align-items:center;gap:18px;margin-bottom:10px}.brand{display:flex;align-items:center;gap:12px}.mark{background:#cfe3d5;width:45px;height:45px;border-radius:16px;display:grid;place-items:center;font-size:25px;transform:rotate(-5deg)}h1,h2,h3,p{margin:0}.brand h1{font-size:18px;letter-spacing:1px}.sub{display:none}.top-actions{display:none!important;align-items:center;gap:9px}.pill,.ghost{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:9px 14px;color:var(--ink)}.primary{background:#426f5c;color:white;border-radius:30px;padding:10px 17px}.workspace{display:block;gap:0;align-items:start}.panel{background:var(--paper);border:1px solid #efeee9;border-radius:23px;box-shadow:var(--shadow)}aside.panel{padding:20px 13px;min-height:660px}.sectionTitle{font-size:11px;letter-spacing:2px;color:var(--muted);padding:8px 11px;font-weight:700}.stream{width:100%;text-align:left;display:flex;align-items:center;gap:10px;background:transparent;padding:10px 11px;border-radius:13px;color:#58635e}.stream:hover,.stream.active{background:#eef3ec;color:#355e4c}.dot{width:10px;height:10px;border-radius:4px;flex-shrink:0}.stream small{margin-left:auto;color:#a0a8a1}.sep{height:1px;background:var(--line);margin:15px 9px}.note{margin:11px;padding:14px;background:#f5f3e9;border-radius:14px;color:#788078;font-size:12px;line-height:1.9}.center{min-width:0}.hello{padding:23px 25px 21px;margin-bottom:16px;background:linear-gradient(115deg,#f1f6ed,#fffdfa 75%);position:relative;overflow:hidden}.hello:after{content:'✺';position:absolute;right:28px;top:2px;font-size:84px;color:#d9e9d8;transform:rotate(15deg)}.hello h2{font-size:24px;font-weight:600;letter-spacing:1px;margin-bottom:7px;position:relative;z-index:1}.hello p{font-size:13px;color:#78877e;position:relative;z-index:1;line-height:1.9}.quick{margin-top:18px;display:flex;gap:9px;position:relative;z-index:1}.quick input{flex:1;border:1px solid #e2e9df;background:white;border-radius:14px;padding:13px 16px;min-width:0}.quick button{border-radius:14px;background:#426f5c;color:#fff;padding:0 20px}.examples{font-size:12px;color:#8e9a90;margin-top:9px}.cal{padding:19px 19px 20px}.calhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:16px}.calhead h3{font-size:17px;letter-spacing:.4px}.calnav{display:flex;align-items:center;gap:6px}.calnav button{background:#f3f5f0;border-radius:10px;padding:7px 11px;color:#617168}.viewTabs{display:flex;background:#f3f4ee;padding:4px;border-radius:12px;gap:3px}.viewTabs button{background:transparent;border-radius:9px;color:#89958c;padding:7px 10px;font-size:12px}.viewTabs button.selected{background:white;color:#476d56;box-shadow:0 2px 6px #3332}.weekdays,.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}.weekdays>div{font-size:11px;text-align:center;color:#a0a8a1;padding:10px 0}.day{background:white;min-height:112px;border-top:1px solid #edf0ea;border-right:1px solid #edf0ea;padding:8px 5px;overflow:hidden;cursor:pointer}.days>.day:nth-child(7n){border-right:0}.day.other{background:#fbfbf8}.day.today .daynum{background:#56816e;color:white}.daynum{border-radius:10px;width:27px;height:27px;display:grid;place-items:center;margin:0 0 6px 3px;font-size:12px}.event{font-size:11px;padding:5px 7px;margin-bottom:4px;border-radius:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;width:100%;color:#4d5b50}.event:hover{filter:brightness(.97)}.event b{font-weight:600}.more{color:#9a9e97;font-size:10px;padding-left:6px}.empty{font-size:11px;color:#c1c7c1;padding-left:7px}.foot{margin-top:13px;color:#98a49a;font-size:11px;display:flex;justify-content:space-between;gap:8px}.right{display:flex;flex-direction:column;gap:16px}.right .panel{padding:20px}.overline{font-size:11px;letter-spacing:1.5px;color:#93a097;font-weight:600;margin-bottom:10px}.right h3{font-size:17px;margin-bottom:13px}.priority{display:flex;gap:10px;align-items:flex-start;border-bottom:1px solid #f0f1eb;padding:10px 0}.priority:last-child{border:0}.check{width:19px;height:19px;border-radius:50%;background:#fff;border:1.5px solid #b4cbbb;color:#fff;flex-shrink:0}.check.done{background:#648c75}.priority .title{font-size:13px;line-height:1.5}.priority .title.done{text-decoration:line-through;color:#a1aaa3}.meta{font-size:11px;color:#a3aaa2;margin-top:4px}.tag{display:inline-block;font-size:10px;padding:4px 8px;border-radius:8px;margin-bottom:5px}.upcoming{font-size:12px;line-height:1.6;border-left:2px solid #cfdecf;padding:0 0 14px 12px;margin-left:3px}.upcoming strong{display:block;font-size:12px}.upcoming time{color:#9ba8a0;font-size:11px}.smallbtn{color:#58806c;background:#edf4ed;border-radius:10px;padding:8px 10px;margin-top:10px;font-size:12px}.filterLabel{font-size:11px;color:#a1aaa0;display:block;padding-left:11px;margin-top:6px}
+/* V21: truly schedule-first home */
+#streams,.right,.hello,.top-actions{display:none!important}
+.workspace>aside{display:none!important}
+.center{width:100%;max-width:none}
+.panel.cal{border-radius:18px;padding:12px 12px 14px}
+.calhead{margin-bottom:10px}
+.compactController{margin:0 0 8px}
+.compactController button,.compactController select{padding:9px 11px;border-radius:11px}
+.compactController label{font-size:12px}
+.lessonWeekTitle{font-size:13px;margin:8px 0 6px}
+.lessonGrid{border-radius:12px;overflow:hidden}
+.lessonCell{padding:1px}
+.lessonItem{border-radius:10px}
+.overlay{position:fixed;inset:0;background:#233b3075;z-index:20;display:none;align-items:center;justify-content:center;padding:20px}.overlay.show{display:flex}.modal{background:#fffefa;max-width:490px;width:100%;padding:26px;border-radius:24px;box-shadow:0 22px 70px #18291f33;max-height:90vh;overflow:auto}.modal h2{font-size:21px;margin-bottom:6px}.modal p{color:#94a198;font-size:12px;line-height:1.7;margin-bottom:15px}.field{display:block;font-size:12px;color:#7b897e;margin:13px 0 6px}.fieldInput{width:100%;border:1px solid #e5eae2;background:#fff;border-radius:11px;padding:11px;color:#3b4b3f}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.actions{display:flex;gap:8px;justify-content:flex-end;margin-top:21px}.actions button{padding:10px 14px;border-radius:11px}.btnCancel{background:#f1f2ed;color:#607268}.btnSave{background:#456f5a;color:white}.danger{background:#fff1ec;color:#b27062;margin-right:auto!important}.hint{padding:10px 12px;border-radius:10px;background:#f2f5ed;color:#7d9382;font-size:12px;margin-top:13px}.itemmenu{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.itemmenu button{background:#eff4ed;color:#567b64;padding:8px 11px;border-radius:9px;font-size:12px}.small{font-size:12px;color:#95a199}.emptyArea{padding:40px;text-align:center;color:#9eaaa0}.focusRow{display:flex;align-items:center;gap:8px}.focusRow span{font-size:12px}.focusRow input{accent-color:#5b8e74}@media(max-width:1150px){.workspace{grid-template-columns:165px minmax(0,1fr)}.right{grid-column:2;display:grid;grid-template-columns:1fr 1fr}.note{display:none}}@media(max-width:740px){.app{padding:13px}.workspace{display:block}.workspace>aside{min-height:0;display:flex;overflow:auto;gap:5px;margin-bottom:12px;padding:9px}.workspace>aside .sectionTitle,.workspace>aside .sep,.workspace>aside .note,.workspace>aside .filterLabel{display:none}.stream{white-space:nowrap;width:auto;flex-shrink:0}.stream small{display:none}.right{display:block}.right .panel{margin-top:12px}.hello{padding:20px}.hello h2{font-size:20px}.top-actions .ghost{display:none}.top{margin-bottom:13px}.cal{padding:12px 7px}.day{min-height:89px;padding:5px 2px}.event{font-size:9px;padding:4px 3px}.daynum{font-size:11px}.viewTabs button{padding:6px 7px}.calhead h3{font-size:14px}.quick input{font-size:12px}.formgrid{grid-template-columns:1fr}}
+.manager{max-width:640px}.manageLine{display:flex;align-items:center;gap:12px;padding:9px 5px;border-bottom:1px solid var(--line)}.manageLine strong{flex:1;font-size:13px;font-weight:500}.miniBtn{background:#f1f4ee;color:#607467;padding:6px 10px;border-radius:8px}.manageEditor{background:#f7f8f4;padding:16px;border-radius:16px;margin-top:18px}.swatches{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px;margin:12px 0}.swatch{aspect-ratio:1;border:2px solid transparent;border-radius:9px;min-height:23px}.swatch.picked{border:2px solid #303c39;outline:2px solid white;box-shadow:0 0 0 2px #303c39}.customColor{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.customColor label{display:flex;align-items:center;gap:8px;font-size:12px}.customColor input[type=color]{border:0;background:transparent;width:45px;height:35px;cursor:pointer}.customColor .fieldInput{max-width:120px}.colorPreview{width:26px;height:26px;border-radius:8px;border:1px solid #8884}@media(max-width:740px){.swatches{grid-template-columns:repeat(8,minmax(0,1fr))}.top-actions{flex-wrap:wrap;justify-content:flex-end}.top-actions #manage{display:block}}
+
+/* v4 */
+.right{min-width:0}.right .panel{padding:20px}.workspace{grid-template-columns:210px minmax(0,1fr) 275px}
+.modeToggle{display:flex;flex-wrap:wrap;gap:5px;background:#f2f4ef;padding:4px;border-radius:12px;margin-top:12px}
+.modeToggle button{flex:1;min-width:max-content;padding:9px 11px;background:transparent;border-radius:9px;color:#7d8b82;font-size:12px}
+.modeToggle button.selected{background:#fff;color:#3e725c;box-shadow:0 2px 7px #25352815;font-weight:700}
+.scheduleEditor{margin-top:18px;border-top:1px solid #e8ebe5;padding-top:16px}
+.scheduleHeading{font-size:14px;font-weight:700;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.ruleFields{padding:12px 2px 2px}.ruleFields[hidden]{display:none}
+.ruleDesc{font-size:12px;line-height:1.8;margin-top:10px;color:#819087}
+.slotRow{display:flex;align-items:center;gap:6px;margin-top:8px}
+.slotRow select{min-width:0;flex:1}.slotRow input{min-width:0;flex:1}.slotRow button,.specialLine button{background:#f8e7e3;color:#ad675f;border-radius:8px;padding:8px 10px}
+.specialList{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0}.specialLine{display:flex;align-items:center;gap:6px;background:#eaf1e9;border-radius:10px;padding:5px 7px;font-size:12px}
+.scheduleHint{font-size:10px;color:#8a9e91;margin-top:3px}.tinyLabel{display:block;font-size:10px;color:#7e8b81}
+@media(max-width:1150px){.workspace{grid-template-columns:165px minmax(0,1fr)}.right{grid-column:2;display:block}}@media(max-width:740px){.workspace{display:block}.right{display:block}}
+
+#periodOverlay{z-index:45}.timeEntry{display:grid;grid-template-columns:1fr 1fr;gap:6px}.timeEntry #fTime{grid-column:1/-1}.holidayFlag{display:block;border-radius:6px;background:#f9efe7;color:#9e6d4e;font-size:10px;padding:3px 5px;margin-bottom:5px;line-height:1.4}.day.holiday{background:#fff9f4}.holidayInfo{font-size:12px;color:#9a6748;margin-top:12px;line-height:1.8}.slotRow{flex-wrap:wrap}.slotRow .slotPeriod{flex:1.5}.slotRow input.slotClock{flex:1.1}.periodSettingRow{display:grid;grid-template-columns:65px 1fr 1fr;align-items:center;gap:9px;margin:8px 0}.periodSettingRow input{min-width:0}.holidayHint{background:#fff1df;color:#895b35;padding:10px;border-radius:12px;margin-top:10px;font-size:12px;line-height:1.6}.scheduleNote{font-size:11px;color:#849083}
+
+.lessonToolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:10px}.lessonToolbar button{background:#eef4ed;border-radius:11px;padding:9px 13px;color:#426b57}.lessonLegend{font-size:12px;color:#7c8d81;margin-bottom:12px}.lessonGrid{display:grid;grid-template-columns:52px repeat(5,minmax(0,1fr));border:1px solid #d9e2d8;border-radius:13px;overflow:hidden;background:#fff}.lessonHead{background:#f1f5ef;padding:11px 4px;text-align:center;font-weight:700;font-size:12px;border-right:1px solid #e1e8de;border-bottom:1px solid #e1e8de}.lessonPeriod{background:#f7f9f6;text-align:center;font-weight:700;padding:18px 4px;border-right:1px solid #e1e8de;border-bottom:1px solid #e1e8de}.lessonCell{min-height:100px;border-right:1px solid #e1e8de;border-bottom:1px solid #e1e8de;padding:5px;display:flex;flex-direction:column;gap:5px;background:#fff}.lessonItem{border-radius:10px;padding:7px 8px;text-align:left;width:100%;color:#35443d;line-height:1.45;font-size:12px}.lessonItem .courseName{font-size:11px;font-weight:700}.lessonItem .progress{margin-top:4px;white-space:pre-wrap;font-size:12px}.lessonItem .status{font-size:10px;opacity:.8;margin-top:4px}.lessonPlus{background:transparent;color:#91a79a;padding:5px;font-size:11px;text-align:left}.lessonHoliday{font-size:10px;color:#af7057}.lessonModal{max-width:530px}.progressType{display:flex;gap:7px;flex-wrap:wrap}.progressType button{border-radius:10px;background:#edf2eb;color:#667a6c;padding:9px 12px}.progressType button.active{background:#3f725d;color:#fff}.lessonEmpty{padding:35px;text-align:center;color:#91a196}@media(max-width:790px){.lessonGrid{min-width:690px}.lessonScroller{overflow-x:auto}.lessonItem{padding:6px}.lessonCell{min-height:85px}}
+
+/* V7: batch lesson editor */
+.bulkOpen{background:#365f50!important;color:white!important;border-radius:12px;padding:9px 16px;border:0;cursor:pointer}
+.bulkModal{width:min(1100px,96vw)!important;max-height:92vh;overflow:auto}
+.bulkControls{display:flex;gap:10px;flex-wrap:wrap;align-items:end;margin:14px 0}
+.bulkControls label{font-size:13px;color:#66756b;display:grid;gap:5px}
+.bulkControls select,.bulkControls input{padding:9px;border:1px solid #d6dfd6;border-radius:9px;background:white}
+.bulkTableWrap{overflow:auto;max-height:55vh;border:1px solid #dee5dc;border-radius:12px}
+.bulkTable{border-collapse:separate;border-spacing:0;width:100%;font-size:14px}
+.bulkTable th{position:sticky;top:0;background:#eef3ed;z-index:2;padding:10px;white-space:nowrap;text-align:left}
+.bulkTable td{border-top:1px solid #e7ece6;padding:5px 7px;vertical-align:middle}
+.bulkTable td:nth-child(1),.bulkTable td:nth-child(2){white-space:nowrap;font-size:12px;color:#53665a}
+.bulkTable select{min-width:90px;border:1px solid #e1e6df;padding:7px;border-radius:8px;background:white}
+.bulkTable textarea{min-width:220px;box-sizing:border-box;width:100%;padding:8px;border:1px solid #e1e6df;border-radius:8px;resize:vertical;min-height:44px;font:inherit}
+.bulkTable textarea:focus{outline:2px solid #72a48d}
+.bulkHint{font-size:13px;color:#68796d;line-height:1.6;margin:10px 0}
+.bulkFooter{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:15px}
+
+.otherWeek{margin-top:16px;padding:14px;background:#f8faf7;border:1px solid #e4eae1;border-radius:14px}.otherWeekEntries{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}.otherWeekEntry{padding:9px 12px;border-radius:10px;text-align:left;color:#314539}.lessonHead{font-size:14px;line-height:1.45}.lessonHead div{font-size:13px;color:#426e5e!important;font-weight:700!important}
+.lessonItem{min-height:56px;border:1px solid rgba(25,60,44,.07)}.lessonItem .progress{font-weight:700;font-size:13px;color:#364a41}.lessonItem .status{display:inline-block;background:rgba(255,255,255,.5);border-radius:4px;padding:2px 5px}.lessonCell{min-height:105px}
+
+/* V9: teacher's compact, side-by-side timetable */
+.lessonCell{display:flex;flex-direction:column;gap:2px;padding:4px;min-height:76px;position:relative}
+.lessonEntries{display:flex;flex-direction:row;gap:3px;align-items:stretch;min-width:0;flex:1}
+.lessonItem{min-width:0;flex:1 1 0;width:auto;min-height:0;padding:7px 5px;border-radius:8px;line-height:1.4;overflow-wrap:anywhere;word-break:break-word}
+.lessonItem .courseName{font-size:12px;line-height:1.35;font-weight:700}
+.lessonItem .progress{margin-top:5px;font-weight:600;font-size:12px;color:#354a40;white-space:pre-wrap}
+.lessonItem .progress.quizProgress{color:#d13b3b}
+.lessonItem .status{display:none}
+.lessonPlus{align-self:flex-start;font-size:17px;line-height:1;padding:2px 6px;color:#9baea1;opacity:.72}
+.lessonCell.hasLesson .lessonPlus{opacity:0;position:absolute;right:3px;bottom:2px;background:#ffffffdd;border-radius:5px;z-index:2}
+.lessonCell.hasLesson:hover .lessonPlus,.lessonCell.hasLesson:focus-within .lessonPlus{opacity:1}
+.lessonCell:not(.hasLesson) .lessonPlus{margin:auto;color:#799b87}
+@media(max-width:790px){.lessonGrid{min-width:790px}.lessonItem{padding:6px 4px}.lessonItem .courseName{font-size:11px}.lessonItem .progress{font-size:11px}}
+.overviewChoice{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid #e5eae2;border-radius:11px;background:#f8faf6;color:#4f6759;font-size:13px}.overviewChoice input{width:17px;height:17px;accent-color:#56816e} .overviewChoice:has(input:checked){background:#edf5eb} .lessonCycleBox{padding:12px 14px;margin:14px 0;background:#f4f8f3;border:1px solid #dce7d9;border-radius:12px}.lessonCycleBox .field{margin-top:0}.lessonCycleBox .small{line-height:1.55;margin-top:8px}
+/* V14 legacy styling; off-week tiles are hidden in V15. */
+.lessonItem.offweek{background:#f4f6f2!important;border:1px dashed #b9c8bc;color:#819185;box-shadow:none;opacity:.9}
+.lessonItem.offweek .courseName{color:#6e8175}
+.lessonItem .cycleNote{font-size:10px;font-weight:500;margin-top:5px;color:#7c8c7d;line-height:1.35}
+.lessonLegend .softNote{background:#f4f6f2;border:1px dashed #b9c8bc;border-radius:5px;padding:2px 7px}
+.offweekNotice{padding:9px 10px;border-radius:8px;background:#fff5e9;color:#9c6a39;font-size:12px;line-height:1.6;margin-bottom:12px}
+/* V15: clean off-week grid + actionable substitutions */
+.lessonItem.changedLesson{outline:3px solid #df4242;outline-offset:-3px;border:2px solid #c72e2e!important;box-shadow:0 0 0 1px #fff inset}
+.lessonItem.changedLesson .courseName:before{content:"↔ ";color:#b72222}
+.lessonExam{color:#bf3232;font-weight:800;font-size:11px;line-height:1.3;margin-top:5px}
+.lessonHead{overflow-wrap:anywhere}.lessonPlus{font-size:20px}
+.timeEditor{background:#f6f8f3;border:1px solid #dfe8dd;padding:12px;border-radius:12px;margin:12px 0}
+.timeEditor select,.timeEditor input{width:100%}.timeEditor .field{margin-top:9px}
+.timeEditorGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.timeHelp{font-size:11px;color:#73847a;line-height:1.7;margin-top:7px}
+@media(max-width:580px){.timeEditorGrid{grid-template-columns:1fr}}
+
+/* V19: mobile-first, lessons are the home screen */
+.compactController{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:0 0 12px}
+.compactController label{color:#64756a;font-weight:600;font-size:13px}
+.compactController select,.compactController button{border:1px solid #dce6db;background:#f4f7f1;color:#37654f;border-radius:12px;padding:10px 12px;font-size:13px}
+#mobileFab{position:fixed;z-index:12;bottom:max(20px,env(safe-area-inset-bottom));right:18px;width:58px;height:58px;border-radius:50%;background:#416d57;color:white;font-size:33px;box-shadow:0 6px 20px #24442f44;display:none}
+.homeSheet{max-width:420px}.sheetGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}.sheetGrid button{padding:15px 9px;border-radius:13px;background:#eef5ed;color:#3f6754;text-align:center;min-height:68px;line-height:1.4}.sheetGrid button:active{background:#dceadc}.sheetClose{display:block;margin-left:auto;padding:11px 18px;border-radius:10px;background:#eee;color:#526157}
+.lessonWeekGroup{margin-bottom:24px}.lessonWeekTitle{font-size:14px;color:#416e59;font-weight:700;margin:10px 0 8px}.lessonWeekGroup .lessonScroller{border:1px solid #e2e9df;border-radius:12px;overflow:auto}
+@media(max-width:740px){
+.app{padding:7px 6px 78px}.top{padding:2px 2px;margin:0 0 8px}.top .mark{width:32px;height:32px;font-size:20px}.brand h1{font-size:17px}.brand .sub{display:none}.top-actions{display:none!important}
+.workspace{display:block}.workspace>aside,#streams,.right,.hello{display:none!important}
+.center{width:100%}.panel.cal{border-radius:14px;padding:10px 5px}.calhead{gap:9px;margin-bottom:10px}.calnav{width:100%;justify-content:space-between}.calnav h3{font-size:15px;text-align:center;flex:1;order:0}.calnav button{padding:8px 11px}.viewTabs{display:none!important}
+#mobileFab{display:block}.compactController{display:flex;gap:6px;padding:0 4px}.compactController label{flex:1;white-space:nowrap}.compactController select{max-width:78px}.compactController button{padding:9px 7px;font-size:12px}.lessonLegend,.foot{display:none}.lessonToolbar{margin-bottom:5px;padding:0 4px}.lessonToolbar strong{font-size:12px}.lessonToolbar .bulkOpen{display:none}
+.lessonScroller{overflow-x:auto;-webkit-overflow-scrolling:touch}.lessonGrid{min-width:610px!important;grid-template-columns:35px repeat(5,minmax(0,1fr))!important}.lessonHead{font-size:11px!important;padding:8px 2px!important}.lessonPeriod{font-size:13px}.lessonCell{min-height:63px;padding:2px}.lessonItem{padding:5px 3px;border-radius:6px}.lessonItem .courseName{font-size:11px}.lessonItem .progress{font-size:10px;line-height:1.2}.lessonPlus{font-size:17px}.otherWeek{padding:10px}.otherWeekEntry{font-size:11px}
+.overlay{padding:0;align-items:flex-end}.overlay .modal{border-radius:24px 24px 0 0;max-height:85dvh;padding:24px 18px calc(24px + env(safe-area-inset-bottom));max-width:100%}
+}
+
+/* V20: ONE timetable-first homepage for desktop, tablet and phone. All legacy
+   dashboard sections remain as hidden state holders for existing JS handlers. */
+html,body{max-width:100%;overflow-x:hidden}
+.app{width:100%;max-width:1650px;margin:auto;padding:12px 14px 92px}
+.top{margin:0 0 10px;padding:0 3px;min-height:36px}
+.top .brand{gap:8px}.top .mark{width:28px;height:28px;border-radius:9px;font-size:17px}
+.brand h1{font-size:18px;letter-spacing:.02em}.brand .sub{display:none}
+.top-actions,.workspace>aside,#streams,.right,.hello{display:none!important}
+.workspace{display:block!important;width:100%;grid-template-columns:none!important}
+.center{width:100%;max-width:none;min-width:0}
+.panel.cal{box-shadow:none;border-radius:15px;padding:13px 11px;background:#fffefa}
+.calhead{margin:0 0 11px}.viewTabs{display:none!important}
+#mobileFab{display:block!important;z-index:16;right:16px;bottom:max(17px,env(safe-area-inset-bottom));box-shadow:0 6px 22px #314a3b40}
+.compactController{margin:0 0 10px;display:flex;gap:8px;align-items:center}
+.compactController label{flex:1;font-size:13px}.compactController select{min-width:78px;max-width:105px}
+.lessonLegend,.foot{display:none!important}
+.lessonWeekTitle{font-size:14px;margin:8px 0}.lessonWeekGroup{margin-bottom:17px}
+.lessonScroller{max-width:100%;overflow:auto;-webkit-overflow-scrolling:touch}
+#calendar{min-width:0}
+@media(max-width:740px){
+ .app{padding:7px 5px 88px}.top{padding:4px 8px;margin:0 0 7px}
+ .panel.cal{padding:9px 4px;border-radius:12px}
+ .calnav h3{font-size:13px}.compactController{padding:0 4px}
+ .lessonGrid{min-width:600px!important}
+ .lessonWeekTitle{padding:0 5px}
+}
+
+/* V22 — calm, editorial density; schedule remains the primary focus */
+:root{--bg:#f5f4ef;--paper:#fffefa;--ink:#303a35;--green:#476958;--muted:#78857d;--line:#dce1d9}
+body{background:radial-gradient(circle at 92% 0%,#eeeae4 0%,transparent 31%),#f5f4ef;font-size:13px}
+.app{max-width:1480px!important;padding:9px 12px 75px!important}
+.top{margin:0 0 7px!important;padding:0 5px!important;min-height:32px!important}
+.top .mark{background:transparent!important;width:23px!important;height:24px!important;border-radius:0!important;transform:none!important;font-size:20px!important;color:#66816c}
+.brand h1{font-size:18px!important;letter-spacing:.12em!important;font-weight:600}
+.panel.cal{background:#fffefa!important;border:1px solid #deded5!important;border-radius:13px!important;padding:10px 10px 9px!important;box-shadow:0 4px 25px #2e36250a!important}
+.calhead{margin:0 0 5px!important}.calnav{gap:4px!important}.calnav button{background:#f3f2ed!important;border-radius:7px!important;padding:6px 10px!important;font-size:12px!important}
+.calnav h3{font-size:15px!important;font-weight:650!important;color:#323d37}
+.compactController{margin:0 0 7px!important;gap:5px!important;justify-content:flex-end!important;flex-wrap:wrap!important}
+.compactController label{font-size:11px!important;margin-right:auto!important}
+.compactController select,.compactController button{border:1px solid #dfe5dd!important;background:#f7f7f2!important;border-radius:7px!important;padding:6px 8px!important;font-size:11px!important;color:#4a6555!important}
+.compactController select{min-width:62px!important;max-width:85px!important}
+.lessonToolbar{margin:0 0 2px!important;min-height:0!important}.lessonToolbar strong,.lessonLegend{display:none!important}
+.lessonWeekTitle{font-size:12px!important;font-weight:650!important;color:#5b7564!important;letter-spacing:.035em;margin:5px 2px 5px!important}
+.lessonWeekGroup{margin:0 0 11px!important}
+.lessonWeekGroup .lessonScroller{border:1px solid var(--line)!important;border-radius:7px!important}
+.lessonGrid{border:0!important;border-radius:0!important;gap:0!important;background:var(--line)!important}
+.lessonHead{background:#f1f2eb!important;border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;padding:6px 3px!important;font-size:11px!important;line-height:1.35!important}
+.lessonPeriod{background:#f4f5f0!important;border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;padding:8px 2px!important;font-size:12px!important}
+.lessonCell{background:#fffefa!important;border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;min-height:49px!important;padding:2px!important;gap:0!important}
+.lessonEntries{gap:2px!important}
+.lessonItem{min-height:0!important;padding:5px 6px!important;border-radius:var(--user-card-radius,8px)!important;line-height:1.2!important;box-shadow:none!important;text-align:left!important}
+.lessonItem .courseName{font-size:11px!important;font-weight:650!important;line-height:1.2!important}
+.lessonItem .progress{font-size:10.5px!important;font-weight:600!important;margin-top:3px!important;line-height:1.25!important}
+.lessonItem.changedLesson{border:2px solid #d73c37!important;outline:1px solid #d73c37!important;outline-offset:-2px!important}
+.lessonPlus{font-size:17px!important;opacity:.67!important;padding:0 4px!important;color:#8ca59a!important}
+.lessonCell.hasLesson .lessonPlus{opacity:0!important}.lessonCell.hasLesson:hover .lessonPlus,.lessonCell.hasLesson:focus-within .lessonPlus{opacity:1!important}
+.otherWeek{background:#fafbf7!important;padding:7px 9px!important;margin-top:7px!important;border-radius:7px!important}
+.otherWeekEntries{gap:4px!important;margin-top:5px!important}.otherWeekEntry{padding:5px 7px!important;border-radius:6px!important}
+#mobileFab{width:44px!important;height:44px!important;font-size:27px!important;right:12px!important;bottom:max(11px,env(safe-area-inset-bottom))!important;background:#416d59!important;box-shadow:0 4px 14px #3546362e!important}
+/* Continuous plain list, not separate chunky cards */
+.todoDesk{margin:8px 0 0;padding:9px 11px 10px;background:#fffefa;border:1px solid #deded5;border-radius:12px;box-shadow:0 4px 25px #2e362508}
+.todoHeading,.todoTitle{display:flex;align-items:center;gap:7px}.todoHeading{justify-content:space-between;margin-bottom:5px}
+.todoGlyph{color:#809d86;font-size:14px}.todoHeading h2{font-size:15px;letter-spacing:.05em;font-weight:650}
+.todoSummary{font-size:11px;color:#829088}.todoToggle{background:transparent;border:0;font-size:11px;color:#658271;padding:5px 6px;border-radius:6px}
+.todoToggle:hover{background:#f2f4ee}
+.todoQuick{display:flex;gap:5px;margin:2px 0 5px}.todoQuick input{flex:1;min-width:0;border:1px solid #e0e4db;background:#fdfdfa;border-radius:6px;height:35px;padding:7px 9px;font-size:13px;color:#39493f;outline-offset:0}.todoQuick input:focus{border-color:#829e88}.todoQuick button{border:0;border-radius:6px;width:38px;min-width:38px;background:#4d745e;color:#fff;font-size:21px}
+.todoRows{border-top:1px solid #e9ebe5}.todoRow{display:flex;align-items:center;gap:8px;min-height:32px;border-bottom:1px solid #eeefe9;padding:2px 0}
+.todoCheck{appearance:none;width:17px;height:17px;border:1px solid #9aafa0;border-radius:4px;flex-shrink:0;margin:0 0 0 2px;background:white;position:relative;cursor:pointer}
+.todoCheck:checked{background:#7e9c86;border-color:#7e9c86}.todoCheck:checked:after{content:'✓';color:white;font-size:13px;position:absolute;left:2px;top:-2px}
+.todoText{flex:1;cursor:pointer;min-width:0;line-height:1.45;font-size:12.5px;overflow-wrap:anywhere}.todoRow.finished .todoText{text-decoration:line-through;color:#99a099;text-decoration-thickness:1.25px}
+.todoEdit{border:0;background:transparent;padding:5px 8px;color:#afb8af;font-size:14px;opacity:.8}.todoEdit:hover{color:#54725e}
+.todoFoot{padding-top:5px;font-size:10.5px;color:#9ba59e}
+@media(max-width:740px){
+ .app{padding:5px 5px 72px!important}.top{margin-bottom:4px!important}
+ .panel.cal{padding:7px 5px!important;border-radius:10px!important}
+ .calnav h3{font-size:13px!important}.calnav button{padding:5px 8px!important}
+ .compactController{gap:4px!important;margin-bottom:5px!important}.compactController button,.compactController select{font-size:10px!important;padding:6px!important}
+ .lessonScroller{max-width:100%!important;overflow-x:auto!important}
+ .lessonGrid{min-width:580px!important;grid-template-columns:32px repeat(5,minmax(0,1fr))!important}
+ .lessonHead{padding:5px 1px!important;font-size:10px!important}
+ .lessonCell{min-height:43px!important;padding:1px!important}
+ .lessonItem{padding:4px 3px!important;border-radius:5px!important}
+ .lessonItem .courseName{font-size:10.5px!important}
+ .lessonItem .progress{font-size:10px!important;margin-top:2px!important}
+ .lessonWeekTitle{font-size:11px!important;margin:4px 2px!important}
+ .todoDesk{margin-top:6px;padding:8px 8px 10px;border-radius:9px}
+ .todoRow{min-height:33px}.todoText{font-size:12.5px}
+ .overlay .modal{padding:16px 13px calc(16px + env(safe-area-inset-bottom));border-radius:15px 15px 0 0}
+ .modal .field{margin:8px 0 3px}.modal .fieldInput{padding:8px}.modal p{margin-bottom:7px}
+}
+
+/* V23 · Personal Morandi notebook: quiet, editorial, readable */
+:root{--bg:#eeeae4;--paper:#faf8f4;--ink:#403d3a;--muted:#807b75;--green:#706f65;--line:#d3cdc5;--shadow:0 3px 16px #6a5b4b0d}
+html{background:#eeeae4} body{background:linear-gradient(155deg,#ebe6df 0%,#f4f0eb 49%,#ede8e0 100%)!important;color:#403d3a!important;font-size:15px!important}
+.app{max-width:1480px!important;padding:12px 16px 78px!important}
+.top{margin:0 0 8px!important;padding:0 3px!important}
+.top .mark{color:#93877c!important;font-size:21px!important}
+.brand h1{font-size:22px!important;letter-spacing:.16em!important;font-weight:650!important;color:#4c4843}
+.panel.cal{background:#fbfaf7!important;border:1px solid #d4cbc1!important;border-radius:11px!important;padding:12px 12px 13px!important;box-shadow:0 7px 25px #55483811!important}
+.calhead{margin-bottom:7px!important}
+.calnav{gap:6px!important;display:flex;flex-wrap:wrap}
+.calnav button{background:#eee9e3!important;border:1px solid #ddd4c9!important;border-radius:7px!important;color:#5e5a54!important;padding:7px 12px!important;font-size:15px!important;min-height:38px}
+.calnav h3{font-size:19px!important;letter-spacing:.02em!important;color:#4d4a46!important;font-weight:650!important;line-height:1.25!important}
+.compactController{margin:0 0 8px!important;gap:6px!important}
+.compactController label{font-size:14px!important;color:#6d6963!important;font-weight:550!important}
+.compactController button,.compactController select{background:#f1ece5!important;border:1px solid #d8cec4!important;border-radius:7px!important;color:#605a54!important;padding:7px 10px!important;font-size:14px!important;min-height:36px!important}
+.compactController select{min-width:82px!important;max-width:95px!important}
+.lessonWeekTitle{font-size:15px!important;color:#71675f!important;margin:7px 2px 5px!important;font-weight:650!important}
+.lessonWeekGroup{margin:0 0 8px!important}
+.lessonWeekGroup .lessonScroller{border:1px solid #cdc4bb!important;border-radius:7px!important}
+.lessonGrid{background:var(--line)!important}
+.lessonHead{background:#e7e1d9!important;border-color:var(--line)!important;font-size:14px!important;line-height:1.3!important;color:#45413d!important;padding:7px 3px!important}
+.lessonHead>div{font-size:13px!important;color:#6c6a63!important}
+.lessonPeriod{background:#eee9e2!important;border-color:var(--line)!important;font-size:16px!important;font-weight:700!important;color:#4c4844!important;padding:6px 2px!important}
+.lessonCell{background:#fbfaf7!important;border-color:var(--line)!important;min-height:65px!important;padding:3px!important}
+.lessonEntries{gap:4px!important}
+.lessonItem{padding:8px 8px!important;border-radius:7px!important;line-height:1.28!important;color:#3f3d39!important;min-height:57px!important;text-align:left!important}
+.lessonItem .courseName{font-size:15px!important;line-height:1.28!important;font-weight:680!important;color:#3e3e3b!important}
+.lessonItem .progress{font-size:14px!important;line-height:1.34!important;font-weight:580!important;margin-top:3px!important;color:#4a4340!important}
+.lessonItem .progress.quizProgress{color:#853448!important;font-weight:700!important}
+.lessonItem.changedLesson{border:3px solid #ba5350!important;outline:1px solid #ba5350!important}
+.lessonPlus{font-size:21px!important;color:#a9a29a!important;opacity:.78!important}
+.otherWeek{background:#f0ebe5!important;border-radius:7px!important}.otherWeekEntry{font-size:13px!important}
+#mobileFab{background:#78685f!important;color:#fff!important;width:49px!important;height:49px!important;font-size:27px!important;box-shadow:0 5px 16px #68544c36!important}
+.todoDesk{background:#fbfaf7!important;border:1px solid #d4cbc1!important;border-radius:10px!important;margin-top:8px!important;padding:12px 13px!important;box-shadow:0 6px 20px #5548380b!important}
+.todoHeading h2{font-size:19px!important;color:#494541!important}.todoGlyph{color:#968477!important}.todoSummary,.todoToggle{font-size:13px!important;color:#7c736b!important}
+.todoQuick input{background:#fffefd!important;border-color:#d8cfc5!important;font-size:15px!important;height:40px!important;color:#484440!important}
+.todoQuick button{background:#80746c!important}.todoRow{min-height:37px!important;border-color:#e7e0d8!important}.todoText{font-size:15px!important;color:#484440!important}
+.todoCheck{width:19px!important;height:19px!important;border-color:#a79d91!important}.todoCheck:checked{background:#999184!important;border-color:#999184!important}
+.overlay .modal{background:#faf8f3!important;border-radius:15px!important;color:#494640!important}
+.overlay .fieldInput{font-size:15px!important;border-color:#d7cfc4!important}
+.btnSave{background:#77685e!important}.sheetGrid button{background:#eee7df!important;color:#594f49!important}
+@media(max-width:740px){
+ .app{padding:7px 5px 77px!important}.top{margin-bottom:6px!important}.brand h1{font-size:19px!important}
+ .panel.cal{padding:8px 6px 9px!important}
+ .calnav h3{font-size:16px!important;line-height:1.2!important}
+ .calnav button{font-size:14px!important;padding:6px 9px!important;min-height:36px!important}
+ .compactController{gap:5px!important}.compactController label{font-size:13px!important}.compactController button,.compactController select{font-size:13px!important;padding:6px 8px!important;min-height:34px!important}
+ .lessonGrid{min-width:655px!important;grid-template-columns:36px repeat(5,minmax(0,1fr))!important}
+ .lessonHead{font-size:13px!important;padding:6px 2px!important}.lessonHead>div{font-size:11.5px!important}
+ .lessonPeriod{font-size:14px!important}.lessonCell{min-height:62px!important;padding:2px!important}
+ .lessonItem{padding:7px 5px!important;min-height:58px!important;border-radius:6px!important}
+ .lessonItem .courseName{font-size:13.5px!important;line-height:1.3!important}
+ .lessonItem .progress{font-size:13px!important;line-height:1.32!important}
+ .todoDesk{padding:10px!important}.todoText{font-size:14px!important}.todoHeading h2{font-size:17px!important}
+}
+
+/* Date annotations and evening row */
+.lessonHead .shortDate{font-size:13px!important;line-height:1.3;font-weight:650!important;color:#635e58!important;margin-top:2px}
+.dayLabel{display:block;width:100%;font-size:11px;font-weight:700;line-height:1.25;background:#efe4dd;color:#925d4e;border-radius:5px;margin-top:4px;padding:3px 2px;text-align:center;white-space:normal;overflow-wrap:anywhere}
+.lessonPeriod:last-of-type{font-size:12px}
+@media(max-width:740px){.dayLabel{font-size:10px;padding:2px 1px}.lessonHead .shortDate{font-size:12px!important}}
+
+/* V25 · A focused, low-accident checklist sheet (only appears when opened) */
+#taskMenu{z-index:55;padding:14px;background:#342e2a78}
+#taskMenu .todoModal{width:min(600px,100%);max-width:600px;max-height:min(88dvh,850px);padding:15px 17px 14px;border-radius:18px;background:#faf8f4!important;overflow:auto}
+.todoModalTop{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.todoModalTop h2{font-size:21px;margin:0;color:#514a45;font-weight:700}
+.todoModalClose{width:38px;height:38px;border:1px solid #d9d0c5;background:#f1ece5;color:#5e554d;border-radius:10px;font-size:18px;flex-shrink:0}
+#taskMenu .todoDesk{padding:0!important;border:0!important;box-shadow:none!important;background:transparent!important;margin:0!important}
+#taskMenu .todoHeading{margin:0 0 7px}
+#taskMenu .todoTitle .todoGlyph,#taskMenu .todoTitle h2{display:none}
+#taskMenu .todoSummary{font-size:13px!important}
+#taskMenu .todoToggle{font-size:12px!important}
+#taskMenu .todoQuick{margin:3px 0 10px;gap:6px}
+#taskMenu .todoQuick input{height:39px!important;border-radius:8px;font-size:15px!important}
+#taskMenu .todoQuick button{height:39px;border-radius:8px}
+#taskMenu .todoRows{border-top:1px solid #ded7ce}
+#taskMenu .todoRow{min-height:44px;display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #e6dfd6}
+#taskMenu .todoTextBlock{flex:1;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;min-width:0}
+#taskMenu .todoText{cursor:default;font-size:15px!important;line-height:1.35;color:#4d4742!important}
+#taskMenu .todoRow.finished .todoText{color:#9c948d!important;text-decoration:line-through;text-decoration-thickness:1.4px}
+#taskMenu .todoDoneDate{margin-left:auto;font-size:11px;color:#9b8d80;white-space:nowrap}
+#taskMenu .todoEdit{flex-shrink:0;min-width:35px;min-height:36px;font-size:19px;color:#756e66;background:transparent;opacity:1}
+#taskMenu .todoAction{flex-shrink:0;min-width:57px;min-height:36px;border:1px solid #b4b9ab;background:#edf0e8;color:#516b58;border-radius:7px;font-size:13px;font-weight:650}
+#taskMenu .todoAction.undo{min-width:51px;border-color:#ddd6cc;background:#f5f0e9;color:#82786d}
+#taskMenu .todoCompletedHeading{display:flex;align-items:center;justify-content:space-between;padding:10px 0 7px;font-weight:650;font-size:13px;color:#746b63;border-bottom:1px solid #dbd1c7}
+#taskMenu .todoCompletedHeading button{border:0;background:transparent;color:#6f665e;font-size:13px;padding:4px 9px}
+#taskMenu .todoEmpty{font-size:13px;padding:12px 4px;color:#a49a90}
+#taskMenu .todoFoot{font-size:11px;color:#aca198;padding-top:8px}
+@media(max-width:740px){#taskMenu{padding:0;align-items:flex-end}#taskMenu .todoModal{width:100%;max-width:none;max-height:92dvh;border-radius:18px 18px 0 0;padding:13px 12px max(17px,env(safe-area-inset-bottom))}#taskMenu .todoText{font-size:14px!important}#taskMenu .todoDoneDate{font-size:10px}#taskMenu .todoRow{min-height:43px}}
+
+/* V26 — compact, larger-type checklist */
+#taskMenu .todoModal{width:min(660px,100%);max-width:660px;padding:11px 15px 10px;border-radius:16px}
+#taskMenu .todoModalTop{margin-bottom:0;min-height:39px}
+#taskMenu .todoModalTop h2{font-size:23px;line-height:1.18;letter-spacing:.02em}
+#taskMenu .todoModalClose{width:34px;height:34px;border-radius:9px;font-size:19px}
+#taskMenu .todoHeading{margin:0 0 4px;align-items:center}
+#taskMenu .todoSummary{font-size:16px!important;line-height:1.3}
+#taskMenu .todoToggle{font-size:14px!important;padding:4px 6px}
+#taskMenu .todoQuick{margin:4px 0 7px;gap:6px}
+#taskMenu .todoQuick input{height:38px!important;font-size:17px!important;padding:5px 11px!important}
+#taskMenu .todoQuick button{width:40px;height:38px;font-size:24px!important}
+#taskMenu .todoRow{min-height:37px;padding:2px 0;gap:5px}
+#taskMenu .todoTextBlock{gap:3px 8px}
+#taskMenu .todoText{font-size:18px!important;line-height:1.32;font-weight:500;letter-spacing:0}
+#taskMenu .todoDoneDate{font-size:13px;line-height:1.2;margin-left:auto}
+#taskMenu .todoEdit{min-width:32px;width:32px;min-height:32px;font-size:21px;padding:0}
+#taskMenu .todoAction{min-width:48px;min-height:31px;padding:3px 6px;font-size:14px;border-radius:7px}
+#taskMenu .todoAction.undo{min-width:48px}
+#taskMenu .todoCompletedHeading{padding:6px 0 4px;font-size:16px}
+#taskMenu .todoCompletedHeading button{font-size:14px;padding:3px 5px}
+#taskMenu .todoFoot{padding-top:5px;font-size:12px}
+#taskMenu .todoEmpty{font-size:15px;padding:9px 2px}
+@media(max-width:740px){
+ #taskMenu .todoModal{padding:10px 10px max(12px,env(safe-area-inset-bottom));max-height:93dvh}
+ #taskMenu .todoText{font-size:17px!important}
+ #taskMenu .todoRow{min-height:36px;padding:2px 0}
+ #taskMenu .todoDoneDate{font-size:12px}
+ #taskMenu .todoSummary{font-size:14px!important}
+ #taskMenu .todoModalTop h2{font-size:22px}
+ #taskMenu .todoQuick input{font-size:16px!important}
+}
+
+/* V27 voice draft: no auto-save, always confirm */
+#taskMenu #todoMic{width:40px;min-width:40px;height:38px;border:1px solid #d1c4b6;background:#ede5de;color:#51463e;border-radius:9px;font-size:19px;padding:0}
+#taskMenu #todoMic.listening{background:#a65c58;color:#fff;animation:voicePulse 1.3s infinite}
+@keyframes voicePulse{50%{box-shadow:0 0 0 5px #a65c5822}}
+#taskMenu .voiceStatus{font-size:13px;color:#675b51;margin:3px 0 6px}
+#taskMenu .voiceReview{border:1px solid #d9ccc0;border-radius:11px;padding:10px;background:#f3eeea;margin:7px 0}
+#taskMenu .voiceReviewHeading{font-weight:700;font-size:15px;margin-bottom:7px}
+#taskMenu .voiceReview label{display:block;font-size:12px;color:#76695e;margin:5px 0 3px}
+#taskMenu .voiceReview textarea{width:100%;resize:vertical;min-height:48px;border-radius:8px;border:1px solid #d2c6bc;background:#fffdfa;padding:7px;font-size:15px;color:#413c37}
+#taskMenu .voiceReview textarea[readonly]{background:#eae5df;color:#6a625b}
+#taskMenu .voiceReviewActions{display:flex;justify-content:flex-end;gap:7px;margin-top:7px}
+#taskMenu .voiceReviewActions button{border-radius:8px;padding:7px 10px;font-size:14px}
+#taskMenu #voiceSave{background:#5c7567;color:#fff}
+#taskMenu #voiceCancel{background:#e5dcd2;color:#4f4840}
+
+/* V28: progressive disclosure and readable, compact lesson editor */
+#progressOverlay .lessonModal{max-width:540px;padding:20px 21px 16px!important;border-radius:17px!important}
+#progressOverlay .lessonModal h2{font-size:22px!important;margin-bottom:2px!important}
+#progressMeta{font-size:13px!important;margin:0 0 12px!important;line-height:1.35!important}
+#progressOverlay .field{font-size:14px!important;margin:11px 0 5px!important}
+#progressTypes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:6px 0 11px}
+#progressTypes button{padding:8px 1px!important;border-radius:7px!important;border:1.5px solid var(--kind-chip,#9d968e)!important;color:var(--kind-chip,#635b55)!important;background:#f6f4ef!important;font-size:14px!important;font-weight:700!important;min-height:38px}
+#progressTypes button.active{background:var(--kind-chip,#6b675f)!important;color:#fff!important}
+#progressText{height:100px!important;min-height:90px!important;font-size:17px!important;line-height:1.5!important;padding:10px!important;resize:vertical}
+#progressOverlay .actions{margin-top:12px!important}
+.lessonDetails{border:1px solid #ddd3c9;background:#f8f7f3;border-radius:9px;margin-top:9px;overflow:hidden}
+.lessonDetails>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:11px 12px;font-size:14px;font-weight:650;color:#655c53;min-height:42px}
+.lessonDetails>summary::-webkit-details-marker{display:none}
+.lessonDetails>summary .softChevron{font-size:16px;opacity:.7;transition:transform .2s}
+.lessonDetails[open]>summary .softChevron{transform:rotate(180deg)}
+.lessonDetailsInner{border-top:1px solid #e7ded5;padding:3px 11px 11px}
+.lessonDetailsInner .lessonCycleBox{margin:9px 0!important;padding:9px 10px!important}
+.lessonDetailsInner .timeEditor{padding:10px!important;margin:8px 0 0!important}
+.lessonDetailsInner .small,.lessonDetailsInner .timeHelp{font-size:11px!important;line-height:1.55!important}
+.kindColorList{padding:5px 12px 7px;border-top:1px solid #e7ded5;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 12px}
+.kindColorList label{display:flex;align-items:center;justify-content:space-between;padding:4px 2px;font-size:14px;color:#514a44}
+.kindColorList input[type=color]{width:47px;height:32px;cursor:pointer;border:1px solid #d5cbc0;background:transparent;border-radius:6px;padding:2px}
+.kindColorHint{padding:0 12px 9px;font-size:11px!important;margin:0!important}
+@media(max-width:600px){#progressOverlay{padding:6px!important;align-items:center}#progressOverlay .lessonModal{padding:16px 14px 12px!important;border-radius:14px!important;max-height:94vh!important}#progressTypes button{font-size:13px!important}#progressText{font-size:17px!important}.lessonDetails>summary{font-size:13px;padding:10px}}
+
+/* V29 rounded personal studio */
+:root{--bg:#f5edef;--paper:#fffdfb;--ink:#574c51;--muted:#94888e;--line:#e4d8dc;--green:#816d7b;--v29-accent:#866c80}
+body,button,input,textarea,select{font-family:'Zen Maru Gothic','Nunito','Arial Rounded MT Bold',system-ui,sans-serif!important}
+body{background:var(--bg)!important;color:var(--ink)!important}
+.panel,.modal,.todoModal{background:var(--paper)!important;border-color:var(--line)!important}
+.brand h1{font-weight:800;letter-spacing:1px}
+.calnav button,.compactController button,.compactController select{background:color-mix(in srgb,var(--bg) 76%,white);color:var(--ink);border-color:var(--line)!important}
+.lessonHead,.lessonPeriod{background:color-mix(in srgb,var(--bg) 80%,white)!important;color:var(--ink)!important;border-color:var(--line)!important}
+.lessonCell,.lessonGrid{border-color:var(--line)!important}
+.lessonItem .courseName{color:var(--lesson-title-color,var(--ink))!important;font-family:inherit!important}
+.lessonItem .progress{font-family:inherit!important}
+.lessonItem.changedLesson{border-color:#bf4e4b!important;outline-color:#bf4e4b!important}
+#progressOverlay .modal{max-width:550px}
+.stylePaletteGroup{margin:8px 0 10px}
+.stylePaletteGroup .paletteLabel{display:block;font-size:12px;font-weight:700;margin-bottom:6px;color:var(--muted)}
+.stylePalette{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px}
+.stylePalette button{border-radius:8px;min-height:28px;aspect-ratio:1;border:2px solid #ffffffaa;box-shadow:0 0 0 1px #0001;padding:0}
+.stylePalette button:focus-visible,.stylePalette button.picked{outline:2px solid var(--ink);outline-offset:1px}
+.styleColorLine{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0}
+.styleColorLine label{font-size:12px;display:flex;align-items:center;justify-content:space-between;gap:6px;color:var(--ink)}
+.styleColorLine input[type=color]{height:34px;width:58px;border:1px solid var(--line);border-radius:8px;padding:2px;background:white}
+.stylePreview{border-radius:12px;padding:12px;font-size:15px;font-weight:700;border:2px solid #ffffff;min-height:48px;display:flex;align-items:center}
+#lessonAppearanceDetails summary{font-size:14px;font-weight:700}
+.themeGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0}
+.themeChip{min-height:70px;border:1px solid var(--line);border-radius:13px;text-align:left;padding:9px 10px;display:flex;gap:9px;align-items:center;background:#fff}
+.themeChip .themeSample{width:32px;height:44px;border-radius:9px;display:block;flex:none;border:1px solid #0002}
+.themeChip strong{font-size:13px;color:#554b4b}
+.themeChip.selected{outline:2px solid var(--v29-accent);outline-offset:1px}
+#styleOverlay .modal{max-width:470px}
+@media(max-width:740px){.stylePalette{grid-template-columns:repeat(8,minmax(0,1fr))}.stylePalette button{min-height:31px}.themeGrid{gap:6px}.themeChip{min-height:63px}}
+
+.styleOverrideChoice{display:flex;align-items:center;gap:8px;margin:10px 0 5px;font-size:13px;color:var(--ink)}.styleOverrideChoice input{width:17px;height:17px;accent-color:var(--green)}#lessonColorScope{font-weight:600}#lessonColorScopeHint{line-height:1.5;margin:4px 0 8px}
+
+#allClasses,#classAll{background:#e7efe8!important;color:#3c6254!important;border:1px solid #b5c9bb!important;border-radius:10px!important;font-weight:700!important;font-size:13px!important;padding:8px 10px!important;white-space:nowrap}
+#showClasses.isFiltered{border-color:#a6bbaf;background:#f3eee2;color:#504737;font-weight:700}
+@media(max-width:740px){#allClasses{padding:7px 7px!important;font-size:12px!important}}
+
+/* V33 important events: month/day dates and academic week labels */
+.dayDateLine{display:flex;justify-content:space-between;align-items:center;gap:2px;flex-wrap:wrap;margin-bottom:4px}
+.dayDateLine .daynum{width:auto;min-width:46px;padding:2px 5px;margin:0;border-radius:7px;display:inline-flex;justify-content:center;white-space:nowrap;font-size:13px;font-weight:700}
+.schoolWeekTag{font-size:10px;font-weight:650;color:#73645d;background:#f0ebe5;border-radius:6px;padding:3px 5px;white-space:nowrap}
+.day.today .daynum{padding-inline:6px}
+@media(max-width:740px){.dayDateLine .daynum{font-size:11px;min-width:0}.schoolWeekTag{font-size:9px;padding:2px 3px}}
+/* Persistent, reachable return button, even while another class is selected */
+#allClasses{display:inline-flex!important;align-items:center;justify-content:center}
+
+/* V34 compact course-manager controls */
+.chooserActions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin:10px 0}
+.chooserActions button{padding:10px 4px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);font-size:12px;min-height:42px}
+.paletteOptions{display:grid;gap:7px;margin:10px 0}.paletteOption{padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--paper);text-align:left;color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:8px}.paletteOption.active{outline:2px solid #668a79}.paletteDots{display:flex;gap:3px}.paletteDots i{display:block;width:16px;height:16px;border-radius:5px}
+.bulkControls label{font-size:12px}.bulkTable td,.bulkTable th{padding:5px}.bulkTable textarea{font-size:14px;min-height:40px}
+@media(max-width:740px){.chooserActions{grid-template-columns:repeat(3,minmax(0,1fr))}.chooserActions button{font-size:11px}.bulkControls{gap:6px}.bulkTable td,.bulkTable th{font-size:12px}}
+
+@media(max-width:740px){
+ #bulkOverlay .bulkModal{padding:13px 10px;max-height:96vh}
+ #bulkOverlay .bulkTableWrap{overflow-x:hidden;max-height:64vh}
+ #bulkOverlay .bulkTable,#bulkOverlay .bulkTable tbody{display:block;min-width:0;width:100%}
+ #bulkOverlay .bulkTable thead{display:none}
+ #bulkOverlay .bulkTable tr{display:grid;grid-template-columns:1.3fr .8fr 1.05fr;gap:3px;align-items:center;padding:5px 2px;margin-bottom:5px;border-bottom:1px solid var(--line)}
+ #bulkOverlay .bulkTable td{min-width:0;display:block;padding:4px 2px;border:0!important;font-size:13px}
+ #bulkOverlay .bulkTable td:nth-child(4){grid-column:1/-1}
+ #bulkOverlay .bulkTable textarea{width:100%;min-height:43px;resize:vertical;border-radius:7px;font-size:15px}
+ #bulkOverlay .bulkTable select{max-width:100%;min-width:0;font-size:13px}
+}
+
+#paletteAppliedNotice:not([hidden]){position:fixed;bottom:88px;left:50%;transform:translateX(-50%);z-index:110;background:#344F46;color:#fff;border-radius:12px;padding:11px 17px;font-size:15px;box-shadow:0 5px 20px #263c3550;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
+.paletteOption{border:1.5px solid #d4d4d0!important;padding:12px 10px!important;min-height:60px!important}
+.paletteOption.active{border-color:#346653!important;outline:2px solid #346653!important;outline-offset:1px}
+.paletteDots{gap:4px}.paletteDots i{height:23px!important;width:23px!important;border:1px solid #0002}
+.palettePreviewHelp{font-size:12px;line-height:1.5;color:#717b73;margin:4px 0 12px}
+@media(max-width:740px){.paletteDots i{height:18px!important;width:18px!important}.paletteOption b{font-size:14px}.paletteOption{gap:8px}}
+
+/* V39: a two-column, dense exam-period worksheet */
+#lessonAppearanceDetails{display:none!important}
+.examEditor{width:100%;font-size:15px}
+.examHeader,.examRow{display:grid;grid-template-columns:minmax(165px,31%) minmax(0,1fr);align-items:stretch}
+.examHeader{background:#f1eee9;color:#675e57;font-weight:700;position:sticky;top:0;z-index:1}
+.examHeader span{padding:10px 12px}
+.examRow{border-top:1px solid #e6e1d9;min-height:55px}
+.examRow:nth-child(odd){background:#faf8f5}
+.examSlot{padding:8px 12px;display:flex;flex-direction:column;justify-content:center;gap:3px;border-right:1px solid #e6e1d9}
+.examSlot strong{font-size:15px;white-space:nowrap}.examSlot span{font-size:12px;color:#827871}
+.examInput{display:flex;gap:8px;align-items:center;padding:6px 9px;min-width:0}
+.examInput select{flex:0 0 84px;width:84px;min-width:0;background:#fff;border:1px solid #d8cfc5;border-radius:8px;padding:7px 4px;font-size:13px;color:#514b47}
+.examInput textarea{flex:1;min-width:0;min-height:37px;width:100%;resize:vertical;border:1px solid #d8cfc5;border-radius:8px;background:white;padding:8px;font:inherit;font-size:15px;line-height:1.35}
+.examInput textarea:focus{outline:2px solid #a5bbba}
+#bulkOverlay .bulkTableWrap{overflow-x:hidden;max-height:60vh}
+@media(max-width:740px){
+ #bulkOverlay .bulkModal{padding:14px 11px;width:98vw}
+ .examHeader,.examRow{grid-template-columns:minmax(105px,33%) minmax(0,1fr)}
+ .examHeader span{padding:8px 6px;font-size:12px}
+ .examSlot{padding:7px 5px}.examSlot strong{font-size:13px}.examSlot span{font-size:11px}
+ .examInput{padding:5px;gap:4px}.examInput select{flex-basis:62px;width:62px;font-size:12px;padding:7px 1px}
+ .examInput textarea{min-height:40px;font-size:15px;padding:7px 5px}
+ #bulkOverlay .bulkControls{margin:8px 0}
+}
+
+#classChoices.sheetGrid{grid-template-columns:1fr 1fr;gap:8px}
+.classChooserRow{background:#f4f0ea;border-radius:11px;padding:5px;display:flex;align-items:center;gap:3px;min-width:0}
+.classChooserRow button{min-height:0!important;padding:8px 5px!important;border-radius:8px!important;font-size:12px!important;white-space:nowrap}
+.classChooserRow .classChooserPick{flex:1;min-width:0;text-align:left!important;overflow:hidden;text-overflow:ellipsis;background:transparent!important;font-size:14px!important}
+.classChooserRow .classChooserEdit{background:#e5eae6!important;color:#456657!important}
+.classChooserRow .classChooserDelete{background:#f8e7e5!important;color:#a55353!important}
+@media(max-width:610px){#classChoices.sheetGrid{grid-template-columns:1fr}.classChooserRow .classChooserPick{font-size:15px!important}}
+
+/* V39 unified item types: small-screen-first management */
+#swatches{display:none!important}.manageEditor{padding:12px;border-radius:14px}.manageEditor .field{margin:9px 0 4px}.manageEditor .fieldInput{padding:9px 10px}.manageLine{padding:7px 4px}.chooserHeading{font-size:12px;color:#746e6c;font-weight:700;letter-spacing:.5px;margin:14px 0 5px;grid-column:1/-1}.classChooserRow{min-width:0}.classChooserPick{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.deleteLaneChoices{display:grid;gap:9px}.deleteLaneChoices button{border-radius:11px;padding:13px;background:#edf1eb;text-align:left;color:#394e43}.deleteLaneChoices #deleteLaneAll{background:#fff0ef;color:#ad4444}.deleteLaneChoices #deleteLaneCancel{background:#f3f0eb;text-align:center}.slotRow{gap:5px!important;margin:4px 0!important}.slotRow select{padding:7px 5px!important}.paletteOption{min-height:51px!important}.paletteDots i{border:1px solid #0001}
+@media(max-width:740px){.manageEditor{padding:9px}.classChooserRow{padding:5px!important}.classChooserEdit,.classChooserDelete{padding:8px 6px!important}.slotRow{display:grid!important;grid-template-columns:1fr 1fr 1.2fr auto}.slotRow .slotClock{grid-column:1/3}.slotRow select{min-width:0!important}.deleteLaneChoices button{font-size:15px}}
+
+/* V41: streamlined controls */
+#styleOverlay .themeGrid,#styleOverlay .themeAdvanced{display:none!important}
+.themeSelectors{display:grid;gap:2px;margin:6px 0 12px}.themeSelectors .field{margin-top:10px}
+.themeSamplePreview{font-size:12px;color:#746e70;margin:7px 0 5px}.previewPalette{padding:11px;border:1px solid;border-radius:12px;display:flex;align-items:center;gap:12px}.previewPalette span{padding:9px;border:1px solid;border-radius:8px;flex:1;font-weight:700}.previewPalette i{width:35px;height:35px;border-radius:50%}
+#personalDateFields{margin-top:14px}#personalDateFields[hidden]{display:none!important}
+#scheduleEditor[hidden]{display:none!important}
+
+/* V41: whole-day today indicator, instead of date-number pill */
+.day.today{position:relative;outline:4px solid #C53A40!important;outline-offset:-4px;z-index:1;background:#FFF9F6!important}
+.day.today .daynum{background:transparent!important;color:var(--ink)!important}
+.lessonHead.todayLessonHead{position:relative;outline:4px solid #C53A40!important;outline-offset:-4px;z-index:2;background:#FFF4F0!important}
+/* Editing items is now palette-only, removing all individual color controls */
+.manageEditor #swatches,.manageEditor #itemColorPalette,.manageEditor #itemColorChoice,.manageEditor .customColor,.manageEditor #laneBorderColor,.manageEditor #laneBorderHex,.manageEditor #laneBorderWidth,.manageEditor #previewBorder,.manageEditor #previewColor{display:none!important}
+.manageEditor .field:has(+ #itemColorPalette),.manageEditor .field:has(+ #itemColorChoice){display:none!important}
+.manageEditor .field:has(+ .customColor){display:none!important}
+#fChangeTypeWrap[hidden]{display:none!important}
+
+/* V43 simplified daily UI: no competing historical workspaces. */
+#views,#lessonBar .viewTabs,#loadReal,#reset,#quickAdd,#periodSettings{display:none!important}
+#showStyle[hidden],button[hidden]{display:none!important}
+#classMenu .chooserActions,#homeMenu .sheetGrid,#settingsMenu .sheetGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+#classMenu .chooserActions button,#homeMenu .sheetGrid button,#settingsMenu .sheetGrid button{padding:11px 8px;border-radius:11px;font-size:14px}
+#chooserBulk{grid-column:1/-1;background:#e9f0e9;color:#3b6151;font-weight:700}
+#classActions .sheetGrid [hidden]{display:none!important}
+#classMenu .classChooserRow{min-width:0}
+#classMenu .classChooserPick{min-width:0}
+#classMenu .modal{max-height:90vh;overflow-y:auto}
+@media(max-width:520px){#classMenu .chooserActions,#homeMenu .sheetGrid,#settingsMenu .sheetGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* V45 readability: dense timetable, legible important-events calendar */
+.lessonCell{min-height:48px!important;padding:2px!important}
+.lessonEntries{gap:2px!important}
+.lessonItem{min-height:40px!important;padding:5px 7px!important;line-height:1.2!important}
+.lessonItem .courseName{font-size:15px!important;line-height:1.18!important}
+.lessonItem .progress{font-size:14px!important;line-height:1.18!important;margin-top:2px!important}
+.lessonItem .cycleNote{font-size:11px!important;margin-top:2px!important}
+.lessonPeriod{padding:3px 2px!important}
+.lessonHead{padding:5px 3px!important}
+.lessonPlus{padding:1px 3px!important;line-height:1!important;font-size:18px!important}
+.lessonCell:not(.hasLesson) .lessonPlus{margin:auto!important}
+.day{min-height:104px;padding:7px 5px}
+.dayDateLine .daynum{font-size:15px!important;font-weight:750!important}
+.schoolWeekTag{font-size:11px!important}
+.event{font-size:14px!important;line-height:1.3!important;font-weight:550!important;padding:5px 6px!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:normal!important;overflow:visible!important;text-overflow:clip!important;margin-bottom:4px!important}
+.more{font-size:12px!important}
+.holidayFlag{font-size:12px!important;line-height:1.3!important;overflow-wrap:anywhere}
+.weekdays>div{font-size:13px!important;padding:8px 0!important}
+@media(max-width:740px){
+ .lessonCell{min-height:46px!important;padding:1px!important}
+ .lessonItem{min-height:38px!important;padding:4px 5px!important}
+ .lessonItem .courseName{font-size:13.5px!important}
+ .lessonItem .progress{font-size:13px!important;line-height:1.18!important}
+ .day{min-height:100px;padding:5px 3px!important}
+ .dayDateLine .daynum{font-size:12px!important}
+ .schoolWeekTag{font-size:10px!important}
+ .event{font-size:12px!important;padding:4px 3px!important;line-height:1.25!important}
+ .weekdays>div{font-size:12px!important}
+}
+
+/* V46: important events share timetable locations without duplicating data */
+.lessonItem.sharedEvent{box-shadow:inset 0 0 0 1px #b89f8a}
+.lessonItem.sharedEvent.replacementEvent{border:3px solid #b74848!important}
+.lessonHead .dayLabel{display:block;width:100%;white-space:normal;overflow-wrap:anywhere;margin:3px 0;padding:3px 4px;border-radius:6px;background:#f3dbd5;color:#923b3b;font-size:12px;line-height:1.25;text-align:center}
+#fConflictBox[hidden]{display:none!important}
+
+/* V47: 五個上課日永遠完整放入螢幕，不再以橫向捲動呈現週課表。 */
+.lessonWeekGroup,.lessonWeekGroup .lessonScroller{width:100%!important;max-width:100%!important;min-width:0!important}
+.lessonWeekGroup .lessonScroller{overflow-x:hidden!important;overflow-y:visible!important}
+.lessonGrid{width:100%!important;max-width:100%!important;min-width:0!important;grid-template-columns:clamp(27px,5.4vw,46px) repeat(5,minmax(0,1fr))!important}
+.lessonGrid>.lessonHead,.lessonGrid>.lessonPeriod,.lessonGrid>.lessonCell{min-width:0!important;box-sizing:border-box}
+.lessonHead{overflow-wrap:anywhere!important}
+.lessonCell{overflow:hidden!important}
+.lessonItem{min-width:0!important;max-width:100%!important;overflow-wrap:anywhere!important;word-break:break-word!important}
+.lessonItem .courseName,.lessonItem .progress{overflow-wrap:anywhere!important;word-break:break-word!important;white-space:pre-wrap!important}
+@media(max-width:740px){
+ .app{padding-left:3px!important;padding-right:3px!important}
+ .panel.cal{padding-left:3px!important;padding-right:3px!important}
+ .lessonGrid{grid-template-columns:28px repeat(5,minmax(0,1fr))!important}
+ .lessonHead{font-size:11px!important;padding:5px 0!important}
+ .lessonHead .shortDate{font-size:11px!important}
+ .lessonPeriod{font-size:12px!important;padding:7px 1px!important}
+ .lessonCell{padding:1px!important;min-height:52px!important}
+ .lessonItem{padding:5px 2px!important;min-height:45px!important;border-radius:4px!important}
+ .lessonItem .courseName{font-size:clamp(10px,2.65vw,13px)!important;line-height:1.2!important}
+ .lessonItem .progress{font-size:clamp(10px,2.45vw,12px)!important;line-height:1.18!important;margin-top:2px!important}
+ .lessonPlus{font-size:17px!important;padding:3px!important}
+ .dayLabel{font-size:10px!important;padding:2px 0!important}
+}
+@media(max-width:375px){
+ .lessonGrid{grid-template-columns:25px repeat(5,minmax(0,1fr))!important}
+ .lessonItem{padding:4px 1px!important}
+ .lessonHead{font-size:10px!important}
+ .lessonHead .shortDate{font-size:10px!important}
+ .lessonItem .courseName{font-size:10.5px!important}
+ .lessonItem .progress{font-size:10px!important}
+}
+</style></head><body><div class="app"><header class="top"><div class="brand"><div class="mark">✿</div><div><h1>日子有序</h1><div class="sub">把忙碌攤開，日子就有了呼吸的空間。</div></div></div><div class="top-actions" id="topActions"><button class="ghost" id="manage">✦ 管理班級與事項</button><button class="ghost" id="loadReal">↺ 載入提供的課表與進度</button><button class="ghost" id="reset">↺ 示範資料</button><button class="ghost" id="export">匯出備份</button><button class="primary" id="add">＋ 新增行程</button></div></header><div class="workspace"><aside class="panel" id="streams"></aside><main class="center"><section class="panel hello"><h2 id="greeting">今天，先記下心裡掛念的事</h2><p>待辦先放在待辦清單；有明確日期的行程才放進日曆。</p><div class="quick"><input id="quickInput" placeholder="例如：修改高二講義、準備日本交流活動" autocomplete="off"><button id="quickAdd">記下來 ↗</button></div><div class="examples">直接記成待辦，不會自動出現在日曆。</div></section><section class="panel cal"><div class="calhead"><div class="calnav"><button id="prev" aria-label="上一段">‹</button><button id="today">今天</button><button id="next" aria-label="下一段">›</button><h3 id="rangeTitle"></h3></div><div class="viewTabs" id="views"><button data-view="day">一天</button><button data-view="week">一週</button><button data-view="lessons">節次課表</button><button data-view="two">兩週</button><button data-view="month">一個月</button><button data-view="semester">一學期</button></div></div><div class="compactController" id="compactController"><button id="jumpTodos" type="button">待辦 <span id="todoCountTop"></span></button><button id="showImportant" type="button">重要行事</button><button id="showClasses" type="button">課程管理</button><button id="showStyle" type="button" hidden>外觀</button><button id="backupEntry" type="button">設定</button></div><div id="lessonBar" style="display:none"></div><div id="calendar"></div><div class="foot"><span>一般日曆只顯示重要事件；教學節次和進度請切換到「節次課表」。</span><span id="countLabel"></span></div></section></main><div class="right"><section class="panel"><div class="overline">YOUR DESK · 工作桌面</div><h3>待辦事項 <span style="color:#a3b3a7" id="taskCount"></span></h3><div id="tasks"></div><button class="smallbtn" id="addTask">＋ 新增待辦</button></section></div></div></div>
+<div class="overlay" id="overlay"><div class="modal"><h2 id="modalTitle">寫下一件事</h2><p>不需要把每個欄位都填滿，先記得這件事最重要。</p><label class="field">要做什麼？</label><input id="fTitle" class="fieldInput" placeholder="例如：高一甲 第五課小考"><div class="formgrid"><div><label class="field">哪一天？（可以留空）</label><input id="fDate" type="date" class="fieldInput"></div><div><label class="field">幾點？（可以留空）</label><div class="timeEntry"><select id="fTimeMode" class="fieldInput"><option value="period">第幾節</option><option value="clock">實際時間</option><option value="all">整日（標在日期下方）</option><option value="night">夜間</option></select><select id="fPeriod" class="fieldInput"></select><input id="fTime" type="time" class="fieldInput"></div></div></div><div id="dateHolidayNotice" class="holidayHint" style="display:block"></div><label class="field">屬於哪一條工作線？</label><select id="fLane" class="fieldInput"></select><div id="fChangeTypeWrap"><label class="field">這筆安排的性質</label><select id="fChangeType" class="fieldInput"><option value="normal">一般新增行程／課程</option><option value="cover">臨時幫別人代課（紅框）</option><option value="temporary">其他臨時調整（紅框）</option></select></div><label class="field" for="fPlacement">顯示在哪裡？</label><select id="fPlacement" class="fieldInput"><option value="both">重要行事＋週課表</option><option value="important">只顯示在重要行事</option><option value="week">只顯示在週課表</option></select><label class="overviewChoice" hidden style="display:none"><input id="fOverview" type="checkbox" checked><span>顯示在一般行事曆</span></label><div class="small" id="fPlacementHelp" style="margin-top:4px">同一筆資料在兩個視圖連動，無須重複新增。</div><div id="fConflictBox" class="lessonCycleBox" hidden style="display:none"><strong>這個時段原本已有課</strong><div id="fConflictText" class="small"></div><label class="field" for="fConflictMode">如何處理本次課堂？</label><select id="fConflictMode" class="fieldInput"><option value="alongside">並列提醒，保留原課</option><option value="replace">本次活動取代原課（原課資料仍保留）</option></select></div><div id="eventGroupBox" class="lessonCycleBox" style="display:none"><label class="field">這是連續多天的同一件事</label><div id="eventGroupSummary" class="small"></div><select class="fieldInput" id="eventGroupScope" style="margin-top:9px"><option value="group">整組一起修改（所有日期）</option><option value="one">只修改目前這一天</option></select><div class="small" style="margin-top:7px">修改分類、名稱、備註和顯示方式會依選取範圍套用；若改日期，整組會一起平移，保留原本間隔。</div></div><label class="field">補充提醒（選填）</label><textarea id="fNote" class="fieldInput" rows="2" placeholder="例如：要先完成題目、印講義"></textarea><div class="modeToggle" id="modeToggle"><button type="button" data-mode="task">待辦事項</button><button type="button" data-mode="event">日曆行程</button></div><div class="hint" id="modeHelp">待辦不會出現在日曆裡。</div><div class="hint">臨時調課、改期，可以直接點原本事項操作，不用重新新增。</div><div class="itemmenu" id="itemmenu"></div><div class="actions"><button id="delete" class="danger" style="display:none">刪除</button><button id="cancel" class="btnCancel">取消</button><button id="save" class="btnSave">儲存這件事</button></div></div></div>
+<div class="overlay" id="bulkOverlay"><div class="modal bulkModal"><h2>段考範圍｜一次填寫進度</h2><p>左邊是實際上課日期與節次；右邊直接填寫。舊進度會自動帶入，最後一次儲存。</p><div class="bulkControls"><label>班級<select id="bulkClass"></select></label><label>選擇段考<select id="bulkExam"></select></label><label>從哪天開始<input type="date" id="bulkStart"></label><button id="bulkRefresh" class="smallbtn">重新整理</button><select id="bulkRange" hidden><option value="exam" selected>段考</option></select><span id="bulkWeeksWrap" hidden><select id="bulkWeeks"><option value="4">4 週</option></select></span></div><div class="bulkHint">點右側欄位即可連續輸入。已填過的內容直接顯示；可從 Excel 複製整欄貼上。儲存前不會修改原資料。</div><div id="bulkCount" class="small"></div><div id="bulkTableWrap" class="bulkTableWrap"></div><div class="bulkFooter"><span id="bulkStatus" class="small">尚未儲存</span><div class="actions"><button id="bulkCancel" class="btnCancel">取消</button><button id="bulkSave" class="btnSave">一次儲存全部進度</button></div></div></div></div><div class="overlay" id="progressOverlay"><div class="modal lessonModal"><h2 id="progressHeading">編輯這一堂課</h2><p id="progressMeta"></p><label class="field">這一堂要做什麼？</label><div class="progressType" id="progressTypes"><button data-kind="上課">上課</button><button data-kind="小考">小考</button><button data-kind="段考">段考</button><button data-kind="活動">活動</button><button data-kind="其他">其他</button></div><label class="field">本堂進度／考試範圍</label><textarea id="progressText" class="fieldInput" rows="3" placeholder="例如：L4 單字小考；L5 閱讀第一段"></textarea><details class="lessonDetails" id="lessonAppearanceDetails" style="display:none" aria-hidden="true"><summary>這堂課的顏色與文字 <span class="softChevron">⌄</span></summary><div class="lessonDetailsInner"><label class="field" for="lessonColorScope">顏色套用範圍</label><select id="lessonColorScope" class="fieldInput"><option value="one">只改這一堂</option><option value="lane">這個班級／科目的所有課（包含未來）</option><option value="all">整張課表的所有課（包含未來）</option></select><label class="styleOverrideChoice" id="styleOverrideLabel"><input type="checkbox" id="overwriteSpecialColors">一併覆蓋原本逐堂自訂的顏色</label><div class="small" id="lessonColorScopeHint">只更改這一堂課的顏色。</div><div id="lessonColorPalettes"></div><div class="styleColorLine"><label>底色 <input type="color" id="lessonBgColor" value="#c8dded"></label><label>班級名稱文字 <input type="color" id="lessonTitleColor" value="#433a40"></label></div><div class="styleColorLine"><label>外框 <input type="color" id="lessonBorderColor" value="#ffffff"></label><label>框線粗細 <select id="lessonBorderSize" class="fieldInput" style="width:80px"><option value="0">無</option><option value="1">細</option><option value="2">中</option><option value="3">粗</option><option value="4">更粗</option></select></label></div><div class="stylePreview" id="lessonAppearancePreview">高一仁　｜　第 1 節</div><button type="button" id="resetLessonColors" class="miniBtn">恢復班級預設顏色</button></div></details><input type="hidden" id="progressNote"><details class="lessonDetails" id="lessonSettingsDetails"><summary>課程設定：單雙週／調課／代課／時間 <span class="softChevron">⌄</span></summary><div class="lessonDetailsInner"><div id="lessonCycleBox" class="lessonCycleBox"><label class="field" for="lessonCycle">這個固定時段出現在哪些週？</label><select id="lessonCycle" class="fieldInput"><option value="all">每週</option><option value="odd">單週（學期第 1、3、5…週）</option><option value="even">雙週（學期第 2、4、6…週）</option></select><div class="small" id="lessonCycleHelp">只修改這個班級、星期和節次的固定課，不會更動其他時段。</div></div><div id="timeEditor" class="timeEditor"><strong>修改這堂課</strong><label class="field">異動性質</label><select class="fieldInput" id="timeChangeType"><option value="formal">正式調整固定課表（不加紅框）</option><option value="temporary">臨時調課／代課（加紅框）</option></select><label class="field">要做什麼？</label><select class="fieldInput" id="timeAction"><option value="keep">不變動時間</option><option value="move">更改上課日期或節次</option><option value="add">另加一堂課</option><option value="delete">取消／刪除這堂課</option><option value="sub">這堂請人代課</option></select><label class="field">影響範圍</label><select class="fieldInput" id="timeScope"><option value="one">只改這一次</option><option value="future">從這次以後</option><option value="all">整個固定系列</option></select><div id="timeDestination" class="timeEditorGrid" style="display:none"><div><label class="field">新日期／開始日期</label><input class="fieldInput" id="timeNewDate" type="date"></div><div><label class="field">新節次</label><select class="fieldInput" id="timeNewPeriod"></select></div></div><div id="timeSubWrap" style="display:none"><label class="field">代課老師或說明</label><input class="fieldInput" id="timeSubName" placeholder="例如：請王老師代課"></div><div class="timeHelp" id="timeHelp">單次修改不會改動其他週；調課或代課將以紅色外框標示。</div></div></div></details><details class="lessonDetails" id="kindColorsDetails"><summary>調整五種類型的文字顏色 <span class="softChevron">⌄</span></summary><div class="kindColorList" id="kindColorList"><label><span>上課</span><input type="color" data-kind-color="上課" aria-label="上課的文字顏色"></label><label><span>小考</span><input type="color" data-kind-color="小考" aria-label="小考的文字顏色"></label><label><span>段考</span><input type="color" data-kind-color="段考" aria-label="段考的文字顏色"></label><label><span>活動</span><input type="color" data-kind-color="活動" aria-label="活動的文字顏色"></label><label><span>其他</span><input type="color" data-kind-color="其他" aria-label="其他的文字顏色"></label></div><p class="kindColorHint">變更後會立即套用到所有課表進度，並儲存在這台裝置。</p></details><div class="actions"><button class="btnCancel" id="progressCancel">取消</button><button class="btnSave" id="progressSave">儲存這堂課</button></div></div></div><div class="overlay" id="periodOverlay"><div class="modal"><h2>學校節次設定</h2><p>只需設定一次。之後排課直接選第幾節，實際時間會作為參考。</p><div id="periodSettingsList"></div><div class="actions"><button type="button" id="closePeriod" class="btnCancel">取消</button><button type="button" id="savePeriod" class="btnSave">儲存節次</button></div></div></div><div class="overlay" id="manageOverlay"><div class="modal manager"><h2>事項管理</h2><button type="button" id="periodSettings" class="smallbtn">⚙ 設定學校節次時間</button><p>先選事項類型，再設定名稱、顏色和日期／節次。</p><div class="viewTabs" style="display:none"><button class="selected" id="tabClass">固定課表</button><button id="tabItem">重要行事</button></div><div id="manageList"></div><div class="manageEditor"><label class="field" for="itemCategory">事項類型</label><select id="itemCategory" class="fieldInput"><option value="course">固定課表（課程）</option><option value="personal">私人行程</option><option value="school">學校重要行事</option></select><label class="field" id="nameLabel">事項名稱</label><input class="fieldInput" id="laneName" placeholder="例如：高一 101"><label class="field">顏色組合</label><select id="itemColorPalette" class="fieldInput"></select><label class="field">選擇顏色</label><select id="itemColorChoice" class="fieldInput"></select><div id="swatches" class="swatches" hidden></div><div class="customColor"><label>或自由選色 <input type="color" id="customColor" value="#b6d9c7"></label><input class="fieldInput" id="colorHex" maxlength="7" value="#b6d9c7" aria-label="色碼"><span id="previewColor" class="colorPreview"></span></div><label class="field">課表卡片外框</label><div class="customColor"><label>外框顏色 <input type="color" id="laneBorderColor" value="#ffffff"></label><input class="fieldInput" id="laneBorderHex" maxlength="7" value="#FFFFFF" aria-label="外框色碼"><label>粗細 <select id="laneBorderWidth" class="fieldInput" style="max-width:96px"><option value="0">0</option><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option></select></label><span id="previewBorder" class="colorPreview"></span></div><div id="personalDateFields" hidden><label class="field" for="personalDate">私人行程日期</label><input class="fieldInput" type="date" id="personalDate"><label class="field" for="personalTime">時間（選填；留空代表整日）</label><input class="fieldInput" type="time" id="personalTime"></div><div class="scheduleEditor" id="scheduleEditor">
+<div class="scheduleHeading">日曆出現方式 <span class="small">不排時間也可以直接新增分類</span></div>
+<div class="modeToggle" id="ruleTabs"><button type="button" data-rule="none">暫不排時間</button><button type="button" data-rule="weekly">每週固定</button><button type="button" data-rule="dates">指定多個日期</button></div>
+<div id="weeklyFields" class="ruleFields" hidden>
+<div class="formgrid"><div><label class="field">從哪一天開始</label><input id="ruleStart" type="date" class="fieldInput"></div><div><label class="field">到哪一天結束</label><input id="ruleEnd" type="date" class="fieldInput"></div></div>
+<p class="ruleDesc">選星期幾、第幾節以及單週／雙週。同一天可以新增多節。</p>
+<div class="formgrid"><div><label class="field">哪一天算學期第一週？</label><input id="cycleAnchor" type="date" class="fieldInput"></div><div><label class="field">說明</label><div class="hint">單週＝第 1、3、5… 週；雙週＝第 2、4、6… 週</div></div></div><div class="small" style="margin:6px 0 4px">星期幾／單雙週／第幾節</div><div id="weeklySlots"></div><button type="button" id="addSlot" class="smallbtn">＋ 再加一個每週時段</button>
+<label class="field">只出現前幾堂／次？（選填）</label><input id="ruleCount" type="number" min="1" max="500" class="fieldInput" placeholder="留空表示持續到結束日期"><div class="small">次數是整個安排的合計，例如週一、三各一節，填 4 代表共出現 4 堂。</div>
+</div><div id="dateFields" class="ruleFields" hidden>
+<label class="field">逐筆加入日期與時間（不固定日期也可選節次）</label><div class="formgrid"><input id="specialDate" type="date" class="fieldInput"><select id="specialPeriod" class="fieldInput"></select><input id="specialTime" type="time" class="fieldInput"></div>
+<button type="button" id="addSpecial" class="smallbtn">＋ 加入這一天</button><div id="specialList" class="specialList"></div>
+<label class="field">或貼上一串日期（每行一個，可加時間）</label><textarea id="bulkDates" class="fieldInput" rows="2" placeholder="2026-12-01 15:30&#10;2026-12-08 15:30"></textarea><button type="button" id="importDates" class="smallbtn">加入以上日期</button>
+</div><div id="scheduleSummary" class="small" style="margin-top:10px"></div><div id="scheduleHolidayInfo" class="holidayInfo"></div>
+</div><div class="actions"><button class="btnCancel" id="cancelLaneEdit">取消編輯</button><button class="btnSave" id="saveLane">＋ 新增</button></div></div><div class="actions"><button class="btnCancel" id="closeManage">完成</button></div></div></div>
+<button id="mobileFab" aria-label="新增或管理" title="新增或管理">＋</button>
+<div class="overlay" id="homeMenu"><div class="modal homeSheet"><h2>新增</h2><p>只要選擇這次要新增的內容。</p><div class="sheetGrid"><button data-home="newCourse">＋ 固定課程</button><button data-home="newEvent">＋ 重要行事／私事</button><button data-home="temporary">↔ 臨時代課／調課</button></div><button class="sheetClose" id="closeHome">關閉</button></div></div>
+<div class="overlay" id="backupHelp"><div class="modal homeSheet"><h2>資料保護與備份</h2><p>GitHub 儲存網站程式，不會自動儲存你每天輸入的行事曆。請固定下載備份並保存到手機「檔案」或雲端硬碟。</p><div class="sheetGrid"><button type="button" id="backupDownloadNow">↓ 下載完整備份</button><button type="button" id="backupRestoreNow">↑ 選擇備份還原</button><input type="file" id="backupRestoreInput" accept=".json,application/json" style="display:none" aria-label="選擇完整備份檔"></div><p style="margin-top:10px">換手機、清除瀏覽器資料、或更換 GitHub Pages 網址時，可以使用還原功能。還原會先要求你確認，並保留當下資料的安全備份。</p><button class="sheetClose" id="backupHelpClose">關閉</button></div></div><div class="overlay" id="styleOverlay"><div class="modal homeSheet"><h2>課表外觀</h2><p>換一套只屬於你的頁面氣質。</p><div class="themeSelectors">
+<label class="field" for="themeBaby">Baby・柔和粉彩</label><select class="fieldInput" id="themeBaby"><option value="">選擇 Baby 配色</option></select>
+<div id="themeSamplePreview" class="themeSamplePreview" aria-live="polite">選擇一套色系，即可預覽整頁搭配。</div>
+</div>
+<div id="themeGrid" class="themeGrid" hidden></div>
+<div class="themeAdvanced" hidden>
+<div class="styleColorLine"><label>頁面背景 <input type="color" id="pageBackgroundColor" value="#f5edef"></label><label>整頁文字 <input type="color" id="pageTextColor" value="#574c51"></label></div>
+<div class="styleColorLine"><label>卡片背景 <input type="color" id="pagePaperColor" value="#fffdfb"></label><label>整頁細線 <input type="color" id="pageLineColor" value="#e4d8dc"></label></div>
+<input id="gridColor" type="color" value="#d9e2d8"><input id="cardBorderColor" type="color" value="#ffffff">
+<select id="cardBorderWidth"><option value="2">中</option></select><select id="cardRadius"><option value="10">柔和</option></select>
+</div><div class="actions"><button class="btnCancel" id="styleClose">取消</button><button class="btnSave" id="styleSave">套用外觀</button></div></div></div><div class="overlay" id="taskMenu"><div class="modal todoModal"><div class="todoModalTop"><h2>待辦事項</h2><button class="todoModalClose" id="closeTasks" type="button" aria-label="關閉待辦">✕</button></div><section id="todoSection" class="todoDesk" aria-label="我的待辦事項"><div class="todoHeading"><div class="todoTitle"><span class="todoGlyph">✳</span><h2>待辦事項</h2><span id="todoSummary" class="todoSummary"></span></div><button id="todoToggleDone" type="button" class="todoToggle">收起已完成</button></div><form id="todoQuickForm" class="todoQuick" autocomplete="off"><input id="todoQuickText" aria-label="新增待辦" placeholder="想到什麼，直接寫一行……"><button type="button" id="todoMic" aria-label="語音輸入待辦" title="語音輸入">🎙</button><button type="submit" aria-label="新增待辦">＋</button></form><div id="voiceStatus" role="status" aria-live="polite" class="voiceStatus" hidden></div><div class="voiceReview" id="voiceReview" hidden><div class="voiceReviewHeading">語音整理結果 · 儲存前可修改</div><label for="voiceOriginal">你剛剛說的話</label><textarea id="voiceOriginal" rows="2" readonly></textarea><label for="voiceClean">整理後待辦</label><textarea id="voiceClean" rows="2"></textarea><div class="voiceReviewActions"><button type="button" id="voiceCancel">取消</button><button type="button" id="voiceSave">確認加入待辦</button></div></div><div id="todoRows" class="todoRows"></div><div class="todoFoot" id="todoFoot"></div></section><div id="taskSheetEntries" hidden></div><button id="taskSheetAdd" type="button" hidden>新增待辦</button></div></div>
+<div class="overlay" id="settingsMenu"><div class="modal homeSheet"><h2>設定</h2><div class="sheetGrid"><button id="settingsColors" type="button">✿ Baby 配色與外觀</button><button id="settingsBackup" type="button">↓ 下載完整備份</button><button id="settingsRestore" type="button">↑ 從備份還原</button><button id="settingsPeriods" type="button">節次時間設定</button></div><button id="settingsClose" class="sheetClose" type="button">關閉</button></div></div><div class="overlay" id="classMenu"><div class="modal homeSheet"><h2 id="chooserTitle">課程管理</h2><p id="chooserDescription">選課程可編輯節次，或一次填寫段考進度。</p><button type="button" id="classAll" class="allClasses" style="width:100%;margin:4px 0 8px">▦ 顯示全部事項</button><div id="classChoices" class="sheetGrid"></div><div class="chooserActions"><button id="chooserBulk" type="button">✎ 一次填寫段考進度</button><button id="chooserNewClass" type="button">＋ 新增</button><button id="chooserManage" type="button">編輯全部</button><button id="chooserPalette" type="button">🎨 Baby 整組配色</button></div><button class="sheetClose" id="closeClass">關閉</button></div></div>
+<div class="overlay" id="deleteLaneOverlay"><div class="modal homeSheet"><h2>刪除事項</h2><p id="deleteLaneDescription"></p><div class="deleteLaneChoices"><button id="deleteLaneKeep" type="button">只刪除分類，保留已排的行程</button><button id="deleteLaneAll" type="button">連相關行程一起刪除</button><button id="deleteLaneCancel" type="button">取消</button></div></div></div><div id="paletteAppliedNotice" role="status" aria-live="polite" hidden></div><div class="overlay" id="paletteOverlay"><div class="modal homeSheet"><h2>整組套用色系</h2><p>僅保留 Baby 柔和配色，預設為「柔霧撞色」。每個事項分配不同顏色。</p><div class="paletteOptions" id="paletteOptions"></div><div class="palettePreviewHelp" id="palettePreviewHelp">一套內有明顯不同的柔和色相，方便一眼辨認各堂課。</div><label class="styleOverrideChoice"><input type="checkbox" id="paletteOverwrite">覆蓋先前逐堂設定的特殊顏色</label><div class="actions"><button class="btnCancel" id="paletteCancel">取消</button><button class="btnSave" id="paletteApply">套用整組</button></div></div></div><div class="overlay" id="classActions"><div class="modal homeSheet"><h2 id="classActionName">課程</h2><p id="classActionHint">查看這門課的節次或整批進度。</p><div class="sheetGrid"><button data-class-action="week">看本週課表</button><button data-class-action="month">看本月重要行事</button><button data-class-action="semester">看一學期重要行事</button><button data-class-action="bulk">✎ 一次填寫本次段考進度</button><button data-class-action="add">＋ 新增</button><button data-class-action="manage">編輯分類與時間</button><button data-class-action="delete">刪除此班級／事項</button></div><button class="sheetClose" id="closeClassAction">返回</button></div></div>
+<script>
+
+// School periods, as user-customizable labels rather than assumed bell times.
+const PERIOD_DEFAULTS=[...Array.from({length:8},(_,i)=>({name:`第 ${i+1} 節`,start:'',end:''})),{name:'夜間',start:'',end:''}];
+let PERIODS;try{PERIODS=JSON.parse(localStorage.getItem('days-organized-periods-v1'))||PERIOD_DEFAULTS}catch{PERIODS=PERIOD_DEFAULTS} PERIODS=[...PERIOD_DEFAULTS.map((p,i)=>({...p,start:PERIODS[i]?.start||'',end:PERIODS[i]?.end||''}))];
+function periodSelectOptions(v='',includeNone=true){return (includeNone?'<option value="">選擇節次／不限</option>':'')+PERIODS.map((p,i)=>`<option value="${i+1}" ${String(v)===String(i+1)?'selected':''}>${i===8?'夜間':p.name}${p.start?'（'+p.start+'）':''}</option>`).join('')}
+function renderPeriodChoices(){document.querySelector('#fPeriod').innerHTML=periodSelectOptions();document.querySelector('#specialPeriod').innerHTML=periodSelectOptions()}
+function showTimeMode(mode,period=''){document.querySelector('#fTimeMode').value=mode;document.querySelector('#fPeriod').value=period||'';document.querySelector('#fPeriod').style.display=mode==='period'?'block':'none';document.querySelector('#fTime').style.display=mode==='clock'?'block':'none'}
+function periodLabel(p){let x=PERIODS[Number(p)-1];return x?x.name:`第 ${p} 節`}
+function eventTimeLabel(e){return e.period?periodLabel(e.period)+' ':e.time?e.time+' ':''}
+const HOLIDAYS={};
+function holiday(d,label){HOLIDAYS[d]=label}
+function holidayRange(start,end,label){for(let d=new Date(start+'T12:00:00'),e=new Date(end+'T12:00:00');d<=e;d.setDate(d.getDate()+1)){let k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');holiday(k,label)}}
+// Government-announced holidays, 2026 and 2027. School-specific dates remain editable separately.
+holiday('2026-01-01','元旦');holidayRange('2026-02-14','2026-02-22','春節連假');holidayRange('2026-02-27','2026-02-28','和平紀念日連假');holidayRange('2026-04-03','2026-04-06','兒童節／清明節連假');holiday('2026-05-01','勞動節');holiday('2026-06-19','端午節');holiday('2026-09-25','中秋節');holiday('2026-09-28','教師節');holidayRange('2026-10-09','2026-10-10','國慶日連假');holidayRange('2026-10-25','2026-10-26','臺灣光復紀念日連假');holiday('2026-12-25','行憲紀念日');
+holiday('2027-01-01','元旦');holidayRange('2027-02-04','2027-02-10','春節連假');holidayRange('2027-02-27','2027-03-01','和平紀念日連假');holidayRange('2027-04-03','2027-04-06','兒童節／清明節連假');holidayRange('2027-04-30','2027-05-01','勞動節連假');holiday('2027-06-09','端午節');holiday('2027-09-15','中秋節');holiday('2027-09-28','教師節');holidayRange('2027-10-10','2027-10-11','國慶日連假');holiday('2027-10-25','臺灣光復紀念日');holidayRange('2027-12-24','2027-12-25','行憲紀念日連假');holiday('2027-12-31','2028 元旦補假');
+let SCHOOL_HOLIDAYS;try{SCHOOL_HOLIDAYS=JSON.parse(localStorage.getItem('days-organized-school-holidays-v1'))||{}}catch{SCHOOL_HOLIDAYS={}}
+// 基隆市教育處115學年度行事日期；使用者另行設定的停課日優先。
+const SCHOOL_OFFICIAL={};
+for(let d=new Date('2027-01-21T12:00:00');d<=new Date('2027-02-10T12:00:00');d.setDate(d.getDate()+1)){
+ let k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+ SCHOOL_OFFICIAL[k]=(k>='2027-02-04'?'寒假／春節連假':'寒假');
+}
+function holidayName(date){return SCHOOL_HOLIDAYS[date]||SCHOOL_OFFICIAL[date]||HOLIDAYS[date]||''} 
+function holidayWarn(date){let h=holidayName(date);let el=document.querySelector('#dateHolidayNotice');if(el)el.innerHTML=h?`⚠ ${date} 是「${h}」，可能不上課。仍可以安排活動，儲存時會再確認。`:''}
+function confirmHolidayDates(dates){const warnings=[...new Set(dates)].filter(d=>holidayName(d));if(!warnings.length)return true;return confirm('以下日期為國定假日或停課日：\n'+warnings.slice(0,12).map(d=>d+' '+holidayName(d)).join('\n')+(warnings.length>12?'\n…另有 '+(warnings.length-12)+' 天':'')+'\n\n仍要排入日曆嗎？')}
+function scheduleOccurrences(cfg){let occurrences=[];if(cfg.mode==='weekly'&&cfg.start&&cfg.end){let st=new Date(cfg.start+'T12:00:00'),end=new Date(cfg.end+'T12:00:00');for(let d=new Date(st);d<=end&&occurrences.length<2500;d.setDate(d.getDate()+1)){let day=d.getDay(),date=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');(cfg.slots||[]).forEach((slot,j)=>{if(Number(slot.day)===day && (!slot.start||date>=slot.start) && (!slot.end||date<=slot.end) && (slot.cycle==='all'||!slot.cycle||(((Math.floor((monday(d)-monday(new Date((cfg.cycleAnchor||cfg.start)+'T12:00:00')))/604800000)+1)%2===0?'even':'odd')===slot.cycle)))occurrences.push({date,index:j,period:slot.period||'',time:slot.period?'':(slot.time||'')})})}occurrences.sort((a,b)=>(a.date+String(a.period||a.time||'')).localeCompare(b.date+String(b.period||b.time||'')));if(cfg.count)occurrences=occurrences.slice(0,Number(cfg.count))}if(cfg.mode==='dates')occurrences=(cfg.dates||[]).map((x,i)=>({...x,index:i}));return occurrences}
+function updateScheduleHolidayHint(){let info=document.querySelector('#scheduleHolidayInfo');if(!info)return;let cfg;if(ruleMode==='weekly'){cfg={mode:'weekly',start:document.querySelector('#ruleStart').value,end:document.querySelector('#ruleEnd').value,slots:weeklySlots,cycleAnchor:document.querySelector('#cycleAnchor').value,count:Number(document.querySelector('#ruleCount').value)||null}}else if(ruleMode==='dates')cfg={mode:'dates',dates:specialDates};else{info.innerHTML='';return}let list=scheduleOccurrences(cfg).filter(x=>holidayName(x.date)),dates=[...new Set(list.map(x=>x.date))];info.innerHTML=dates.length?`⚠ 目前有 ${list.length} 堂／次安排落在假日（${dates.slice(0,5).map(d=>d.slice(5).replace('-','/')+' '+holidayName(d)).join('、')}${dates.length>5?'…':''}）。儲存前會詢問你是否保留。`:''}
+function showPeriodSettings(){document.querySelector('#periodSettingsList').innerHTML=PERIODS.map((p,i)=>`<div class="periodSettingRow"><strong>${p.name}</strong><input type="time" class="fieldInput" data-period-start="${i}" value="${p.start||''}" aria-label="${p.name} 開始"><input type="time" class="fieldInput" data-period-end="${i}" value="${p.end||''}" aria-label="${p.name} 結束"></div>`).join('');document.querySelector('#periodOverlay').classList.add('show')}
+document.querySelector('#periodSettings').onclick=showPeriodSettings;
+document.querySelector('#closePeriod').onclick=()=>document.querySelector('#periodOverlay').classList.remove('show');
+document.querySelector('#savePeriod').onclick=()=>{PERIODS=PERIODS.map((p,i)=>({...p,start:document.querySelector(`[data-period-start="${i}"]`).value,end:document.querySelector(`[data-period-end="${i}"]`).value}));localStorage.setItem('days-organized-periods-v1',JSON.stringify(PERIODS));document.querySelector('#periodOverlay').classList.remove('show');renderPeriodChoices();renderSlots();render()};
+renderPeriodChoices();
+document.querySelector('#fTimeMode').onchange=e=>showTimeMode(e.target.value,document.querySelector('#fPeriod').value);
+const DEFAULT_LANES=[{id:'all',name:'所有事情',color:'#c8d9c8'},{id:'c1',name:'班級一',color:'#dcebdd'},{id:'c2',name:'班級二',color:'#dce8f4'},{id:'c3',name:'班級三',color:'#f4e7d8'},{id:'c4',name:'班級四',color:'#e8e2f2'},{id:'elective',name:'多元選修',color:'#f5eacb'},{id:'support',name:'充實補強',color:'#d7ece8'},{id:'jp',name:'日本交流',color:'#f3e2e4'},{id:'kr',name:'韓國交流',color:'#e6e5f3'},{id:'personal',name:'生活與家庭',color:'#ebebe6'},{id:'other',name:'臨時事項',color:'#f6e9d7'}];
+let LANES=(()=>{try{let v=JSON.parse(localStorage.getItem('days-organized-lanes-v3'));if(Array.isArray(v))return [{id:'all',name:'所有事情',color:'#c8d9c8',kind:'all'},...v.filter(x=>x.id!=='all')]}catch{}return [{id:'all',name:'所有事情',color:'#c8d9c8',kind:'all'}]})();
+const $=s=>document.querySelector(s), pad=n=>String(n).padStart(2,'0'), iso=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`, fromISO=s=>new Date(s+'T12:00:00'), addDays=(d,n)=>new Date(d.getFullYear(),d.getMonth(),d.getDate()+n,12), monday=d=>addDays(d,-(d.getDay()+6)%7), today=()=>new Date(), uid=()=>String(Date.now())+Math.random().toString(36).slice(2,7), label=id=>LANES.find(l=>l.id===id)?.name||'其他', bg=id=>LANES.find(l=>l.id===id)?.color||'#edf0e8', borderC=id=>LANES.find(l=>l.id===id)?.borderColor||localStorage.getItem('days-organized-card-border-color')||'#ffffff', borderW=id=>Number(LANES.find(l=>l.id===id)?.borderWidth ?? localStorage.getItem('days-organized-card-border-width') ?? 2), cardR=()=>Number(localStorage.getItem('days-organized-card-radius')||10);
+let formGroupIds=[];
+let view='lessons',anchor=fromISO('2026-11-16'),filter='all',editing=null,items=[],formMode='task';
+let ruleMode='none',weeklySlots=[],specialDates=[];
+const persistLanes=()=>localStorage.setItem('days-organized-lanes-v3',JSON.stringify(LANES.slice(1)));
+function updateSchedule(lane){
+  // Keep individually changed occurrences, regenerate the unchanged ones.
+  // Archive progress for temporarily excluded odd/even weeks so toggling back restores it.
+  const progressArchive=lane.progressArchive||{};
+  items.filter(x=>x.autoSchedule&&x.lane===lane.id&&x.occurrenceKey).forEach(x=>{progressArchive[x.occurrenceKey]={lessonKind:x.lessonKind||'上課',lessonProgress:x.lessonProgress||'',note:x.note||''}});
+  lane.progressArchive=progressArchive;
+  let previous=new Map(items.filter(x=>x.autoSchedule&&x.lane===lane.id&&x.occurrenceKey).map(x=>[x.occurrenceKey,x]));let kept=items.filter(x=>x.lane!==lane.id || !x.autoSchedule || x.customized);
+  let oldManualKeys=new Set(kept.filter(x=>x.lane===lane.id&&x.customized&&x.occurrenceKey).map(x=>x.occurrenceKey));const exceptions=lane.slotExceptions||{};
+  const cfg=lane.schedule||{mode:'none'}; const occurrences=scheduleOccurrences(cfg);
+  for(let x of occurrences){let key=lane.id+'|'+x.date+'|'+x.index;if(oldManualKeys.has(key)||exceptions[key])continue;
+    let prior=previous.get(key),archive=progressArchive[key]||{};kept.push({id:prior?.id||'auto-'+uid(),title:lane.name,date:x.date,time:x.time||'',period:x.period||'',lane:lane.id,task:false,note:prior?.note??archive.note??'',lessonKind:prior?.lessonKind||archive.lessonKind||'上課',lessonProgress:prior?.lessonProgress??archive.lessonProgress??'',changedLesson:prior?.changedLesson||false,autoSchedule:true,occurrenceKey:key,done:false});
+  }
+  items=kept;
+}
+function regenerateAll(){ for(let l of LANES.slice(1))if(l.schedule)updateSchedule(l);persist() }
+
+const getKinds=kind=>LANES.filter(l=>l.kind===kind);
+function laneCategory(l){if(l.category)return l.category;if(l.kind==='class'||l.schedule?.mode==='weekly')return 'course';if(/生活|家庭|私人|個人|回診/.test(l.name))return 'personal';return 'school'}
+const ITEM_TYPES=[['course','固定課表'],['personal','私人行程'],['school','學校重要行事']];
+function optionsForCategory(category){return category==='course'?LANES.filter(l=>l.id!=='all'&&laneCategory(l)==='course'):LANES.filter(l=>l.id!=='all'&&laneCategory(l)===category)}
+
+function loadDemoLanes(){LANES=DEFAULT_LANES.map((l,i)=>({...l,kind:i===0?'all':i<=4?'class':'item'}));persistLanes()}
+
+function demo(){let d=today(),next=(n)=>iso(addDays(d,n));return [
+{id:uid(),title:'高一甲 第五課小考',date:next(3),time:'09:00',lane:'c1',task:false,note:'完成考卷後要印製'},
+{id:uid(),title:'高一乙 講義校對',date:next(1),time:'',lane:'c2',task:true,note:'確認例句與單字'},
+{id:uid(),title:'日本交流｜視訊準備',date:next(2),time:'',lane:'jp',task:true,note:'確認分組與遊戲'},
+{id:uid(),title:'韓國交流｜文化題庫修改',date:next(4),time:'',lane:'kr',task:true,note:'等待題目確認'},
+{id:uid(),title:'多元選修｜活動設計',date:next(5),time:'',lane:'elective',task:true,note:''},
+{id:uid(),title:'高二甲 閱讀測驗',date:next(7),time:'10:00',lane:'c3',task:false,note:''},
+{id:uid(),title:'國際交流程式測試',date:next(9),time:'',lane:'jp',task:true,note:'學生操作流程'},
+{id:uid(),title:'醫院回診',date:next(12),time:'14:30',lane:'personal',task:false,note:''},
+{id:uid(),title:'臨時代課',date:next(8),time:'11:00',lane:'other',task:false,note:''},
+{id:uid(),title:'考卷題目構思',date:'',time:'',lane:'c4',task:true,note:'沒有確定截止日，先記著'},
+{id:uid(),title:'充實補強｜字彙練習',date:next(11),time:'',lane:'support',task:true,note:''},
+{id:uid(),title:'高一甲 第六課講義初稿',date:next(16),time:'',lane:'c1',task:true,note:''}
+]}
+try{items=JSON.parse(localStorage.getItem('days-organized-v2')||'null')||[]}catch{items=[]}
+if(items.length && LANES.length===1)loadDemoLanes()
+function persist(){localStorage.setItem('days-organized-v2',JSON.stringify(items))}
+function visible(){return items.filter(i=>!i.hidden&&(filter==='all'||i.lane===filter))}
+// Calendar overview is intentionally distinct from the period-by-period teaching timetable.
+function overviewVisible(){return visible().filter(e=>!e.task&&e.date&&(!e.autoSchedule||laneCategory(LANES.find(l=>l.id===e.lane)||{kind:'class',name:''})!=='course')&&(e.placement?e.placement!=='week':(e.overview===true||(e.overview!==false&&!e.period))))}
+function renderStreams(){let h='<div class="sectionTitle">我的工作線</div>';h+=`<button class="stream ${filter==='all'?'active':''}" data-lane="all"><span class="dot" style="background:#c8d9c8"></span>所有事情<small>${items.length}</small></button>`;for(let [kind,title] of [['class','我的班級'],['item','我的事項']]){h+=`<div class="sep"></div><div class="filterLabel">${title}</div>`;for(let l of getKinds(kind)){h+=`<button class="stream ${filter===l.id?'active':''}" data-lane="${l.id}"><span class="dot" style="background:${l.color}"></span>${escapeHTML(l.name)}<small>${items.filter(i=>i.lane===l.id).length}</small></button>`}h+=`<button class="stream" data-create="${kind}" style="color:#658b76">＋ ${kind==='class'?'新增班級':'新增事項'}</button>`}h+='<div class="note">你可以自由新增班級和事項、替它們改名與換色。點選名稱，就只看相關安排。</div>';$('#streams').innerHTML=h;document.querySelectorAll('[data-lane]').forEach(b=>b.onclick=()=>{filter=b.dataset.lane;render()});document.querySelectorAll('[data-create]').forEach(b=>b.onclick=()=>openManage(b.dataset.create))}
+
+function showDay(d,other){let arr=overviewVisible().filter(e=>e.date===iso(d)).sort((a,b)=>(String(a.period||'').padStart(2,'0')+(a.time||'')).localeCompare(String(b.period||'').padStart(2,'0')+(b.time||'')));let show=arr.slice(0,other?2:4);let hol=holidayName(iso(d));return `<div class="day ${hol?'holiday':''} ${other?'other':''} ${iso(d)===iso(today())?'today':''}" data-date="${iso(d)}"><div class="dayDateLine"><span class="daynum">${d.getMonth()+1}/${d.getDate()}</span>${d.getDay()===1?`<span class="schoolWeekTag">第 ${schoolWeekNumber(d)} 週</span>`:""}</div>${hol?`<span class="holidayFlag">${escapeHTML(hol)}</span>`:''}${show.map(e=>`<button class="event" data-id="${e.id}" style="background:${bg(e.lane)}">${escapeHTML(eventTimeLabel(e))}${escapeHTML(e.title)}${e.done?' ✓':''}</button>`).join('')}${arr.length>show.length?`<div class="more">還有 ${arr.length-show.length} 件</div>`:''}</div>`}
+function escapeHTML(t){return String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderCalendar(){if(view==='lessons'){renderLessons();return}$('#lessonBar').style.display='none';let start,end,title;let a=anchor;if(view==='day'){start=new Date(a);end=addDays(start,1);title=`${a.getMonth()+1} 月 ${a.getDate()} 日`}else if(view==='week'||view==='two'){start=monday(a);end=addDays(start,view==='week'?7:14);title=`${start.getMonth()+1}/${start.getDate()} — ${addDays(end,-1).getMonth()+1}/${addDays(end,-1).getDate()}`}else if(view==='month'){start=new Date(a.getFullYear(),a.getMonth(),1,12);end=new Date(a.getFullYear(),a.getMonth()+1,1,12);title=`${a.getFullYear()} 年 ${a.getMonth()+1} 月`}else{let m=a.getMonth()<7?1:8;start=new Date(a.getFullYear(),m-1,1,12);end=new Date(a.getFullYear(),m+5,1,12);title=`${a.getFullYear()} 年 ${m===1?'上':'下'}學期 · ${m}–${m+4} 月`}
+$('#rangeTitle').textContent=title;$('#views').querySelectorAll('button').forEach(b=>b.classList.toggle('selected',b.dataset.view===view));let h='';if(view==='semester'){h='<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px">';for(let m=new Date(start);m<end;m=new Date(m.getFullYear(),m.getMonth()+1,1,12)){let ev=overviewVisible().filter(e=>fromISO(e.date).getFullYear()===m.getFullYear()&&fromISO(e.date).getMonth()===m.getMonth());h+=`<button class="monthBox" data-month="${iso(m)}" style="text-align:left;padding:17px;border-radius:15px;background:#f7f8f4;min-height:150px"><strong style="font-size:22px;font-weight:500">${m.getMonth()+1}月</strong><div class="small" style="margin:7px 0 13px">${ev.length} 件安排 · ${Object.keys(HOLIDAYS).filter(d=>d.slice(0,7)===iso(m).slice(0,7)).length} 個假日標記</div>${ev.slice(0,4).map(x=>`<div style="font-size:11px;padding:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:${bg(x.lane)};border-radius:6px;margin:4px 0">${escapeHTML(x.title)}</div>`).join('')}</button>`}h+='</div>'}else{let gs=view==='day'?monday(start):view==='month'?monday(start):start;let ge=view==='day'?addDays(gs,7):view==='month'?addDays(monday(addDays(end,-1)),7):end;h='<div class="weekdays">'+['一','二','三','四','五','六','日'].map(w=>`<div>${w}</div>`).join('')+'</div><div class="days">';for(let d=gs;d<ge;d=addDays(d,1))h+=showDay(d,(view==='day'&&iso(d)!==iso(start))||(view==='month'&&d.getMonth()!==start.getMonth()));h+='</div>';if(view==='day')h+='<div class="small" style="margin-top:11px">一天視角會顯示所在週，點選當天事項即可調整。</div>'}$('#calendar').innerHTML=h;$('#countLabel').textContent=`重要事件 ${overviewVisible().filter(e=>e.date>=iso(start)&&e.date<iso(end)).length} 件`;document.querySelectorAll('.day').forEach(x=>x.onclick=e=>{if(e.target.closest('[data-id]'))return;openForm({date:x.dataset.date})});document.querySelectorAll('.event').forEach(x=>x.onclick=e=>{e.stopPropagation();openForm(items.find(i=>i.id===x.dataset.id))});document.querySelectorAll('.monthBox').forEach(x=>x.onclick=()=>{anchor=fromISO(x.dataset.month);view='month';render()})}
+function renderRight(){
+ let undone=visible().filter(x=>x.task&&!x.done).sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999'));
+ $('#taskCount').textContent=String(undone.length);
+ $('#tasks').innerHTML=undone.length?undone.map(x=>`<div class="priority"><button class="check" data-complete="${x.id}" aria-label="標記完成"></button><div style="flex:1;min-width:0;cursor:pointer" data-open="${x.id}"><div class="title">${escapeHTML(x.title)}</div><div class="meta"><span class="dot" style="background:${bg(x.lane)};display:inline-block;vertical-align:middle"></span> ${escapeHTML(label(x.lane))} · ${x.date?'預計 '+x.date.slice(5).replace('-','/'):'尚未排日期'}</div></div></div>`).join(''):'<div class="emptyArea">目前沒有待辦 ☀</div>';
+ document.querySelectorAll('[data-complete]').forEach(b=>b.onclick=()=>{let i=items.find(i=>i.id===b.dataset.complete);if(i){i.done=true;persist();render()}});
+ document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>openForm(items.find(i=>i.id===b.dataset.open)));
+}
+function syncClassFilter(){
+ const pick=$('#showClasses');if(!pick)return;
+ const isCourse=view==='lessons';pick.textContent=isCourse?'課程管理':'重要行事管理';
+ pick.classList.toggle('isFiltered',filter!=='all');
+}
+function showAllClasses(){filter='all';selectedClassLane='all';view='lessons';document.querySelector('#showImportant').textContent='重要行事';hideSheet('classMenu');hideSheet('classActions');render()}
+function render(){if(filter!=='all'&&!LANES.some(l=>l.id===filter))filter='all';syncClassFilter();renderStreams();renderCalendar();renderRight();renderTodoDesk()}
+let showCompletedTodos=localStorage.getItem('days-organized-show-completed-v25')==='true';
+function renderTodoDesk(){
+ const rows=items.filter(x=>x.task),active=rows.filter(x=>!x.done),finished=rows.filter(x=>x.done),done=finished.length,open=active.length;
+ $('#todoSummary').textContent=done+' 已完成 · '+open+' 待做';
+ $('#todoCountTop').textContent=open?'('+open+')':'';
+ $('#todoToggleDone').textContent=showCompletedTodos?'收起已完成':'展開已完成';
+ const rowHTML=(x,isDone)=>`<div class="todoRow ${isDone?'finished':''}"><div class="todoTextBlock"><span class="todoText">${escapeHTML(x.title)}</span>${isDone?`<span class="todoDoneDate">${x.completedAt?escapeHTML(x.completedAt.replaceAll('-','/')):'完成日期未記錄'}</span>`:''}</div><button class="todoEdit" type="button" data-todo-open="${x.id}" aria-label="編輯 ${escapeHTML(x.title)}">⋯</button><button class="todoAction ${isDone?'undo':''}" type="button" data-todo-done="${x.id}" aria-label="${isDone?'恢復未完成':'標記完成'}">${isDone?'恢復':'完成'}</button></div>`;
+ $('#todoRows').innerHTML=(active.map(x=>rowHTML(x,false)).join('')||'<div class="todoEmpty">目前沒有待做事項。</div>')+`<div class="todoCompletedHeading"><span>已完成 ${done} 件</span><button id="todoCompletedInnerToggle" type="button">${showCompletedTodos?'收起':'展開'} ${showCompletedTodos?'⌃':'⌄'}</button></div>`+(showCompletedTodos?`<div class="todoCompletedRows">${finished.slice().reverse().map(x=>rowHTML(x,true)).join('')||'<div class="todoEmpty">還沒有完成紀錄</div>'}</div>`:'');
+ $('#todoFoot').textContent='已完成事項會保留在清單底部，不會自動刪除。';
+ document.querySelectorAll('[data-todo-done]').forEach(b=>b.onclick=()=>{const t=items.find(i=>i.id===b.dataset.todoDone);if(!t)return;t.done=!t.done;t.completedAt=t.done?iso(today()):'';persist();renderTodoDesk();renderRight()});
+ document.querySelectorAll('[data-todo-open]').forEach(b=>b.onclick=()=>{$('#taskMenu').classList.remove('show');openForm(items.find(i=>i.id===b.dataset.todoOpen))});
+ $('#todoCompletedInnerToggle').onclick=toggleCompletedTodos;
+}
+function toggleCompletedTodos(){showCompletedTodos=!showCompletedTodos;localStorage.setItem('days-organized-show-completed-v25',String(showCompletedTodos));renderTodoDesk()}
+$('#todoToggleDone').onclick=toggleCompletedTodos;
+function openTodos(){renderTodoDesk();$('#taskMenu').classList.add('show')}
+$('#jumpTodos').onclick=openTodos;
+// Browser speech-to-text; the local organizer removes common spoken fillers.
+// It does not call an AI language model or auto-save anything.
+let voiceRecognition=null, voiceListening=false;
+function voiceNotice(message){const el=$('#voiceStatus');el.hidden=!message;el.textContent=message||''}
+function organizeSpokenTodo(raw){
+ let v=String(raw||'').trim().replace(/[，。！？；]+/g,'，').replace(/\s+/g,' ');
+ v=v.replace(/^(?:嗯|呃|那個|就是|我想一下|對了|啊)[，\s]*/g,'');
+ v=v.replace(/^(?:我剛剛想到|我突然想到|我想到|我記得|我需要記得|我需要|我得|我還要|記得要|提醒我|幫我記一下|幫我記得|請幫我記得|我要記得|我明天要|我今天要)[，\s]*/,'');
+ v=v.replace(/[，\s]*(?:這件事情要記下來|這個要記一下|不要忘記這件事|先這樣|好就這樣|謝謝)[，\s]*$/,'');
+ // Preserve dates, class names, objects and the verb; never guess missing details.
+ v=v.replace(/^[，\s]+|[，\s]+$/g,'');
+ return v||String(raw||'').trim();
+}
+function showVoiceReview(text){
+ const raw=String(text||'').trim();if(!raw){voiceNotice('沒有辨識到內容，可以再說一次或直接手打。');return}
+ $('#voiceOriginal').value=raw;$('#voiceClean').value=organizeSpokenTodo(raw);
+ $('#voiceReview').hidden=false;voiceNotice('辨識完成。請確認整理後內容，再按「確認加入待辦」。');
+ $('#voiceClean').focus();
+}
+function stopVoice(){if(voiceRecognition&&voiceListening){try{voiceRecognition.stop()}catch{}}}
+$('#todoMic').onclick=()=>{
+ if(voiceListening){stopVoice();return}
+ const SpeechCtor=window.SpeechRecognition||window.webkitSpeechRecognition;
+ if(!SpeechCtor){voiceNotice('這個瀏覽器目前沒有提供語音辨識。可以點輸入框，用手機鍵盤的麥克風聽寫，或改用支援語音辨識的瀏覽器。');$('#todoQuickText').focus();return}
+ try{
+  let transcript='';voiceRecognition=new SpeechCtor();voiceRecognition.lang='zh-TW';voiceRecognition.continuous=false;voiceRecognition.interimResults=true;
+  voiceRecognition.onstart=()=>{voiceListening=true;$('#todoMic').classList.add('listening');$('#todoMic').textContent='■';voiceNotice('正在聽你說話，說完可以再點一次停止。')};
+  voiceRecognition.onresult=e=>{let s='';for(let i=0;i<e.results.length;i++)s+=e.results[i][0].transcript;transcript=s;voiceNotice('辨識中：'+transcript)};
+  voiceRecognition.onerror=e=>{voiceNotice(e.error==='not-allowed'?'沒有取得麥克風權限。請允許麥克風，或用鍵盤語音輸入。':'語音辨識未成功（'+e.error+'）。可以重新嘗試或直接手打。')};
+  voiceRecognition.onend=()=>{voiceListening=false;$('#todoMic').classList.remove('listening');$('#todoMic').textContent='🎙';if(transcript.trim())showVoiceReview(transcript)};
+  voiceRecognition.start();
+ }catch(e){voiceNotice('目前無法啟動語音辨識；可使用手機鍵盤上的麥克風。')}
+};
+$('#voiceCancel').onclick=()=>{$('#voiceReview').hidden=true;voiceNotice('')};
+$('#voiceSave').onclick=()=>{
+ const title=$('#voiceClean').value.trim();if(!title){$('#voiceClean').focus();return}
+ const lane=(LANES.find(x=>x.id==='personal')||LANES.find(x=>x.id!=='all')||{}).id;
+ if(!lane){voiceNotice('請先建立至少一個班級或事項分類。');return}
+ items.push({id:uid(),title,date:'',time:'',period:'',lane,task:true,done:false,note:''});persist();
+ $('#voiceReview').hidden=true;voiceNotice('已加入待辦清單。');renderTodoDesk();renderRight();
+};
+$('#todoQuickForm').onsubmit=e=>{e.preventDefault();const v=$('#todoQuickText').value.trim();if(!v)return;const lane=(LANES.find(x=>x.id==='personal')||LANES.find(x=>x.id!=='all')||{}).id;if(!lane){alert('請先建立一個班級或事項');return}items.push({id:uid(),title:v,date:'',time:'',period:'',lane,task:true,done:false,note:''});persist();$('#todoQuickText').value='';renderTodoDesk();renderRight()};
+function setFormMode(mode){formMode=mode;document.querySelectorAll('#modeToggle button').forEach(b=>b.classList.toggle('selected',b.dataset.mode===mode));$('#modeHelp').textContent=mode==='task'?'待辦不會顯示在日曆裡；可先不填日期。':'有日期的事件可以選擇顯示在總覽；固定課程只顯示於節次課表。需要重複的班級或事項，請至「管理班級與事項」設定。';$('#fDate').closest('.formgrid').querySelector('.field').textContent=mode==='task'?'預計完成日（可留空）':'哪一天？';$('#fTimeMode').closest('div').style.opacity=mode==='task'?'0.55':'1'}
+$('#modeToggle').onclick=e=>{let b=e.target.closest('[data-mode]');if(b)setFormMode(b.dataset.mode)};
+function relatedEventIds(ev){
+ if(!ev||ev.task||ev.autoSchedule||!ev.date)return ev?.id?[ev.id]:[];
+ if(ev.groupId)return items.filter(x=>x.groupId===ev.groupId&&!x.task).map(x=>x.id);
+ // Backward compatibility: older saved exams were stored as separate days.
+ // Only cluster consecutively dated, identically named events in the same category.
+ const candidates=items.filter(x=>!x.task&&!x.autoSchedule&&x.date&&x.title===ev.title&&x.lane===ev.lane&&!x.groupId).sort((a,b)=>a.date.localeCompare(b.date));
+ let pos=candidates.findIndex(x=>x.id===ev.id);if(pos<0)return [ev.id];
+ let first=pos,last=pos;
+ while(first>0 && iso(addDays(fromISO(candidates[first-1].date),1))===candidates[first].date)first--;
+ while(last<candidates.length-1 && iso(addDays(fromISO(candidates[last].date),1))===candidates[last+1].date)last++;
+ return candidates.slice(first,last+1).map(x=>x.id);
+}
+function setEventGroupUI(obj){
+ formGroupIds=relatedEventIds(obj);
+ const group=formGroupIds.map(id=>items.find(x=>x.id===id)).filter(Boolean).sort((a,b)=>a.date.localeCompare(b.date));
+ const box=$('#eventGroupBox');box.style.display=group.length>1?'block':'none';
+ if(group.length>1){$('#eventGroupScope').value='group';$('#eventGroupSummary').textContent=`共 ${group.length} 天：${group.map(x=>x.date.slice(5).replace('-','/')).join('、')}。例如只改分類，這 ${group.length} 天會同時更新。`}
+}
+function syncArrangementVisibility(){const lane=LANES.find(x=>x.id===$('#fLane').value);const personal=lane&&laneCategory(lane)==='personal';$('#fChangeTypeWrap').hidden=!!personal;if(personal)$('#fChangeType').value='normal';}
+$('#fLane').addEventListener('change',syncArrangementVisibility);
+function refreshEventConflict(){
+ const date=$('#fDate').value,period=$('#fTimeMode').value==='period'?$('#fPeriod').value:'';
+ const isEvent=formMode==='event'&&Boolean(date&&period);
+ const colliding=isEvent?items.filter(x=>x.id!==editing&&x.date===date&&String(x.period||'')===String(period)&&x.autoSchedule&&!x.hidden):[];
+ const box=$('#fConflictBox');box.hidden=!colliding.length;box.style.display=colliding.length?'block':'none';
+ if(colliding.length)$('#fConflictText').textContent=colliding.map(x=>label(x.lane)).join('、')+'；建議先並列提醒，除非活動確實取代這堂課。';
+ if(!colliding.length)$('#fConflictMode').value='alongside';
+}
+function syncEventPlacement(){
+ const lane=LANES.find(l=>l.id===$('#fLane').value);
+ const isCourse=lane&&laneCategory(lane)==='course';
+ $('#fPlacementHelp').textContent=isCourse?'固定課程通常只在週課表；特殊事件可自行選兩邊顯示。':'這是同一筆行程，不用在重要行事與週課表重複輸入。';
+ refreshEventConflict();
+}
+['fDate','fPeriod','fTimeMode'].forEach(id=>$('#'+id).addEventListener('change',refreshEventConflict));
+$('#fLane').addEventListener('change',syncEventPlacement);
+function openForm(obj={}){editing=obj.id||null;setEventGroupUI(obj);$('#modalTitle').textContent=editing?'調整這件事':'記下一件事';$('#fTitle').value=obj.title||'';$('#fDate').value=obj.date||'';$('#fTime').value=obj.time||'';showTimeMode(obj.allDay?'all':obj.time==='夜間'?'night':obj.period?'period':obj.time?'clock':'period',obj.period||'');holidayWarn(obj.date||'');$('#fLane').innerHTML=LANES.slice(1).map(x=>`<option value="${x.id}">${escapeHTML(x.name)}</option>`).join('');$('#fLane').value=obj.lane|| (filter==='all'?(LANES[1]?.id||''):filter);syncArrangementVisibility();if(!LANES.slice(1).length)$('#fLane').innerHTML='<option value=>請先新增班級或事項</option>';$('#fChangeType').value=obj.changeType|| (obj.coverLesson?'cover':obj.changedLesson?'temporary':'normal');syncArrangementVisibility();$('#fNote').value=obj.note||'';$('#fOverview').checked=obj.overview===true||(obj.overview!==false&&!obj.period&&!obj.autoSchedule);$('#fPlacement').value=obj.placement||(obj.autoSchedule?'week':(obj.overview===false?'week':'both'));$('#fConflictMode').value=obj.replacesLesson?'replace':'alongside';setFormMode(obj.task?'task':'event');refreshEventConflict();$('#delete').style.display=editing?'block':'none';$('#itemmenu').innerHTML=editing?`<button data-move="1">延後一天 →</button><button data-move="7">延後一週 →</button>${obj.task?`<button id="toggleDone">${obj.done?'取消完成':'✓ 標記完成'}</button>`:''}`:'';
+ document.querySelectorAll('[data-move]').forEach(b=>b.onclick=()=>{let i=items.find(e=>e.id===editing);if(!i)return;let newDate=iso(addDays(i.date?fromISO(i.date):today(),Number(b.dataset.move)));if(!confirmHolidayDates([newDate]))return;i.date=newDate;if(i.autoSchedule)i.customized=true;persist();closeForm();render()});let t=$('#toggleDone');if(t)t.onclick=()=>{let i=items.find(e=>e.id===editing);i.done=!i.done;persist();closeForm();render()};$('#overlay').classList.add('show');$('#fTitle').focus()}
+function closeForm(){$('#overlay').classList.remove('show')}$('#fDate').addEventListener('change',e=>holidayWarn(e.target.value));
+$('#save').onclick=()=>{let title=$('#fTitle').value.trim();if(!title&&$('#fChangeType').value==='cover')title='臨時代課';if(!title){$('#fTitle').focus();return}if(!$('#fLane').value){alert('請先建立班級或事項分類');openManage('class');return}if(formMode==='event'&&!$('#fDate').value){alert('日曆行程需要日期；沒有日期的工作可以改成待辦事項。');return}if(formMode==='event'&&!confirmHolidayDates([$('#fDate').value]))return;let old=editing?items.find(i=>i.id===editing):null;let x={...old,id:editing||uid(),title,date:$('#fDate').value,time:$('#fTimeMode').value==='clock'?$('#fTime').value:$('#fTimeMode').value==='night'?'夜間':'',allDay:$('#fTimeMode').value==='all',period:$('#fTimeMode').value==='period'?$('#fPeriod').value:'',lane:$('#fLane').value,note:$('#fNote').value,changeType:$('#fChangeType').value,changedLesson:$('#fChangeType').value!=='normal',coverLesson:$('#fChangeType').value==='cover',placement:$('#fPlacement').value,overview:$('#fPlacement').value!=='week',replacesLesson:$('#fConflictBox').style.display!=='none'&&$('#fConflictMode').value==='replace',task:formMode==='task',done:old?.done||false};if(x.autoSchedule)x.customized=true;if(editing){
+ const groupEdit=$('#eventGroupBox').style.display!=='none'&&$('#eventGroupScope').value==='group'&&formGroupIds.length>1;
+ if(groupEdit){
+  const delta=Math.round((fromISO(x.date)-fromISO(old.date))/86400000);
+  const targetItems=items.filter(i=>formGroupIds.includes(i.id));
+  const newDates=targetItems.map(i=>iso(addDays(fromISO(i.date),delta)));
+  // Ask once for newly affected holiday dates, not once per day.
+  if(delta && !confirmHolidayDates(newDates))return;
+  const gid=old.groupId||'group-'+uid();
+  items=items.map(i=>formGroupIds.includes(i.id)?{...i,title:x.title,lane:x.lane,note:x.note,overview:x.overview,placement:x.placement,replacesLesson:x.replacesLesson,changeType:x.changeType,changedLesson:x.changedLesson,coverLesson:x.coverLesson,task:x.task,date:iso(addDays(fromISO(i.date),delta)),time:x.time,period:x.period,groupId:gid}:i);
+ }else items=items.map(i=>i.id===editing?x:i);
+}else items.push(x);persist();closeForm();render()};
+$('#cancel').onclick=closeForm;$('#delete').onclick=()=>{if(!editing)return;let groupDel=$('#eventGroupBox').style.display!=='none'&&$('#eventGroupScope').value==='group'&&formGroupIds.length>1;if(!confirm(groupDel?`確定刪除這組 ${formGroupIds.length} 天的所有事件？`:'確定刪除這件事？'))return;if(groupDel){items=items.filter(i=>!formGroupIds.includes(i.id));persist();closeForm();render();return}let old=items.find(i=>i.id===editing);if(old?.autoSchedule){old.customized=true;old.hidden=true;old.date='';old.task=false;}else items=items.filter(i=>i.id!==editing);persist();closeForm();render()};$('#overlay').onclick=e=>{if(e.target.id==='overlay')closeForm()};document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeForm();$('#manageOverlay').classList.remove('show')}});$('#add').onclick=()=>openForm({date:iso(today()),task:false});$('#addTask').onclick=()=>openForm({task:true});
+function quickAdd(){let v=$('#quickInput').value.trim();if(!v)return;let d=today(),date='',lane=filter==='all'?(LANES[1]?.id||''):filter;let m=v.match(/(今天|明天|後天|下週[一二三四五六日天]|\d{1,2}\/\d{1,2}|\d{4}-\d{2}-\d{2})/);if(m){let t=m[1];if(t==='今天')date=iso(d);else if(t==='明天')date=iso(addDays(d,1));else if(t==='後天')date=iso(addDays(d,2));else if(t.startsWith('下週')){let idx='一二三四五六日天'.indexOf(t.slice(-1));date=iso(addDays(monday(d),7+(idx===7?6:idx)))}else if(t.includes('/')){let [mm,dd]=t.split('/').map(Number),year=d.getFullYear();if(new Date(year,mm-1,dd,12)<addDays(d,-30))year++;date=iso(new Date(year,mm-1,dd,12))}else date=t;v=v.replace(m[0],'').trim()}for(let l of LANES.slice(1))if(v.includes(l.name)){lane=l.id;break}if(!lane){alert('請先新增一個班級或事項分類');return}items.push({id:uid(),title:v||$('#quickInput').value.trim(),date,time:'',lane,task:true,note:'',done:false});persist();$('#quickInput').value='';render()}
+$('#quickAdd').onclick=quickAdd;$('#quickInput').onkeydown=e=>{if(e.key==='Enter')quickAdd()};
+$('#views').onclick=e=>{let v=e.target.dataset.view;if(v){view=v;render()}};$('#today').onclick=()=>{anchor=today();render()};function go(n){if(view==='day')anchor=addDays(anchor,n);else if(view==='week'||view==='lessons')anchor=addDays(anchor,n*7);else if(view==='two')anchor=addDays(anchor,n*14);else if(view==='month')anchor=new Date(anchor.getFullYear(),anchor.getMonth()+n,15,12);else anchor=new Date(anchor.getFullYear(),anchor.getMonth()+n*5,15,12);render()}$('#prev').onclick=()=>go(-1);$('#next').onclick=()=>go(1);$('#reset').onclick=()=>{if(confirm('載入示範資料會取代目前畫面裡的資料。建議先匯出備份，確定要繼續嗎？')){loadDemoLanes();items=demo();persist();render()}};$('#export').onclick=()=>exportFullBackup();
+
+// 初始資料由使用者提供的四份進度圖與課表人工轉錄。未標明內容的課維持空白。
+const REAL_IMPORT_VERSION='2026-11-14-v12';
+function realSeed(){
+  const start='2026-08-31',end='2027-01-20',cycleAnchor='2026-08-31';
+  const defs=[
+    ['h1ren','高一仁','#D8B29F',[[1,1],[2,6],[2,8],[4,2],[5,1]]],
+    ['h1zhong','高一忠','#D7C890',[[2,4],[3,7],[4,5],[5,5]]],
+    ['h2zhong','高二忠','#A8BEAA',[[1,3],[2,7],[3,4],[4,1]]],
+    ['h2ren','高二仁','#A5BCC7',[[1,4],[2,2],[3,5],[3,8],[5,4]]],
+    ['filleng','英文充實','#D1B3C8',[[4,3]]],
+    ['movieeng','看電影學英文','#B5AACA',[[4,3]]]
+  ];
+  LANES=[{id:'all',name:'所有事情',color:'#c8d9c8',kind:'all'},...defs.map((d,i)=>({id:d[0],name:d[1],color:d[2],kind:i<4?'class':'item',schedule:{mode:'weekly',start,end,cycleAnchor,slots:d[3].map(([day,period])=>({day,period:String(period),cycle:(d[0]==='h1ren'&&day===2&&period===8)||(d[0]==='filleng')?'odd':d[0]==='movieeng'?'even':'all'}))}})),{id:'jp',name:'岩崎高校交流',color:'#B8CCD1',kind:'item'},{id:'sanchong',name:'三千浦交流',color:'#B9C7AA',kind:'item'},{id:'busan',name:'釜山外語交流',color:'#CBB9C3',kind:'item'},{id:'personal',name:'生活與家庭',color:'#CFC6BA',kind:'item'}];
+  items=[];for(let l of LANES.slice(1))if(l.schedule)updateSchedule(l);
+  const add=(lane,date,period,progress,kind='小考',note='')=>{
+    let x=items.find(x=>x.lane===lane&&x.date===date&&Number(x.period)===period);
+    if(!x){x={id:uid(),lane,date,period:String(period),title:label(lane),task:false,note:'',lessonKind:'上課',lessonProgress:''};items.push(x)}
+    x.lessonProgress=progress;x.lessonKind=kind;x.note=note;
+  };
+  const rows={
+    h1zhong:[
+      ['2026-11-03',4,'考 L4 單'],['2026-11-06',5,'考 3-2＋2-2'],
+      ['2026-11-10',4,'考 L5 單'],['2026-11-13',5,'考 3-3＋2-3'],
+      ['2026-11-17',4,'L4 大卷'],['2026-11-20',5,'考 3-4＋2-4'],
+      ['2026-11-24',4,'L5 大卷'],['2026-11-27',5,'考 3-5＋2-5']],
+    h1ren:[
+      ['2026-11-03',6,'考 L4 單'],['2026-11-05',2,'考雜 W1'],['2026-11-06',1,'考 3-2＋2-2'],
+      ['2026-11-10',6,'考 L5 單'],['2026-11-10',8,'上翻譯','上課'],['2026-11-12',2,'考雜 W2'],['2026-11-13',1,'考 3-3＋2-3'],
+      ['2026-11-17',6,'L4 大卷'],['2026-11-19',2,'考雜 W3'],['2026-11-20',1,'考 3-4＋2-4'],
+      ['2026-11-24',6,'L5 大卷'],['2026-11-24',8,'上翻譯','上課'],['2026-11-26',2,'考雜 W4'],['2026-11-27',1,'考 3-5＋2-5']],
+    h2zhong:[
+      ['2026-11-02',3,'補充 1-3'],['2026-11-04',4,'雜 W3'],
+      ['2026-11-09',3,'9-3＋2-3'],['2026-11-11',4,'雜 W4'],
+      ['2026-11-16',3,'9-4＋2-4'],['2026-11-18',4,'補充 4-6'],
+      ['2026-11-23',3,'9-5＋2-5'],['2026-11-25',4,'補充 7-10']],
+    h2ren:[
+      ['2026-11-02',4,'補充 1-3'],['2026-11-04',5,'雜 W3'],
+      ['2026-11-09',4,'9-3＋2-3'],['2026-11-11',5,'雜 W4'],
+      ['2026-11-16',4,'9-4＋2-4'],['2026-11-18',5,'補充 4-6'],
+      ['2026-11-23',4,'9-5＋2-5'],['2026-11-25',5,'補充 7-10']],
+  };
+  for(const [lane,records] of Object.entries(rows))for(const r of records)add(lane,...r);
+  // 個別資料採使用者圖片；影像中的 × 不假設為整學期取消，僅保留沒有進度的課堂。
+  // 12/1–12/3 段考為日期提醒（不強行刪除原課表）。
+  for(let day of ['2026-12-01','2026-12-02','2026-12-03'])items.push({id:uid(),groupId:'second-exam-2026',title:'第二次段考',date:day,period:'',time:'',lane:'personal',task:false,note:'校內段考；當日實際課務請依學校公告調整',lessonKind:'段考'});
+  const events=[
+    ['sanchong','2026-11-25','14:30','15:30','三千浦 Eng'],
+    ['jp','2026-12-07','15:45','17:00','岩崎高校 Eng'],
+    ['sanchong','2026-12-16','14:30','15:30','三千浦 Eng'],
+    ['busan','2026-12-22','19:50','20:30','釜山外語 Chi']
+  ];
+  for(let [lane,date,time,endTime,title] of events)items.push({id:uid(),lane,date,time,period:'',title,task:false,done:false,note:`圖片標示 ${time}–${endTime}；可點擊修改。`});
+  // 將來源圖片中需再次確認的內容留作編輯提示，而不是猜測成固定週次規則。
+  // 三個單雙週時段已由使用者確認，無需加入待確認事項。
+  persistLanes();persist();localStorage.setItem('days-organized-real-version',REAL_IMPORT_VERSION);
+  filter='all';view='lessons';anchor=fromISO('2026-11-16');
+}
+const already=localStorage.getItem('days-organized-v2');
+if(!already && !localStorage.getItem('days-organized-real-version')){
+ realSeed();
+ // First launch only: use Baby 柔霧撞色 for all default categories.
+ const initialColors=['#F4C9D9','#BFDDF0','#F2E0AC','#C6DDC2','#D3C8E9','#EED1B9','#C2DFE1','#E3C7CE','#DBD6BF','#C9D4EA','#EBC6C0','#D0E0C6'];
+ LANES.filter(l=>l.id!=='all').forEach((l,i)=>{l.color=initialColors[i%initialColors.length]});
+ persistLanes();
+ localStorage.setItem('days-organized-course-palette-preset','mix1');
+}
+$('#loadReal').onclick=()=>{
+ if(!confirm('重新載入圖片中的課表、四班進度與交流日期，會取代目前行事曆資料。請先按「匯出備份」。確定繼續嗎？'))return;
+ realSeed();render();
+};
+
+if(!localStorage.getItem('days-organized-v2'))persist();
+const COLORS=['#CBE8F7','#B9DFF5','#A9D7F4','#DBEDF8','#F9D4E8','#F7BFD9','#F4ABC9','#FBE3F0','#D7C9F5','#D2E0FA','#FFF0B8','#E8F6BE','#CEF0DF','#FBDACA','#F3D7FF','#FF679B','#F04F77','#F05A61','#FF8F49','#FFBC37','#FFDF35','#7DCE68','#28C2B3','#41ABF1','#6377F8','#9353D8','#B54AF3','#E94AB0','#16A98E','#F76B69','#D8B29F','#CBA59B','#B99A8D','#A9897E','#D8BEAB','#C9B1A3','#B9A190','#A78F83','#D7C890','#C8B982','#B7A876','#A69A77','#DDD1B0','#CFC5A6','#C2B696','#B1A489','#A8BEAA','#97B39D','#85A68F','#799383','#B9C7AA','#A5B69F','#92A68E','#7D947D','#A5BCC7','#97AFBE','#88A2B2','#748EA0','#BBCAD0','#AABCC7','#97ABB7','#8196A4','#B5AACA','#A79CBF','#968AAF','#867C9F','#C4B9CE','#B7ACBF','#A69AAE','#93899E','#D1B3C8','#C4A5BC','#B696AB','#A6859A','#D8C1CA','#CBB2BC','#BBA3AC','#AC939D','#CFC6BA','#C4B9AC','#B8AB9D','#A99B8E','#DCD5CA','#CBC6BA','#BBB6AB','#A7A397','#B8CCD1','#A7C0BE','#9CB5B3','#8BA5A4'];
+let manageKind='class',editingLane=null,chosenColor=COLORS[0],chosenBorderColor='#FFFFFF',chosenBorderWidth=2;
+function selectColor(hex){if(!/^#[0-9a-f]{6}$/i.test(hex))return;chosenColor=hex.toUpperCase();$('#customColor').value=chosenColor;$('#colorHex').value=chosenColor;$('#previewColor').style.background=chosenColor;document.querySelectorAll('.swatch').forEach(x=>x.classList.toggle('picked',x.dataset.color.toUpperCase()===chosenColor))}
+function selectBorderColor(hex){if(!/^#[0-9a-f]{6}$/i.test(hex))return;chosenBorderColor=hex.toUpperCase();$('#laneBorderColor').value=chosenBorderColor;$('#laneBorderHex').value=chosenBorderColor;$('#previewBorder').style.background=chosenBorderColor}
+function selectBorderWidth(v){chosenBorderWidth=String(v);$('#laneBorderWidth').value=String(v)}
+function setRule(mode){ruleMode=mode;document.querySelectorAll('#ruleTabs button').forEach(b=>b.classList.toggle('selected',b.dataset.rule===mode));$('#weeklyFields').hidden=mode!=='weekly';$('#dateFields').hidden=mode!=='dates';renderRuleSummary();updateScheduleHolidayHint()}
+function renderRuleSummary(){let t=ruleMode==='none'?'沒有固定時間，只建立名稱與顏色。':ruleMode==='weekly'?`每週 ${weeklySlots.length} 個時段；由系統自動加入日曆。`:`已加入 ${specialDates.length} 筆日期。`;$('#scheduleSummary').textContent=t}
+function renderSlots(){let days=['日','一','二','三','四','五','六'];$('#weeklySlots').innerHTML=weeklySlots.map((x,i)=>`<div class="slotRow" style="display:flex;flex-wrap:wrap"><select class="fieldInput" data-slot-day="${i}">${days.map((d,j)=>`<option value="${j}" ${Number(x.day)===j?'selected':''}>週${d}</option>`).join('')}</select><select class="fieldInput" data-slot-cycle="${i}"><option value="all" ${!x.cycle||x.cycle==='all'?'selected':''}>每週</option><option value="odd" ${x.cycle==='odd'?'selected':''}>單週</option><option value="even" ${x.cycle==='even'?'selected':''}>雙週</option></select><select class="fieldInput slotPeriod" data-slot-period="${i}">${periodSelectOptions(x.period||'',true)}</select><input class="fieldInput slotClock" type="time" title="不選節次時才使用時間" data-slot-time="${i}" value="${escapeHTML(x.time||'')}"><button type="button" data-del-slot="${i}" aria-label="刪除時段">×</button></div>`).join('');document.querySelectorAll('[data-slot-day]').forEach(x=>x.onchange=()=>{weeklySlots[Number(x.dataset.slotDay)].day=Number(x.value);updateScheduleHolidayHint()});document.querySelectorAll('[data-slot-cycle]').forEach(x=>x.onchange=()=>{weeklySlots[Number(x.dataset.slotCycle)].cycle=x.value;updateScheduleHolidayHint()});document.querySelectorAll('[data-slot-period]').forEach(x=>x.onchange=()=>{weeklySlots[Number(x.dataset.slotPeriod)].period=x.value;if(x.value)weeklySlots[Number(x.dataset.slotPeriod)].time='';renderSlots()});document.querySelectorAll('[data-slot-time]').forEach(x=>x.onchange=()=>{weeklySlots[Number(x.dataset.slotTime)].time=x.value;if(x.value)weeklySlots[Number(x.dataset.slotTime)].period='';renderSlots()});document.querySelectorAll('[data-del-slot]').forEach(x=>x.onclick=()=>{weeklySlots.splice(Number(x.dataset.delSlot),1);renderSlots();renderRuleSummary()});renderRuleSummary();updateScheduleHolidayHint()}
+function renderSpecial(){specialDates.sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));$('#specialList').innerHTML=specialDates.map((x,i)=>`<span class="specialLine">${escapeHTML(x.date)} ${escapeHTML(x.period?periodLabel(x.period):(x.time||'整日'))}<button type="button" data-del-special="${i}">×</button></span>`).join('');document.querySelectorAll('[data-del-special]').forEach(b=>b.onclick=()=>{specialDates.splice(Number(b.dataset.delSpecial),1);renderSpecial()});renderRuleSummary();updateScheduleHolidayHint()}
+function addSpecial(date,time,period=''){if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||iso(fromISO(date))!==date)return false;if(!specialDates.some(x=>x.date===date&&String(x.period||'')===String(period||'')&&x.time===(period?'':(time||''))))specialDates.push({date,time:period?'':(time||''),period});renderSpecial();return true}
+$('#addSlot').onclick=()=>{weeklySlots.push({day:1,period:'1',time:'',cycle:'all'});renderSlots()};
+$('#addSpecial').onclick=()=>{if(!addSpecial($('#specialDate').value,$('#specialTime').value,$('#specialPeriod').value))alert('請先選擇正確日期');else $('#specialDate').value=''};
+$('#importDates').onclick=()=>{let raw=$('#bulkDates').value.trim(),bad=[];for(let line of raw.split(/\n+/)){let m=line.trim().match(/^(\d{4}-\d{2}-\d{2})(?:\s+(\d{1,2}:\d{2}))?$/);if(!m||!addSpecial(m[1],m[2]||''))bad.push(line)}$('#bulkDates').value=bad.join('\n');if(bad.length)alert('有 '+bad.length+' 筆日期無法辨識，已留在文字框。')};
+$('#ruleTabs').onclick=e=>{let b=e.target.closest('[data-rule]');if(b)setRule(b.dataset.rule)};
+function loadSchedule(l){const c=l?.schedule||{mode:'none'};weeklySlots=(c.slots||[]).map(x=>({...x}));specialDates=(c.dates||[]).map(x=>({...x}));$('#ruleStart').value=c.start||iso(today());$('#cycleAnchor').value=c.cycleAnchor||c.start||iso(today());$('#ruleEnd').value=c.end||iso(new Date(today().getFullYear()+1,0,31,12));$('#ruleCount').value=c.count||'';$('#bulkDates').value='';$('#specialDate').value='';$('#specialTime').value='';$('#specialPeriod').value='';renderSlots();renderSpecial();setRule(c.mode||'none')}
+function readSchedule(){if(ruleMode==='none')return {mode:'none'};if(ruleMode==='dates'){if(!specialDates.length)throw Error('請至少新增一個日期');return {mode:'dates',dates:specialDates.map(x=>({...x}))}}let start=$('#ruleStart').value,end=$('#ruleEnd').value;if(!start||!end||end<start)throw Error('請選擇正確的開始與結束日期');if(!weeklySlots.length)throw Error('請至少加入一個每週時段');let count=$('#ruleCount').value;if(count&&(!Number.isInteger(Number(count))||Number(count)<1))throw Error('重複次數必須是正整數');return {mode:'weekly',start,end,cycleAnchor:$('#cycleAnchor').value||start,slots:weeklySlots.map(x=>({...x})),count:count?Number(count):null}}
+let pendingLaneDeletion=null;
+function deleteLaneSafely(laneId){
+ const lane=LANES.find(x=>x.id===laneId);if(!lane||lane.id==='all')return;
+ pendingLaneDeletion=laneId;
+ const n=items.filter(x=>x.lane===laneId).length;
+ $('#deleteLaneDescription').textContent='「'+lane.name+'」目前有 '+n+' 筆相關行程。請選擇是否保留它們；這不會影響其他事項。';
+ $('#deleteLaneOverlay').classList.add('show');
+}
+function performLaneDelete(deleteEvents){
+ const laneId=pendingLaneDeletion;if(!laneId)return;
+ const lane=LANES.find(l=>l.id===laneId);if(!lane)return;
+ if(deleteEvents){items=items.filter(x=>x.lane!==laneId)}
+ else {
+   const related=items.filter(x=>x.lane===laneId);
+   if(related.length){let fallback=LANES.find(l=>l.id==='unfiled_saved');
+     if(!fallback){fallback={id:'unfiled_saved',name:'未分類事項',kind:'item',category:'school',color:'#E5E2DC',schedule:{mode:'none'}};LANES.push(fallback)}
+     related.forEach(x=>{x.lane=fallback.id;if(x.autoSchedule){x.autoSchedule=false;x.customized=true;x.occurrenceKey=null}});
+   }
+ }
+ LANES=LANES.filter(x=>x.id!==laneId);
+ if(filter===laneId)filter='all';if(selectedClassLane===laneId)selectedClassLane='all';
+ pendingLaneDeletion=null;$('#deleteLaneOverlay').classList.remove('show');
+ persistLanes();persist();cancelEditLane();renderManage();render();
+ if($('#classMenu').classList.contains('show'))openClassChooser();
+}
+$('#deleteLaneKeep').onclick=()=>performLaneDelete(false);
+$('#deleteLaneAll').onclick=()=>performLaneDelete(true);
+$('#deleteLaneCancel').onclick=()=>{pendingLaneDeletion=null;hideSheet('deleteLaneOverlay')};
+$('#deleteLaneOverlay').onclick=e=>{if(e.target.id==='deleteLaneOverlay')$('#deleteLaneCancel').click()};
+
+function editLaneDirect(laneId){
+ const lane=LANES.find(x=>x.id===laneId);if(!lane)return;
+ hideSheet('classMenu');hideSheet('classActions');
+ openManage(lane.kind==='class'?'class':'item');
+ const button=Array.from(document.querySelectorAll('[data-editlane]')).find(b=>b.dataset.editlane===laneId);
+ if(button)button.click();
+}
+const PASTEL_SET=[
+ ['霧彩拼貼',['#F0CCD8','#C5D9E7','#F2DBA5','#BFDCC6','#CFC5E9','#F1D5C2','#B8D9D8','#E1C6DA','#D9D5BC','#D0D5EC','#E6C6B7','#C7D8B1']],
+ ['奶茶花園',['#EACBBB','#C8DCC9','#E6D4AB','#D7CCE6','#BED8E0','#E7C4D7','#D9DAC5','#F0D9C6','#CCCADC','#DBE7CF','#D5C6BA','#C6DAE8']],
+ ['Baby 彩色軟糖',['#F5CBDE','#B5DCF4','#F8E1AE','#C9EBC4','#D7C7F5','#F6D2B5','#BEE9E5','#EBC9E8','#E6E8BD','#C4D5F5','#F0D5CB','#D5E7C5']],
+ ['復古霧彩',['#DABFC7','#BDD0D9','#E0CDA4','#C4D4BE','#D0C2D9','#DCC1AC','#B2D0CD','#D7C0CE','#DCD6BB','#C5CCD8','#DCC6BD','#CDD6BF']]
+];
+let itemCategory='course';
+function renderItemColors(){
+ const palettes=$('#itemColorPalette');let old=palettes.value;
+ palettes.innerHTML=PASTEL_SET.map((p,i)=>`<option value="${i}">${p[0]}</option>`).join('');
+ if(old)palettes.value=old;else palettes.value='0';
+ updateItemColorChoices();
+}
+function updateItemColorChoices(){
+ const sel=$('#itemColorChoice'),p=PASTEL_SET[Number($('#itemColorPalette').value)]||PASTEL_SET[0];
+ sel.innerHTML=p[1].map((c,i)=>`<option value="${c}">${i+1}. ${c.toUpperCase()}</option>`).join('');
+ sel.value=p[1].find(c=>c.toUpperCase()===chosenColor)||p[1][0];
+ sel.style.background=sel.value;sel.style.color='#39353B';
+}
+$('#itemColorPalette').onchange=()=>{updateItemColorChoices();selectColor($('#itemColorChoice').value)};
+$('#itemColorChoice').onchange=e=>{selectColor(e.target.value);e.target.style.background=e.target.value};
+$('#itemCategory').onchange=e=>{itemCategory=e.target.value;manageKind=itemCategory==='course'?'class':'item';
+ $('#nameLabel').textContent=itemCategory==='course'?'課程／班級名稱':'事項名稱';
+ $('#laneName').placeholder=itemCategory==='course'?'例如：高一仁、英文充實':itemCategory==='personal'?'例如：回診、家庭活動':'例如：段考、國際交流';
+ $('#scheduleEditor').dataset.type=itemCategory;$('#scheduleEditor').hidden=itemCategory==='personal';$('#personalDateFields').hidden=itemCategory!=='personal';
+ if(!editingLane){setRule(itemCategory==='course'?'weekly':'none');if(itemCategory==='course'&&!weeklySlots.length){weeklySlots=[{day:1,period:'1',time:'',cycle:'all'}];renderSlots()}}
+};
+function renderManage(){
+ const arr=LANES.filter(l=>l.id!=='all');
+ $('#manageList').innerHTML=arr.map(l=>`<div class="manageLine"><span class="dot" style="background:${l.color};width:17px;height:17px"></span><strong>${escapeHTML(l.name)}</strong><span class="small">${ITEM_TYPES.find(x=>x[0]===laneCategory(l))?.[1]||''}</span><button data-editlane="${l.id}" class="miniBtn">編輯</button><button data-dellane="${l.id}" class="miniBtn">刪除</button></div>`).join('');
+ document.querySelectorAll('[data-editlane]').forEach(b=>b.onclick=()=>{let l=LANES.find(x=>x.id===b.dataset.editlane);editingLane=l.id;$('#itemCategory').value=laneCategory(l);$('#itemCategory').onchange({target:$('#itemCategory')});$('#laneName').value=l.name;selectColor(l.color);$('#itemColorChoice').value=l.color.toUpperCase();selectBorderColor(l.borderColor||'#FFFFFF');selectBorderWidth(l.borderWidth??2);$('#saveLane').textContent='儲存修改';loadSchedule(l);$('#personalDate').value=l.schedule?.dates?.[0]?.date||'';$('#personalTime').value=l.schedule?.dates?.[0]?.time||''});
+ document.querySelectorAll('[data-dellane]').forEach(b=>b.onclick=()=>deleteLaneSafely(b.dataset.dellane));
+ $('#swatches').innerHTML='';
+ renderItemColors();
+}
+function cancelEditLane(){$('#personalDate').value='';$('#personalTime').value='';editingLane=null;$('#laneName').value='';$('#saveLane').textContent='＋ 新增';selectBorderColor('#FFFFFF');selectBorderWidth(2);loadSchedule(null);$('#itemCategory').value='course';$('#itemCategory').onchange({target:$('#itemCategory')})}
+function openManage(kind='class'){$('#manageOverlay').classList.add('show');renderManage();cancelEditLane();if(kind==='item'){$('#itemCategory').value='school';$('#itemCategory').onchange({target:$('#itemCategory')})}}
+$('#manage').onclick=()=>openManage('class');$('#tabClass').onclick=()=>{manageKind='class';cancelEditLane();renderManage()};$('#tabItem').onclick=()=>{manageKind='item';cancelEditLane();renderManage()};$('#cancelLaneEdit').onclick=cancelEditLane;$('#closeManage').onclick=()=>$('#manageOverlay').classList.remove('show');$('#manageOverlay').onclick=e=>{if(e.target.id==='manageOverlay')$('#manageOverlay').classList.remove('show')};$('#customColor').oninput=e=>selectColor(e.target.value);$('#colorHex').oninput=e=>{if(/^#[0-9a-f]{6}$/i.test(e.target.value))selectColor(e.target.value)};$('#laneBorderColor').oninput=e=>selectBorderColor(e.target.value);$('#laneBorderHex').oninput=e=>{if(/^#[0-9a-f]{6}$/i.test(e.target.value))selectBorderColor(e.target.value)};$('#laneBorderWidth').onchange=e=>selectBorderWidth(e.target.value);
+$('#ruleStart').addEventListener('change',updateScheduleHolidayHint);$('#cycleAnchor').addEventListener('change',updateScheduleHolidayHint);$('#ruleEnd').addEventListener('change',updateScheduleHolidayHint);$('#ruleCount').addEventListener('input',updateScheduleHolidayHint);
+$('#saveLane').onclick=()=>{let name=$('#laneName').value.trim();if(!name){$('#laneName').focus();return}if(LANES.some(l=>l.name===name&&l.id!==editingLane)){alert('已經有同名的班級或事項');return}let schedule;try{if($('#itemCategory').value==='personal'){const date=$('#personalDate').value;if(!date)throw Error('請選擇私人行程日期');const prior=editingLane?LANES.find(l=>l.id===editingLane)?.schedule?.dates||[]:[];schedule={mode:'dates',dates:[{date,time:$('#personalTime').value||'',period:''},...prior.slice(1)]}}else schedule=readSchedule()}catch(e){alert(e.message);return}if(!confirmHolidayDates(scheduleOccurrences(schedule).map(x=>x.date)))return;let old=editingLane?LANES.find(x=>x.id===editingLane):null;const preset=COURSE_PALETTE_SETS.find(x=>x[0]===chosenCoursePalette)||COURSE_PALETTE_SETS[0];const autoColor=preset[2][LANES.filter(l=>l.id!=='all'&&laneCategory(l)==='course').length%preset[2].length];let lane=old||{id:'custom-'+uid(),name,color:autoColor,kind:manageKind,borderColor:chosenBorderColor,borderWidth:Number(chosenBorderWidth)};lane.name=name;if(!old)lane.color=autoColor;lane.category=$('#itemCategory').value;lane.kind=lane.category==='course'?'class':'item';lane.borderColor=chosenBorderColor;lane.borderWidth=Number(chosenBorderWidth);lane.schedule=schedule;if(!old)LANES.push(lane);updateSchedule(lane);persistLanes();persist();cancelEditLane();renderManage();render()};
+
+let selectedProgressId=null,selectedKind='上課',selectedOffweek=null;
+function offweekSlotsAt(date,period){
+ const day=fromISO(date).getDay();let list=[];
+ for(const lane of LANES.slice(1)){
+  if(filter!=='all'&&lane.id!==filter)continue;
+  const cfg=lane.schedule;
+  if(cfg?.mode!=='weekly'||!cfg.start||!cfg.end||date<cfg.start||date>cfg.end)continue;
+  const parity=(Math.floor((monday(fromISO(date))-monday(fromISO(cfg.cycleAnchor||cfg.start)))/604800000)+1)%2===0?'even':'odd';
+  (cfg.slots||[]).forEach((slot,index)=>{
+   if(Number(slot.day)!==day||String(slot.period)!==String(period)||!['odd','even'].includes(slot.cycle)||slot.cycle===parity)return;
+   list.push({lane,index,slot});
+  });
+ }
+ return list;
+}
+function openOffweekSlot(laneId,index,date){
+ const lane=LANES.find(l=>l.id===laneId),slot=lane?.schedule?.slots?.[index];if(!slot)return;
+ selectedOffweek={laneId,index,date};selectedProgressId=null;$('#lessonSettingsDetails').open=true;$('#kindColorsDetails').open=false;
+ $('#progressHeading').textContent=lane.name+'｜'+periodLabel(slot.period);
+ $('#progressMeta').textContent=date+' · '+['週日','週一','週二','週三','週四','週五','週六'][slot.day];
+ $('#lessonCycleBox').style.display='block';$('#lessonCycle').value=slot.cycle||'all';
+ $('#lessonCycleHelp').textContent='這是固定課表中的時段。只修改此時段的週次規則，其他節次不受影響。';
+ $('#progressTypes').style.display='none';$('#progressText').parentElement.querySelector('#progressText').style.display='none';
+ $('#progressNote').style.display='none';
+ document.querySelectorAll('#progressOverlay .field').forEach(el=>{if(el.getAttribute('for')!=='lessonCycle')el.style.display='none'});
+ $('#progressSave').textContent='儲存週次規則';
+ let old=$('#offweekNotice');if(old)old.remove();
+ const n=document.createElement('div');n.id='offweekNotice';n.className='offweekNotice';n.textContent='這堂課屬於另一種週次，所以本週不上課。淡色顯示只是讓你能找到並修改它，不代表本週實際有課。';
+ $('#lessonCycleBox').before(n);$('#progressOverlay').classList.add('show');
+}
+function resetProgressModal(){
+ selectedOffweek=null;$('#progressTypes').style.display='';$('#progressText').style.display='';$('#progressNote').style.display='none';
+ document.querySelectorAll('#progressOverlay .field').forEach(el=>el.style.display='');
+ $('#progressSave').textContent='儲存這堂課';$('#offweekNotice')?.remove();
+}
+function schoolWeekNumber(d){return Math.floor((monday(d)-monday(fromISO('2026-08-31')))/604800000)+1;}
+function renderLessons(){
+ const week=monday(anchor), n=1;
+ $('#rangeTitle').textContent=`第 ${schoolWeekNumber(week)} 週 · ${schoolWeekNumber(week)%2?'單週':'雙週'} · ${week.getFullYear()}/${week.getMonth()+1}/${week.getDate()}—${addDays(week,4).getFullYear()}/${addDays(week,4).getMonth()+1}/${addDays(week,4).getDate()}`;
+ $('#views').querySelectorAll('button').forEach(b=>b.classList.toggle('selected',b.dataset.view===view));
+ $('#lessonBar').style.display='none';
+ let h='';for(let w=0;w<n;w++)h+=renderLessonWeek(addDays(week,w*7),n>1);
+ $('#calendar').innerHTML=h;$('#countLabel').textContent=`${n} 週課表`;
+ document.querySelectorAll('[data-week-event]').forEach(b=>b.onclick=()=>openForm(items.find(x=>x.id===b.dataset.weekEvent)));
+ document.querySelectorAll('[data-progress-id]').forEach(b=>b.onclick=()=>{let x=items.find(i=>i.id===b.dataset.progressId);if(x&&(!x.autoSchedule&&x.placement))openForm(x);else if(x&&!x.period)openForm(x);else openProgress(b.dataset.progressId)});
+ document.querySelectorAll('[data-add-lesson]').forEach(b=>b.onclick=()=>{let [date,period]=b.dataset.addLesson.split('|');openForm(period==='9'?{date,period:'9',changeType:'normal'}:{date,period,changeType:'normal'})});
+}
+const BABY_PALETTE=['#CBE8F7','#B3DCF3','#D9EEFB','#F8D0E5','#FFBED9','#FBE4EC','#E0D5FF','#D2DFF9','#DFF4C8','#FFF0BF','#F9DCCB','#CDEEEA','#ECD8E9','#E8E2F5','#DAF1F4','#FDE6D6'];
+const VIVID_PALETTE=['#FF679B','#F74774','#FB7159','#FF973E','#FFC72C','#F6E951','#9CD64B','#39C691','#2BCBBE','#4AB6F4','#637DF7','#9166E8','#CA5ADB','#EF5ABB','#5AD8D6','#FFAD58'];
+const MORANDI_PALETTE=['#D8B29F','#CBA59B','#D7C890','#A8BEAA','#A5BCC7','#B5AACA','#D1B3C8','#CFC6BA','#A9897E','#97B39D','#748EA0','#968AAF','#BBA3AC','#BBB6AB','#8BA5A4','#D8BEAB'];
+const LESSON_STYLE_KEY='days-organized-lesson-appearance-v1';
+function readLessonStyles(){try{return JSON.parse(localStorage.getItem(LESSON_STYLE_KEY)||'{}')||{}}catch{return {}}}
+function lessonStyleKey(item){return [item.lane,item.date,item.period||item.time||''].join('|')}
+const BATCH_STYLE_KEY='days-organized-batch-appearance-v1';
+function readBatchStyles(){try{const v=JSON.parse(localStorage.getItem(BATCH_STYLE_KEY)||'{}');return v&&typeof v==='object'?v:{}}catch{return {}}}
+function getLessonStyle(item){const b=readBatchStyles(),one=readLessonStyles()[lessonStyleKey(item)]||{};return {...(b.all||{}),...(b.lanes?.[item.lane]||{}),...one}}
+function styleShape(){return {bg:$('#lessonBgColor').value,text:$('#lessonTitleColor').value,border:$('#lessonBorderColor').value,width:Number($('#lessonBorderSize').value)}}
+function selectedColorScope(){return $('#lessonColorScope').value}
+function updateScopeHint(){const scope=selectedColorScope();$('#lessonColorScopeHint').textContent=scope==='one'?'只更改目前這一堂。':scope==='lane'?'此班級／科目在所有週次的課都會跟著更換，未來新增的課也適用。':'整張課表的所有課都使用此配色，包括未來新增的課。';$('#styleOverrideLabel').style.display=scope==='one'?'none':'flex'}
+$('#lessonColorScope').addEventListener('change',()=>{updateScopeHint();if(selectedColorScope()!=='one'){$('#lessonAppearanceDetails').dataset.changed='yes';$('#lessonAppearanceDetails').dataset.reset='no'}});
+
+function hexSafe(v,f){return /^#[0-9a-f]{6}$/i.test(v||'')?v:f}
+function renderPalette(label,colors){return `<div class="stylePaletteGroup"><span class="paletteLabel">${label}</span><div class="stylePalette">${colors.map(c=>`<button type="button" data-pick-lesson-color="${c}" style="background:${c}" title="${c}" aria-label="選擇 ${c}"></button>`).join('')}</div></div>`}
+function updateLessonPreview(){const b=$('#lessonBgColor').value,t=$('#lessonTitleColor').value,c=$('#lessonBorderColor').value,w=$('#lessonBorderSize').value;const el=$('#lessonAppearancePreview');el.style.background=b;el.style.color=t;el.style.border=`${w}px solid ${c}`;}
+function setupLessonAppearance(item){$('#lessonColorScope').value='one';$('#overwriteSpecialColors').checked=false;updateScopeHint();const x=getLessonStyle(item);$('#lessonAppearanceDetails').open=false;$('#lessonBgColor').value=hexSafe(x.bg,bg(item.lane));$('#lessonTitleColor').value=hexSafe(x.text,'#433A40');$('#lessonBorderColor').value=hexSafe(x.border,borderC(item.lane));$('#lessonBorderSize').value=String(x.width??borderW(item.lane));$('#lessonColorPalettes').innerHTML=renderPalette('Baby 柔彩',BABY_PALETTE)+renderPalette('鮮豔活潑',VIVID_PALETTE);$('#lessonColorPalettes').querySelectorAll('[data-pick-lesson-color]').forEach(b=>b.onclick=()=>{$('#lessonBgColor').value=b.dataset.pickLessonColor;$('#lessonAppearanceDetails').dataset.changed='yes';$('#lessonAppearanceDetails').dataset.reset='no';updateLessonPreview()});updateLessonPreview()}
+['lessonBgColor','lessonTitleColor','lessonBorderColor','lessonBorderSize'].forEach(id=>$('#'+id).addEventListener('input',updateLessonPreview));
+$('#resetLessonColors').onclick=()=>{const x=items.find(i=>i.id===selectedProgressId);if(!x)return;$('#lessonBgColor').value=bg(x.lane);$('#lessonTitleColor').value='#433A40';$('#lessonBorderColor').value=borderC(x.lane);$('#lessonBorderSize').value=borderW(x.lane);$('#lessonAppearanceDetails').dataset.reset='yes';updateLessonPreview()};
+function saveLessonAppearance(item){
+ const scope=selectedColorScope(), all=readLessonStyles(), k=lessonStyleKey(item);
+ const changed=$('#lessonAppearanceDetails').dataset.changed==='yes';
+ const reset=$('#lessonAppearanceDetails').dataset.reset==='yes';
+ if(scope==='one'){
+  if(reset)delete all[k];else if(changed)all[k]=styleShape();
+  localStorage.setItem(LESSON_STYLE_KEY,JSON.stringify(all));
+ } else if(changed||reset){
+  const batch=readBatchStyles();batch.lanes=batch.lanes||{};
+  if(scope==='all')batch.all=styleShape();else batch.lanes[item.lane]=styleShape();
+  if($('#overwriteSpecialColors').checked){
+    // Remove only explicit one-off overrides in the target scope.
+    for(const key of Object.keys(all))if(scope==='all'||key.startsWith(item.lane+'|'))delete all[key];
+    // Global batch overrides class-wide colors too when explicitly requested.
+    if(scope==='all')batch.lanes={};
+  }
+  localStorage.setItem(BATCH_STYLE_KEY,JSON.stringify(batch));
+  localStorage.setItem(LESSON_STYLE_KEY,JSON.stringify(all));
+ }
+ $('#lessonAppearanceDetails').dataset.changed='no';$('#lessonAppearanceDetails').dataset.reset='no';
+}
+['lessonBgColor','lessonTitleColor','lessonBorderColor','lessonBorderSize'].forEach(id=>$('#'+id).addEventListener('change',()=>{$('#lessonAppearanceDetails').dataset.changed='yes';$('#lessonAppearanceDetails').dataset.reset='no'}));
+function shownInWeek(item){return !item.task&&!item.hidden&&item.placement!=='important'}
+function isAtPeriod(item,period){return period===9?(String(item.period||'')==='9'||(!item.period&&!!item.time&&(item.time==='夜間'||/^\d{2}:\d{2}$/.test(item.time)&&item.time>='17:30'))):Number(item.period)===period}
+function replacedBySpecial(item){if(!item.autoSchedule)return false;return items.some(e=>e.id!==item.id&&e.date===item.date&&shownInWeek(e)&&e.replacesLesson&&e.period&&String(e.period)===String(item.period))}
+function isWeekHeaderEvent(item){return shownInWeek(item)&&(item.allDay===true||(!item.period&&!item.time&&/段考|期末考|期中考|代導/.test(item.title)))}
+function renderLessonWeek(week,showSubheading=true){
+ let h='<div class="lessonWeekGroup">'+(showSubheading?'<div class="lessonWeekTitle">第 '+schoolWeekNumber(week)+' 週 · '+(['雙週','單週'][schoolWeekNumber(week)%2])+' · '+iso(week).replaceAll('-','/')+'—'+iso(addDays(week,4)).replaceAll('-','/')+'</div>':'')+'<div class="lessonScroller"><div class="lessonGrid"><div class="lessonHead">節次</div>';
+ for(let day=0;day<5;day++){
+  let date=iso(addDays(week,day));
+  let dateNotes=visible().filter(x=>x.date===date&&isWeekHeaderEvent(x));
+  h+=`<div class="lessonHead ${date===iso(today())?'todayLessonHead':''}">週${['一','二','三','四','五'][day]}<div class="shortDate">${date.slice(5).replace('-','/')}</div>${holidayName(date)?`<div class="lessonHoliday">${escapeHTML(holidayName(date))}</div>`:''}${dateNotes.map(x=>`<button class="dayLabel" data-week-event="${x.id}" title="點選修改 ${escapeHTML(x.title)}">${escapeHTML(x.title)}</button>`).join('')}</div>`;
+ }
+ for(let period=1;period<=9;period++){
+ h+=`<div class="lessonPeriod">${period===9?'夜間':period}</div>`;
+ for(let day=0;day<5;day++){
+  let date=iso(addDays(week,day));let dayOff=Boolean(HOLIDAYS[date]||SCHOOL_HOLIDAYS[date]);let ev=visible().filter(x=>shownInWeek(x)&&x.date===date&&isAtPeriod(x,period)&&(!dayOff||!x.autoSchedule)&&!replacedBySpecial(x));ev.sort((a,b)=>label(a.lane).localeCompare(label(b.lane),'zh-Hant'));let ghosts=[];
+  h+=`<div class="lessonCell ${ev.length>1?'splitCell':''} ${ev.length?'hasLesson':''}" title="${escapeHTML(date)} 第${period}節"><div class="lessonEntries">`+ev.map(x=>`<button class="lessonItem ${x.changedLesson?'changedLesson':''} ${x.placement?'sharedEvent':''} ${x.replacesLesson?'replacementEvent':''}" style="background:${hexSafe(getLessonStyle(x).bg,bg(x.lane))};--lesson-title-color:${hexSafe(getLessonStyle(x).text,'#433A40')};border:${getLessonStyle(x).width??borderW(x.lane)}px solid ${hexSafe(getLessonStyle(x).border,borderC(x.lane))};border-radius:${cardR()}px" data-progress-id="${x.id}" title="${escapeHTML(x.placement?x.title:label(x.lane))}${x.lessonProgress?'｜'+escapeHTML(x.lessonProgress):''}"><div class="courseName">${escapeHTML(x.placement?x.title:label(x.lane))}</div>${x.placement&&x.time&&x.time!=='夜間'?`<div class="cycleNote">${escapeHTML(x.time)}</div>`:''}${x.lessonProgress?`<div class="progress ${x.lessonKind==='小考'?'quizProgress':''}" style="color:${kindInk(x.lessonKind)}!important">${escapeHTML(x.lessonProgress)}</div>`:''}${x.coverLesson?'<div class="cycleNote">臨時代課</div>':''}${x.subTeacher?`<div class="cycleNote">${escapeHTML(x.subTeacher)}</div>`:''}</button>`).join('')+ghosts.map(o=>`<button class="lessonItem offweek" data-offweek-lane="${o.lane.id}" data-offweek-index="${o.index}" data-offweek-date="${date}" title="${escapeHTML(o.lane.name)}｜本週不上，點擊可改單雙週"><div class="courseName">${escapeHTML(o.lane.name)}</div><div class="cycleNote">${o.slot.cycle==='odd'?'單週課':'雙週課'} · 本週不上</div></button>`).join('')+`</div>${dayOff?'':`<button class="lessonPlus" aria-label="新增第${period}節事項" title="新增事項" data-add-lesson="${date}|${period}">＋</button>`}</div>`;
+ }
+ }
+ h+='</div></div>';
+ const extra=visible().filter(x=>shownInWeek(x)&&x.date>=iso(week)&&x.date<=iso(addDays(week,6))&&!x.period&&!isWeekHeaderEvent(x)&&!(x.time==='夜間'||(/^\d{2}:\d{2}$/.test(x.time||'')&&x.time>='17:30')));
+ if(extra.length)h+=`<div class="otherWeek"><strong>本週其他行程／日期提醒</strong><div class="otherWeekEntries">${extra.sort((a,b)=>a.date.localeCompare(b.date)).map(x=>`<button class="otherWeekEntry" data-week-event="${x.id}" style="background:${bg(x.lane)};border:${borderW(x.lane)}px solid ${borderC(x.lane)};border-radius:${cardR()}px">${escapeHTML(x.date.slice(5).replace('-','/'))} ${escapeHTML(x.time||'全天')}　${escapeHTML(x.title)}</button>`).join('')}</div></div>`;
+ h+='</div>';
+ return h;
+}
+
+function lessonSlotFor(item){
+ const lane=LANES.find(l=>l.id===item.lane),schedule=lane?.schedule;
+ if(schedule?.mode!=='weekly')return null;
+ let index=NaN;
+ if(item.autoSchedule&&item.occurrenceKey){const part=item.occurrenceKey.split('|');index=Number(part[part.length-1])}
+ let slot=Number.isInteger(index)?schedule.slots?.[index]:null;
+ if(!slot||Number(slot.day)!==fromISO(item.date).getDay()||String(slot.period||'')!==String(item.period||'')){
+   index=(schedule.slots||[]).findIndex(s=>Number(s.day)===fromISO(item.date).getDay()&&String(s.period||'')===String(item.period||''));
+   slot=schedule.slots?.[index];
+ }
+ return slot?{lane,schedule,slot,index}:null;
+}
+function timeUI(){
+ const action=$('#timeAction').value,scope=$('#timeScope').value;
+ $('#timeDestination').style.display=['move','add'].includes(action)?'grid':'none';
+ $('#timeChangeType').disabled=action==='sub';if(action==='sub')$('#timeChangeType').value='temporary';
+ $('#timeSubWrap').style.display=action==='sub'?'block':'none';
+ $('#timeHelp').textContent=(scope==='one'?'只影響這一次；其他週保持不變。':scope==='future'?'從這週起生效；過去課表不受影響。':'修改此固定時段的整個系列。')+($('#timeChangeType').value==='temporary'?' 臨時異動顯示紅色外框。':' 正式課表調整不顯示紅框。');
+}
+$('#timeAction').onchange=timeUI;$('#timeScope').onchange=timeUI;$('#timeChangeType').onchange=timeUI;
+function setupTimeUI(item){
+ $('#timeAction').value='keep';$('#timeScope').value='one';$('#timeChangeType').value='formal';$('#timeNewDate').value=item.date;
+ $('#timeNewPeriod').innerHTML=PERIODS.map((p,i)=>`<option value="${i+1}">${escapeHTML(p.name)}</option>`).join('');
+ $('#timeNewPeriod').value=item.period||'1';$('#timeSubName').value=item.subTeacher||'';
+ $('#timeEditor').style.display='block';timeUI();
+}
+function exceptionKey(lane,sourceDate,index){return lane.id+'|'+sourceDate+'|'+index}
+function addOverride(lane,source,sourceKey,action,newDate,newPeriod,teacher,temporary){
+ if(!lane.slotExceptions)lane.slotExceptions={};lane.slotExceptions[sourceKey]={action,newDate,newPeriod,teacher};
+ if(action==='delete')return;
+ const clone={...source,id:'override-'+uid(),autoSchedule:false,customized:true,sourceKey,changedLesson:!!temporary,changeType:temporary?'temporary':'normal',occurrenceKey:null};
+ if(action==='move'){clone.date=newDate;clone.period=String(newPeriod);clone.title=lane.name+'（調課）'}
+ if(action==='sub'){clone.title=lane.name+'（代課）';clone.subTeacher=teacher||'代課老師待填';clone.note=[clone.note,clone.subTeacher].filter(Boolean).join('｜')}
+ items.push(clone);
+}
+function actionOnLesson(item,match,action,scope,newDate,newPeriod,teacher,temporary){
+ if(action==='keep')return true;
+ if(!match){alert('這不是已設定固定時段的課程；請使用「新增行程」編輯單次活動。');return false}
+ const {lane,schedule,slot,index}=match;
+ if(action==='sub'&&scope!=='one'){alert('請人代課通常是單次事件。請選擇「只改這一次」。');return false}
+ if(['move','add'].includes(action)&&(!newDate||!newPeriod)){alert('請指定新日期與節次');return false}
+ if(['move','add'].includes(action)&&scope==='one'&&newDate===item.date&&String(newPeriod)===String(item.period)){alert('新日期與節次和原本相同');return false}
+ if(scope==='one'){
+   const key=exceptionKey(lane,item.date,index);
+   if(action==='add'){
+      items.push({...item,id:'extra-'+uid(),date:newDate,period:String(newPeriod),title:lane.name+'（加課）',autoSchedule:false,customized:true,changedLesson:!!temporary,changeType:temporary?'temporary':'normal',sourceKey:key,occurrenceKey:null});
+   }else{
+      addOverride(lane,item,key,action,newDate,newPeriod,teacher,temporary);
+      updateSchedule(lane);
+   }
+ }else{
+   if(action==='add'){
+     const newDay=fromISO(newDate).getDay();let begin=scope==='future'?newDate:schedule.start;
+     schedule.slots.push({day:newDay,period:String(newPeriod),cycle:slot.cycle||'all',start:begin,end:schedule.end});
+   }else if(scope==='all'){
+     if(action==='delete'){schedule.slots.splice(index,1)}
+     else{slot.day=fromISO(newDate).getDay();slot.period=String(newPeriod)}
+   }else{
+     let priorEnd=iso(addDays(fromISO(item.date),-1));
+     const oldEnd=slot.end||schedule.end;
+     slot.end=priorEnd;
+     if(action==='move')schedule.slots.push({...slot,day:fromISO(newDate).getDay(),period:String(newPeriod),start:newDate,end:oldEnd});
+   }
+   updateSchedule(lane);
+   if(action==='move'&&temporary)items.filter(x=>x.autoSchedule&&x.lane===lane.id&&x.date>=newDate&&x.period===String(newPeriod)).forEach(x=>x.changedLesson=true);
+ }
+ persistLanes();persist();return true;
+}
+
+const KIND_COLOR_DEFAULTS={'上課':'#49443E','小考':'#AA3E40','段考':'#8E4D70','活動':'#4B6E77','其他':'#766453'};
+const KIND_COLOR_STORE='days-organized-progress-ink-v28';
+function readKindColors(){try{const x=JSON.parse(localStorage.getItem(KIND_COLOR_STORE)||'{}');return x&&typeof x==='object'?x:{}}catch{return {}}}
+function kindInk(k){const p=readKindColors();const c=p[k];return /^#[0-9a-f]{6}$/i.test(c||'')?c:(KIND_COLOR_DEFAULTS[k]||KIND_COLOR_DEFAULTS['上課'])}
+function refreshKindColors(){document.querySelectorAll('[data-kind-color]').forEach(i=>i.value=kindInk(i.dataset.kindColor));document.querySelectorAll('#progressTypes [data-kind]').forEach(b=>{b.style.setProperty('--kind-chip',kindInk(b.dataset.kind));b.style.borderColor=kindInk(b.dataset.kind)})}
+document.querySelectorAll('[data-kind-color]').forEach(el=>{el.addEventListener('input',()=>{const col=readKindColors();col[el.dataset.kindColor]=el.value;localStorage.setItem(KIND_COLOR_STORE,JSON.stringify(col));refreshKindColors();render();})});
+
+function openProgress(id){
+ resetProgressModal();let item=items.find(x=>x.id===id);if(!item)return;$('#lessonSettingsDetails').open=false;$('#kindColorsDetails').open=false;refreshKindColors();
+ selectedProgressId=id;selectedKind=item.lessonKind||'上課';
+ $('#progressHeading').textContent=label(item.lane)+'｜'+periodLabel(item.period);
+ $('#progressMeta').textContent=item.date+'（週'+['日','一','二','三','四','五','六'][fromISO(item.date).getDay()]+'） · '+item.title;setupTimeUI(item);
+ $('#progressText').value=item.lessonProgress||'';$('#progressNote').value=item.note||'';$('#lessonAppearanceDetails').dataset.changed='no';$('#lessonAppearanceDetails').dataset.reset='no';setupLessonAppearance(item);
+ const match=lessonSlotFor(item);$('#lessonCycleBox').style.display=match?'block':'none';
+ if(match){$('#lessonCycle').value=match.slot.cycle||'all';
+   $('#lessonCycleHelp').textContent='只調整「'+label(item.lane)+'／週'+['日','一','二','三','四','五','六'][match.slot.day]+'／'+periodLabel(item.period)+'」這一個時段。單雙週依學期第一週計算；其他週的課不受影響；不上課的週次在表格中留空。';
+ }
+ document.querySelectorAll('#progressTypes button').forEach(b=>b.classList.toggle('active',b.dataset.kind===selectedKind));
+ $('#progressOverlay').classList.add('show');
+}
+$('#progressTypes').onclick=e=>{let b=e.target.closest('[data-kind]');if(b){selectedKind=b.dataset.kind;document.querySelectorAll('#progressTypes button').forEach(x=>x.classList.toggle('active',x===b))}};
+$('#progressCancel').onclick=()=>{$('#progressOverlay').classList.remove('show');resetProgressModal()};
+$('#progressSave').onclick=()=>{
+ if(selectedOffweek){
+   const lane=LANES.find(l=>l.id===selectedOffweek.laneId),slot=lane?.schedule?.slots?.[selectedOffweek.index];
+   if(slot){slot.cycle=$('#lessonCycle').value;updateSchedule(lane);persistLanes();persist()}
+   $('#progressOverlay').classList.remove('show');resetProgressModal();render();return;
+ }
+ let x=items.find(x=>x.id===selectedProgressId);if(!x)return;
+ x.lessonKind=selectedKind;x.lessonProgress=$('#progressText').value.trim();saveLessonAppearance(x);
+ const match=lessonSlotFor(x);
+ const action=$('#timeAction').value,scope=$('#timeScope').value;
+ if(!actionOnLesson(x,match,action,scope,$('#timeNewDate').value,$('#timeNewPeriod').value,$('#timeSubName').value.trim(),$('#timeChangeType').value==='temporary'||action==='sub'))return;
+ if(match&&scope==='all'&&action==='delete'){/* already deleted */}
+ if(match&&action!=='delete'&&$('#lessonCycle').value!==(match.slot.cycle||'all')){
+   match.slot.cycle=$('#lessonCycle').value;
+   // Archive edits before rebuilding the one affected lane.
+   updateSchedule(match.lane);persistLanes();
+ }
+ persist();$('#progressOverlay').classList.remove('show');resetProgressModal();render();
+};
+$('#progressOverlay').onclick=e=>{if(e.target.id==='progressOverlay'){$('#progressOverlay').classList.remove('show');resetProgressModal()}};
+
+
+// One exam-period editor: prefill saved lessons, preserve schedule and save once.
+let bulkRows=[];
+let bulkDirty=false;
+let bulkExamPeriods=[];
+function listExamPeriods(){
+ const candidates=items.filter(x=>!x.task && x.date && /段考|期中考|期末考/.test(x.title||''))
+    .sort((a,b)=>a.date.localeCompare(b.date));
+ const out=[];
+ for(const event of candidates){
+  let period=out.find(p=>p.title===event.title && event.date<=iso(addDays(fromISO(p.end),5)));
+  if(period){if(event.date>period.end)period.end=event.date}
+  else out.push({title:event.title,start:event.date,end:event.date});
+ }
+ return out.sort((a,b)=>a.start.localeCompare(b.start));
+}
+function getBulkExamStart(idx, lane){
+ const exam=bulkExamPeriods[idx];if(!exam)return iso(monday(anchor));
+ const previous=bulkExamPeriods[idx-1];
+ let candidate=previous?iso(addDays(fromISO(previous.end),1)):(LANES.find(x=>x.id===lane)?.schedule?.start||'2026-08-31');
+ if(candidate>=exam.start)candidate=iso(addDays(fromISO(exam.start),-28));
+ return candidate;
+}
+function setBulkExamOptions(){
+ bulkExamPeriods=listExamPeriods();
+ const el=$('#bulkExam');
+ if(!bulkExamPeriods.length){el.innerHTML='<option value="">沒有已設定的段考</option>';return}
+ el.innerHTML=bulkExamPeriods.map((ex,i)=>`<option value="${i}">${escapeHTML(ex.title)}｜${ex.start.slice(5).replace('-','/')}–${ex.end.slice(5).replace('-','/')}</option>`).join('');
+ const now=iso(anchor);
+ const idx=bulkExamPeriods.findIndex(x=>x.start>=now);
+ el.value=String(idx<0?bulkExamPeriods.length-1:idx);
+}
+function openBulk(){
+ const classes=LANES.filter(l=>l.kind==='class');
+ if(!classes.length){alert('請先在「管理班級與事項」建立班級課表。');return}
+ $('#bulkClass').innerHTML=classes.map(l=>`<option value="${escapeHTML(l.id)}">${escapeHTML(l.name)}</option>`).join('');
+ if(filter!=='all'&&classes.some(l=>l.id===filter))$('#bulkClass').value=filter;
+ setBulkExamOptions();
+ $('#bulkStart').value=getBulkExamStart(Number($('#bulkExam').value),$('#bulkClass').value);
+ $('#bulkOverlay').classList.add('show');makeBulkRows();
+}
+function bulkWarn(){return !bulkDirty||confirm('尚未儲存的進度修改會消失，確定切換嗎？')}
+function makeBulkRows(){
+ bulkDirty=false;
+ const lane=$('#bulkClass').value;
+ const index=Number($('#bulkExam').value);
+ const exam=bulkExamPeriods[index];
+ const start=$('#bulkStart').value;
+ if(!exam || !start){$('#bulkTableWrap').innerHTML='<p style="padding:14px">請先選擇段考與開始日期。</p>';return}
+ const end=iso(addDays(fromISO(exam.start),-1));
+ if(start>end){$('#bulkCount').textContent='開始日期必須早於段考第一天';$('#bulkTableWrap').innerHTML='';return}
+ bulkRows=items.filter(x=>!x.task&&!x.hidden&&x.lane===lane&&x.period&&x.date>=start&&x.date<=end&&(!x.autoSchedule||!holidayName(x.date)))
+  .sort((a,b)=>a.date.localeCompare(b.date)||(Number(a.period||99)-Number(b.period||99)))
+  .map(x=>({id:x.id,date:x.date,period:x.period,kind:x.lessonKind||'上課',progress:x.lessonProgress||''}));
+ $('#bulkCount').textContent=`${exam.title}｜${start.replaceAll('-','/')}～${end.replaceAll('-','/')} · ${bulkRows.length} 堂課`;
+ if(!bulkRows.length){$('#bulkTableWrap').innerHTML='<p style="padding:18px">這段期間沒有找到該班的節次。請確認日期、單雙週及固定課表。</p>';return}
+ const kinds=['上課','小考','段考','活動','其他'];
+ let html='<div class="examEditor"><div class="examHeader"><span>實際課堂日期／節次</span><span>進度或考試範圍</span></div>';
+ bulkRows.forEach((r,i)=>{
+  const week=schoolWeekNumber(fromISO(r.date));
+  const dow='日一二三四五六'[fromISO(r.date).getDay()];
+  html+=`<div class="examRow"><div class="examSlot"><strong>${r.date.slice(5).replace('-','/')}（週${dow}）</strong><span>第 ${week} 週 · ${escapeHTML(periodLabel(r.period))}</span></div><div class="examInput"><select aria-label="${r.date} 課程類型" data-bkind="${i}">${kinds.map(k=>`<option ${r.kind===k?'selected':''}>${k}</option>`).join('')}</select><textarea rows="1" data-bprogress="${i}" aria-label="${r.date} 第${r.period}節進度" placeholder="填寫進度或考試內容">${escapeHTML(r.progress)}</textarea></div></div>`;
+ });
+ $('#bulkTableWrap').innerHTML=html+'</div>';
+ $('#bulkStatus').textContent='已填的內容會保留，修改後一次儲存';
+ document.querySelectorAll('[data-bkind]').forEach(el=>el.onchange=()=>{bulkRows[Number(el.dataset.bkind)].kind=el.value;bulkDirty=true;$('#bulkStatus').textContent='尚未儲存';});
+ document.querySelectorAll('[data-bprogress]').forEach(el=>{
+  el.oninput=()=>{bulkRows[Number(el.dataset.bprogress)].progress=el.value;bulkDirty=true;$('#bulkStatus').textContent='尚未儲存';};
+  el.onpaste=e=>{
+   const value=e.clipboardData?.getData('text/plain');if(!value||!/\r|\n/.test(value))return;
+   e.preventDefault();let lines=value.replace(/\r/g,'').replace(/\n$/,'').split('\n'),i=Number(el.dataset.bprogress);
+   lines.forEach((line,j)=>{if(bulkRows[i+j])bulkRows[i+j].progress=line.split('\t')[0]});
+   document.querySelectorAll('[data-bprogress]').forEach(t=>{t.value=bulkRows[Number(t.dataset.bprogress)].progress});
+   bulkDirty=true;$('#bulkStatus').textContent='已貼上進度，尚未儲存';
+  };
+ });
+}
+$('#bulkClass').onchange=()=>{if(!bulkWarn())return;$('#bulkStart').value=getBulkExamStart(Number($('#bulkExam').value),$('#bulkClass').value);makeBulkRows()};
+$('#bulkExam').onchange=()=>{if(!bulkWarn())return;$('#bulkStart').value=getBulkExamStart(Number($('#bulkExam').value),$('#bulkClass').value);makeBulkRows()};
+$('#bulkStart').onchange=()=>{if(!bulkWarn())return;makeBulkRows()};
+$('#bulkRefresh').onclick=()=>{if(bulkWarn())makeBulkRows()};
+$('#bulkCancel').onclick=()=>{if(bulkWarn())$('#bulkOverlay').classList.remove('show')};
+$('#bulkOverlay').onclick=e=>{if(e.target.id==='bulkOverlay'&&bulkWarn())$('#bulkOverlay').classList.remove('show')};
+$('#bulkSave').onclick=()=>{
+ const map=new Map(items.map(x=>[x.id,x]));
+ bulkRows.forEach(r=>{const x=map.get(r.id);if(x){x.lessonKind=r.kind;x.lessonProgress=r.progress.trim();if(x.autoSchedule)x.customized=true;}});
+ persist();bulkDirty=false;$('#bulkOverlay').classList.remove('show');render();
+};
+
+// 一次性增補學校重要日期，不覆蓋教師已編輯的課表／進度／分類。
+const OFFICIAL_EVENT_VERSION='kl-school-115-2026-11-14-v1';
+function addOfficialSchoolDates(){
+ if(localStorage.getItem('days-organized-official-dates')===OFFICIAL_EVENT_VERSION)return;
+ let lane=LANES.find(x=>x.id==='school_dates');
+ if(!lane){lane={id:'school_dates',name:'學校重要行事',color:'#D6DDD4',kind:'item'};LANES.push(lane);persistLanes()}
+ const entries=[
+  ['2027-01-20','第一學期休業式','基隆市教育處115學年度第一學期重要行事日期；第21週'],
+  ['2027-01-21','寒假開始','寒假期間：2027/1/21～2027/2/10'],
+  ['2027-02-04','春節連假開始','春節國定連假：2027/2/4～2/10'],
+  ['2027-02-05','除夕','2027年農曆除夕'],
+  ['2027-02-06','農曆春節初一','2027年春節'],
+  ['2027-02-10','寒假／春節連假最後一天','2027/2/11正式上課'],
+  ['2027-02-11','第二學期開學並正式上課','基隆市教育處115學年度第二學期重要行事日期'],
+  ['2027-06-30','第二學期休業式','基隆市教育處115學年度第二學期重要行事日期'],
+  ['2027-07-01','暑假開始','基隆市教育處115學年度第二學期重要行事日期']
+ ];
+ for(const [date,title,note] of entries){
+   const id='school-official-'+date+'-'+title;
+   if(!items.some(x=>x.id===id||(!x.task&&x.date===date&&x.title===title)))items.push({id,title,date,time:'',period:'',lane:lane.id,task:false,done:false,note,overview:true});
+ }
+ persist();localStorage.setItem('days-organized-official-dates',OFFICIAL_EVENT_VERSION)
+}
+addOfficialSchoolDates();
+// 高一高二第三次段考：暫按基隆中山高中考程整理收錄，官網原始 PDF 待核對。
+// 用獨立版本記號增補，既有使用者資料／進度不覆蓋。
+function addThirdExamDates(){
+ const marker='days-organized-csjh-third-exam-1151-v1';
+ if(localStorage.getItem(marker)==='done')return;
+ let lane=LANES.find(x=>x.id==='school_dates');
+ if(!lane){lane={id:'school_dates',name:'學校重要行事',color:'#D6DDD4',kind:'item'};LANES.push(lane);persistLanes()}
+ for(let d of ['2027-01-18','2027-01-19','2027-01-20']){
+  const title='高一、高二第三次段考';
+  const id='csjh-1151-third-exam-'+d;
+  if(!items.some(x=>x.id===id||(!x.task&&x.date===d&&x.title===title))){
+   items.push({id,groupId:'third-exam-2027',title,date:d,time:'',period:'',lane:lane.id,task:false,done:false,
+    note:'115學年度第1學期；基隆中山高中考程整理列出1/18～1/20。學校官網有行事曆附件，但目前無法讀取原始PDF，待校方確認。可直接點選修改。',overview:true,lessonKind:'段考'});
+  }
+ }
+ persist();localStorage.setItem(marker,'done');
+}
+addThirdExamDates();
+
+// V19 compact navigation: class controls are opened only on demand.
+let selectedClassLane='all';
+function hideSheet(id){document.querySelector('#'+id).classList.remove('show')}
+let chooserMode='course';
+function openClassChooser(mode){
+ chooserMode=mode|| (view==='lessons'?'course':'important');
+ const course=chooserMode==='course';
+ $('#chooserTitle').textContent=course?'課程管理':'重要行事管理';
+ $('#chooserDescription').textContent=course?'選課程後可一次填寫整個段考的進度。':'管理交流、學校重要活動與私人行程。';
+ $('#chooserBulk').hidden=!course;$('#chooserPalette').hidden=!course;
+ $('#classAll').textContent=course?'▦ 顯示全部課程':'▣ 顯示全部重要行事';
+ let html='';
+ const types=course?[['course','固定課程']]:[['school','學校重要行事'],['personal','私人行程']];
+ for(const [type,title] of types){
+  const subset=optionsForCategory(type);
+  if(!subset.length)continue;
+  html+=`<div class="chooserHeading">${title}</div>`;
+  html+=subset.map(x=>`<div class="classChooserRow"><button type="button" data-pick-class="${x.id}" class="classChooserPick"><span style="display:inline-block;width:11px;height:11px;background:${x.color};border-radius:4px;margin-right:7px"></span>${escapeHTML(x.name)}</button><button type="button" data-chooser-edit="${x.id}" class="classChooserEdit">編輯</button><button type="button" data-chooser-delete="${x.id}" class="classChooserDelete">刪除</button></div>`).join('');
+ }
+ $('#classChoices').innerHTML=html||'<p class="small">尚無項目，可以按下方新增。</p>';
+ document.querySelectorAll('[data-chooser-edit]').forEach(b=>b.onclick=()=>editLaneDirect(b.dataset.chooserEdit));
+ document.querySelectorAll('[data-chooser-delete]').forEach(b=>b.onclick=()=>deleteLaneSafely(b.dataset.chooserDelete));
+ document.querySelectorAll('[data-pick-class]').forEach(b=>b.onclick=()=>{
+  selectedClassLane=b.dataset.pickClass;hideSheet('classMenu');
+  $('#classActionName').textContent=label(selectedClassLane);
+  $('#classActionHint').textContent=course?'直接查看課表、修改節次，或一口氣填寫段考進度。':'查看這個事項的行程與日期。';
+  document.querySelectorAll('[data-class-action]').forEach(btn=>{
+   const a=btn.dataset.classAction;
+   btn.hidden=course?['month','semester'].includes(a):['week','bulk'].includes(a);
+  });
+  $('#classActions').classList.add('show');
+ });
+ $('#classMenu').classList.add('show');
+}
+
+function renderTaskSheet(){
+ const arr=items.filter(x=>x.task&&!x.done);
+ document.querySelector('#taskSheetEntries').innerHTML=arr.length?arr.map(x=>`<button class="stream" data-taskopen="${x.id}" style="width:100%;background:#f5f8f2;margin:6px 0;padding:12px;text-align:left">${escapeHTML(x.title)}</button>`).join(''):'<div class="lessonEmpty">目前沒有未完成待辦</div>';
+ document.querySelectorAll('[data-taskopen]').forEach(b=>b.onclick=()=>{hideSheet('taskMenu');openForm(items.find(x=>x.id===b.dataset.taskopen))});
+}
+document.querySelector('#closeTasks').onclick=()=>hideSheet('taskMenu');
+document.querySelector('#taskSheetAdd').onclick=()=>{hideSheet('taskMenu');openForm({task:true})};
+
+const PAGE_THEMES=[
+ ['Baby・蜜桃奶油','#fff0e9','#fffdfa','#684e4a','#ead0c6'],
+ ['Baby・雲朵粉藍','#eaf4fc','#ffffff','#435f74','#cbdfea'],
+ ['Baby・奶油花園','#f5f7e8','#fffefa','#55644c','#dce6c9'],
+ ['Baby・紫藤糖霜','#f2edfb','#fffefd','#5c536b','#ded4ee'],
+ ['Baby・櫻花牛奶','#f9edf4','#fffdfd','#725765','#ecd5e1'],
+ ['Baby・薄荷棉花','#ecf8f4','#ffffff','#4d6b61','#cde8df'],
+];
+function setThemeInputs(t){$('#pageBackgroundColor').value=t[1];$('#pagePaperColor').value=t[2];$('#pageTextColor').value=t[3];$('#pageLineColor').value=t[4];document.querySelectorAll('.themeChip').forEach(x=>x.classList.toggle('selected',x.dataset.themeName===t[0]));}
+function openStyle(){
+ const groups=[['themeBaby','Baby・']];
+ groups.forEach(([id,prefix])=>{const el=$('#'+id);el.innerHTML='<option value="">選擇完整配色組合</option>'+PAGE_THEMES.filter(t=>t[0].startsWith(prefix)).map(t=>`<option value="${t[0]}">${t[0].slice(prefix.length)}</option>`).join('');el.onchange=()=>{if(!el.value)return;groups.forEach(([other])=>{if(other!==id)$('#'+other).value=''});const chosen=PAGE_THEMES.find(t=>t[0]===el.value);setThemeInputs(chosen);$('#themeSamplePreview').innerHTML=`<div class="previewPalette" style="background:${chosen[1]};color:${chosen[3]};border-color:${chosen[4]}"><span style="background:${chosen[2]};border-color:${chosen[4]}">${chosen[0]} · 課表預覽</span><i style="background:${chosen[4]}"></i></div>`;};});
+ $('#pageBackgroundColor').value=localStorage.getItem('days-organized-page-bg')||'#f9edf4';$('#pagePaperColor').value=localStorage.getItem('days-organized-page-paper')||'#fffdfd';$('#pageTextColor').value=localStorage.getItem('days-organized-page-text')||'#725765';$('#pageLineColor').value=localStorage.getItem('days-organized-page-line')||'#ecd5e1';
+ $('#gridColor').value=localStorage.getItem('days-organized-grid-color')||'#d3cdc5';$('#cardBorderColor').value=localStorage.getItem('days-organized-card-border-color')||'#ffffff';$('#cardBorderWidth').value='2';$('#cardRadius').value='10';
+ $('#themeSamplePreview').textContent='選擇一套色系，即可預覽整頁搭配。';$('#styleOverlay').classList.add('show');}
+
+function applyStylePrefs(){ const gc=localStorage.getItem('days-organized-grid-color')||'#d3cdc5'; document.documentElement.style.setProperty('--line',gc); const cbw=localStorage.getItem('days-organized-card-border-width')||'2'; const cbc=localStorage.getItem('days-organized-card-border-color')||'#ffffff'; const cr=localStorage.getItem('days-organized-card-radius')||'10'; document.documentElement.style.setProperty('--user-card-border',cbc); document.documentElement.style.setProperty('--user-card-border-width',cbw+'px'); document.documentElement.style.setProperty('--user-card-radius',cr+'px');document.documentElement.style.setProperty('--bg',localStorage.getItem('days-organized-page-bg')||'#f9edf4');document.documentElement.style.setProperty('--paper',localStorage.getItem('days-organized-page-paper')||'#fffdfd');document.documentElement.style.setProperty('--ink',localStorage.getItem('days-organized-page-text')||'#725765');document.documentElement.style.setProperty('--line',localStorage.getItem('days-organized-page-line')||gc); }
+$('#showStyle').onclick=openStyle; $('#styleClose').onclick=()=>$('#styleOverlay').classList.remove('show'); $('#styleOverlay').onclick=e=>{if(e.target.id==='styleOverlay')$('#styleOverlay').classList.remove('show')}; $('#styleSave').onclick=()=>{ localStorage.setItem('days-organized-page-bg',$('#pageBackgroundColor').value);localStorage.setItem('days-organized-page-paper',$('#pagePaperColor').value);localStorage.setItem('days-organized-page-text',$('#pageTextColor').value);localStorage.setItem('days-organized-page-line',$('#pageLineColor').value);  applyStylePrefs(); $('#styleOverlay').classList.remove('show'); render(); };
+
+const COURSE_PALETTE_SETS=[
+ ['mix1','Baby・柔霧撞色',['#F4C9D9','#BFDDF0','#F2E0AC','#C6DDC2','#D3C8E9','#EED1B9','#C2DFE1','#E3C7CE','#DBD6BF','#C9D4EA','#EBC6C0','#D0E0C6']],
+ ['baby1','Baby・玫瑰奶霜',['#F6C6D9','#BBDFF4','#F8DF9E','#C1E1BE','#D9CEF4','#F5C9AC','#B7E5E6','#E9D4CD','#F0CBEB','#D7E8AA','#CFDBF4','#FFE5BE']],
+ ['baby2','Baby・薄荷雲朵',['#C9E9E0','#F6CEDA','#E7D6F5','#FAE2B5','#BBDDEC','#DFE9BC','#F6D6B6','#D4C9E8','#BAE3E7','#F0D8E8','#E6DBB7','#C5D5F2']],
+ ['baby3','Baby・天空牛奶',['#C5E0F7','#E6CFEC','#F5DCAC','#D3E9BE','#F2C6D8','#BDDCD6','#F4D4C4','#D6D7F1','#F0E6B4','#D3E4F5','#E4D2BD','#C8E8D9']],
+ ['baby4','Baby・蜜桃燕麥',['#F9D6C5','#D2D6F4','#C3E6DB','#F6E2AD','#ECC9E4','#BFDCEB','#DDE6BB','#F1C8CE','#D5C8E8','#F5D8B4','#C9E4B8','#F1DEE7']],
+ ['baby5','Baby・紫藤甜點',['#DED1F5','#C6E7E9','#F8D7BB','#D6E9BC','#F1CDDB','#BAD6F3','#F4E5AE','#D5D0E9','#F4D1E9','#BFDDD1','#F5D8CD','#DDE3B9']],
+ ['baby6','Baby・奶油花園',['#F1E2B0','#CEE4C3','#D8C8F2','#F5D4CF','#BDE2F0','#F0D9B9','#C9E7DF','#E8D5ED','#F3C9DC','#D5E4AD','#D6D9F2','#F5DFC9']],
+];
+let chosenCoursePalette=localStorage.getItem('days-organized-course-palette-preset')||'mix1';
+if(!COURSE_PALETTE_SETS.some(p=>p[0]===chosenCoursePalette))chosenCoursePalette='mix1';
+function openCoursePalette(){ $('#paletteOverlay').classList.add('show');$('#paletteOptions').innerHTML=COURSE_PALETTE_SETS.map(p=>`<button class="paletteOption ${p[0]===chosenCoursePalette?'active':''}" data-palette-id="${p[0]}"><b>${p[1]}</b><span class="paletteDots">${p[2].slice(0,8).map(c=>`<i style="background:${c}"></i>`).join('')}</span></button>`).join('');$('#paletteOptions').querySelectorAll('[data-palette-id]').forEach(b=>b.onclick=()=>{chosenCoursePalette=b.dataset.paletteId;$('#paletteOptions').querySelectorAll('button').forEach(x=>x.classList.toggle('active',x===b))})}
+$('#paletteCancel').onclick=()=>hideSheet('paletteOverlay');
+function readableInk(hex){const h=(hex||'#ffffff').replace('#',''); const rgb=[0,2,4].map(i=>parseInt(h.slice(i,i+2),16)/255).map(v=>v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4));const light=.2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2];return light<.27?'#FFFFFF':'#34383A'}
+$('#paletteApply').onclick=()=>{
+ const p=COURSE_PALETTE_SETS.find(x=>x[0]===chosenCoursePalette);
+ const lanes=LANES.filter(l=>l.id!=='all');
+ if(!p||!lanes.length){alert('目前沒有可以套用配色的班級或事項。');return;}
+ const overwrite=$('#paletteOverwrite').checked;
+ // Apply a distinct position color across all named item categories. User data unchanged.
+ const styles=readBatchStyles();styles.lanes=styles.lanes||{};
+ lanes.forEach((l,i)=>{
+   const color=p[2][i%p[2].length];l.color=color;
+   styles.lanes[l.id]={...(styles.lanes[l.id]||{}),bg:color,text:'#39353B'};
+ });
+ if(overwrite)localStorage.removeItem(LESSON_STYLE_KEY);
+ try{
+   localStorage.setItem(BATCH_STYLE_KEY,JSON.stringify(styles));
+   persistLanes();
+   localStorage.setItem('days-organized-course-palette-preset',chosenCoursePalette);
+   persist();
+ }catch(err){alert('配色儲存失敗：請確認瀏覽器允許儲存網站資料。');return;}
+ hideSheet('paletteOverlay');render();
+ const notice=document.querySelector('#paletteAppliedNotice');
+ if(notice){notice.textContent='已套用「'+p[1]+'」到 '+lanes.length+' 個事項';notice.hidden=false;setTimeout(()=>{notice.hidden=true},3800)}
+};
+$('#chooserPalette').onclick=()=>{hideSheet('classMenu');openCoursePalette()};
+$('#chooserBulk').onclick=()=>{hideSheet('classMenu');filter='all';view='lessons';render();openBulk()};
+$('#chooserNewClass').onclick=()=>{hideSheet('classMenu');openManage(chooserMode==='course'?'class':'item')};
+$('#chooserManage').onclick=()=>{hideSheet('classMenu');openManage(chooserMode==='course'?'class':'item')};
+
+document.querySelector('#mobileFab').onclick=()=>document.querySelector('#homeMenu').classList.add('show');
+document.querySelector('#closeHome').onclick=()=>hideSheet('homeMenu');
+document.querySelector('#closeClass').onclick=()=>hideSheet('classMenu');
+$('#closeClassAction').onclick=()=>{hideSheet('classActions');openClassChooser(chooserMode)};
+$('#showClasses').onclick=()=>openClassChooser(view==='lessons'?'course':'important');
+
+$('#classAll').onclick=()=>{hideSheet('classMenu');if(chooserMode==='course')showAllClasses();else{filter='all';view='month';render()}};
+document.querySelector('#showImportant').onclick=()=>{view=view==='month'?'lessons':'month';document.querySelector('#showImportant').textContent=view==='month'?'返回課表':'重要行事';render()};
+
+document.querySelectorAll('[data-home]').forEach(b=>b.onclick=()=>{const a=b.dataset.home;hideSheet('homeMenu');if(a==='newCourse')openManage('class');else if(a==='newEvent'){const eventLane=LANES.find(l=>l.id!=='all'&&laneCategory(l)==='school');openForm({lane:eventLane?.id||''})}else if(a==='temporary')openForm({changeType:'temporary'});else if(a==='class')openClassChooser('course');else if(a==='importantManage')openClassChooser('important');else if(a==='add')openForm();else if(a==='bulk')openBulk();else if(a==='manage')openManage();else if(a==='import')document.querySelector('#loadReal').click();else if(a==='backup')exportFullBackup();else if(a==='restore')startRestore();else if(a==='important'){view='month';filter='all';render();document.querySelector('#showImportant').textContent='返回課表'}else if(a==='tasks'){openTodos()}else if(a==='style'){openStyle()}});
+document.querySelectorAll('[data-class-action]').forEach(b=>b.onclick=()=>{const a=b.dataset.classAction;hideSheet('classActions');filter=selectedClassLane;if(a==='week'){view='lessons';}else if(a==='month'||a==='semester'){view=a;}else if(a==='bulk'){view='lessons';openBulk();return;}else if(a==='add'){openForm({lane:filter});return;}else if(a==='manage'){editLaneDirect(filter);return;}else if(a==='delete'){deleteLaneSafely(filter);showAllClasses();return;}render()});
+
+
+// V43: a single settings drawer rather than duplicate controls across the home screen.
+$('#backupEntry').onclick=()=>$('#settingsMenu').classList.add('show');
+$('#settingsClose').onclick=()=>hideSheet('settingsMenu');
+$('#settingsMenu').onclick=e=>{if(e.target.id==='settingsMenu')hideSheet('settingsMenu')};
+$('#settingsColors').onclick=()=>{hideSheet('settingsMenu');openStyle()};
+$('#settingsBackup').onclick=()=>{hideSheet('settingsMenu');exportFullBackup()};
+$('#settingsRestore').onclick=()=>{hideSheet('settingsMenu');startRestore()};
+$('#settingsPeriods').onclick=()=>{hideSheet('settingsMenu');$('#periodSettings').click()};
+
+// One-time palette migration. Only known original seed colors are changed;
+// independently chosen user shades remain untouched.
+function migrateMorandiPalette(){
+ const key='days-organized-morandi-v23';if(localStorage.getItem(key)==='done')return;
+ const changes={'#FFCBA8':'#D8B29F','#FAF48C':'#D7C890','#ADE09E':'#A8BEAA','#90D4ED':'#A5BCC7','#F4BCE9':'#D1B3C8','#B7A2EE':'#B5AACA','#B5E1F3':'#B8CCD1','#D5EAC8':'#B9C7AA','#F2CCE6':'#CBB9C3','#E8E2DB':'#CFC6BA'};
+ let changed=false;
+ for(const l of LANES){const target=changes[String(l.color||'').toUpperCase()];if(target){l.color=target;changed=true}}
+ if(changed)persistLanes();localStorage.setItem(key,'done');
+}
+
+// V33: older source-image dates that were missing from the initial import.
+// Add once, without replacing or resetting any user-created items.
+function addEarlierImageDates(){
+ const flag='days-organized-image-early-dates-v33';
+ if(localStorage.getItem(flag)==='done')return;
+ const firstTerm=[
+  ['jp','2026-09-29','15:45','岩崎高校 Eng','17:00'],
+  ['filleng','2026-10-01','','英文充實',''],
+  ['filleng','2026-10-15','','英文充實',''],
+  ['busan','2026-10-27','19:50','釜山外語 Chi','20:30'],
+  ['filleng','2026-10-29','','英文充實',''],
+  ['jp','2026-11-02','15:45','岩崎高校 Eng','17:00'],
+  ['sanchong','2026-11-04','14:30','三千浦 Eng','15:30'],
+  ['busan','2026-11-10','19:50','釜山外語 Chi','20:30'],
+  ['filleng','2026-11-12','','英文充實',''],
+  ['filleng','2026-11-26','','英文充實','']
+ ];
+ let updated=false;
+ for(const [lane,date,time,title,endTime] of firstTerm){
+  if(!LANES.some(l=>l.id===lane))continue;
+  if(items.some(i=>!i.task&&i.date===date&&(i.title===title||i.lane===lane&&i.time===time&&!i.period)))continue;
+  items.push({id:'image-v33-'+lane+'-'+date,lane,date,time,period:'',title,task:false,done:false,overview:true,sourceImported:true,note:endTime?'來源圖片時間 '+time+'–'+endTime:'依使用者提供的原始行事圖'});updated=true;
+ }
+ for(let j=0;j<3;j++){
+  const date=['2026-10-12','2026-10-13','2026-10-14'][j];
+  if(items.some(i=>!i.task&&i.date===date&&/第一次段考|一段/.test(i.title)))continue;
+  let lane=LANES.find(l=>l.id==='school_dates')?.id || LANES.find(l=>l.id==='personal')?.id;
+  if(!lane)continue;
+  items.push({id:'image-v33-first-exam-'+date,groupId:'first-exam-2026',title:'第一次段考',date,period:'',time:'',lane,task:false,done:false,overview:true,sourceImported:true,note:'使用者提供的行事圖顯示 10/12～10/14 一段。'});updated=true;
+ }
+ if(updated)persist();localStorage.setItem(flag,'done');
+}
+addEarlierImageDates();
+
+// V31 complete local storage backup/restore. The file includes all app data and personalization.
+const BACKUP_PREFIX='days-organized-';
+function fullBackupPayload(){
+ const records={};
+ for(let i=0;i<localStorage.length;i++){
+  const key=localStorage.key(i);
+  if(key&&key.startsWith(BACKUP_PREFIX))records[key]=localStorage.getItem(key);
+ }
+ // Ensure the live model is present even when the browser has just initialized.
+ records['days-organized-v2']=JSON.stringify(items);
+ records['days-organized-lanes-v3']=JSON.stringify(LANES.slice(1));
+ return {app:'日子有序',format:'days-organized-complete-backup',version:1,exportedAt:new Date().toISOString(),storage:records};
+}
+function saveBackupFile(payload,name){
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),2000);
+}
+function exportFullBackup(){
+ try{saveBackupFile(fullBackupPayload(),'日子有序-完整備份-'+iso(today())+'.json')}
+ catch(e){alert('備份失敗：'+e.message)}
+}
+function startRestore(){document.querySelector('#backupRestoreInput').click()}
+$('#backupEntry').onclick=()=>$('#settingsMenu').classList.add('show');
+$('#backupDownloadNow').onclick=exportFullBackup;
+$('#backupRestoreNow').onclick=startRestore;
+$('#backupHelpClose').onclick=()=>$('#backupHelp').classList.remove('show');
+$('#backupHelp').onclick=e=>{if(e.target.id==='backupHelp')$('#backupHelp').classList.remove('show')};
+$('#backupRestoreInput').addEventListener('change',async e=>{
+ const input=e.target,file=input.files?.[0];if(!file)return;
+ try{
+  if(file.size>20*1024*1024)throw Error('檔案太大，請確認是否為本系統備份。');
+  const data=JSON.parse(await file.text());
+  let records;
+  if(data?.format==='days-organized-complete-backup'&&data.version===1&&data.storage&&typeof data.storage==='object'&&!Array.isArray(data.storage)){
+   records=data.storage;
+  }else if(Array.isArray(data?.items)&&Array.isArray(data?.lanes)){
+   records={'days-organized-v2':JSON.stringify(data.items),'days-organized-lanes-v3':JSON.stringify(data.lanes)};
+  }else throw Error('無法辨識這份備份檔。');
+  if(!Array.isArray(JSON.parse(records['days-organized-v2']||'null'))||!Array.isArray(JSON.parse(records['days-organized-lanes-v3']||'null')))throw Error('備份中的課表或班級資料格式有誤。');
+  const entries=Object.entries(records);
+  if(!entries.length||entries.some(([key,value])=>!key.startsWith(BACKUP_PREFIX)||typeof value!=='string'))throw Error('資料格式不符合本系統。');
+  const when=data.exportedAt?new Date(data.exportedAt).toLocaleString('zh-TW'): '舊版備份';
+  if(!confirm('即將還原 '+when+' 的備份。這會取代目前的課表和待辦。確定繼續？'))return;
+  // Download a rollback copy BEFORE modifying current data.
+  exportFullBackup();
+  // Replace only this app's keys, retaining unrelated websites' data.
+  for(let i=localStorage.length-1;i>=0;i--){const key=localStorage.key(i);if(key?.startsWith(BACKUP_PREFIX))localStorage.removeItem(key)}
+  for(const [key,value] of entries)localStorage.setItem(key,value);
+  // A reload rehydrates all in-memory schedules, styles, and progress.
+  alert('還原完成。接下來會重新載入頁面。');location.reload();
+ }catch(err){alert('還原未完成：'+err.message)}finally{input.value=''}
+});
+// V32 migration: keep personal edits, but correct the three confirmed fixed-school periods.
+// The first semester has its own schedule. Never automatically extend it into semester two.
+function applyConfirmedSemesterSchedule(){
+ const key='days-organized-semester1-confirmed-v32';
+ if(localStorage.getItem(key)==='done')return;
+ const known={h1ren:{day:2,period:'8',cycle:'odd'},filleng:{day:4,period:'3',cycle:'odd'},movieeng:{day:4,period:'3',cycle:'even'}};
+ let touched=false;
+ for(const lane of LANES){
+  if(!lane.schedule||lane.schedule.mode!=='weekly')continue;
+  // Restrict this migration to the six original first-semester course series.
+  if(!['h1ren','h1zhong','h2zhong','h2ren','filleng','movieeng'].includes(lane.id))continue;
+  const s=lane.schedule;
+  if(!s.end||s.end>'2027-01-20'){s.end='2027-01-20';touched=true;}
+  // Ensure we do not accidentally change a new second-semester series.
+  if(s.start&&s.start>'2027-01-20')continue;
+  const r=known[lane.id];
+  if(r){
+   for(const slot of s.slots||[]){
+    if(Number(slot.day)===r.day&&String(slot.period)===r.period){
+     if(slot.cycle!==r.cycle){slot.cycle=r.cycle;touched=true;}
+     if(slot.end&&slot.end>'2027-01-20'){slot.end='2027-01-20';touched=true;}
+    }
+   }
+  }
+  // Regenerate all these existing semester courses so out-of-week items are removed.
+  // updateSchedule archives old lesson progress so it can be retrieved later.
+  updateSchedule(lane);
+  touched=true;
+ }
+ // Only remove the obsolete *system-generated* confirmation reminder, not custom tasks.
+ const oldTitle='確認週二第 8 節是否為單雙週課（高一仁）';
+ const before=items.length;
+ items=items.filter(x=>!(x.title===oldTitle&&x.lane==='h1ren'&&x.task));
+ if(items.length!==before)touched=true;
+ if(touched){persistLanes();persist()}
+ localStorage.setItem(key,'done');
+}
+applyConfirmedSemesterSchedule();
+migrateMorandiPalette();
+applyStylePrefs();
+render();
+</script></body></html>
